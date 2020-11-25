@@ -5,7 +5,10 @@ using System.Threading;
 namespace Metoder_Benny_och_Nicklas
 {
     class Program
-    {
+    {  
+        // ----------------------------------------------------------------------------------------------------------------
+        // ******************************************* BENNYS LEKTION. ****************************************************
+        // ----------------------------------------------------------------------------------------------------------------
         //static void Main(string[] args)
         //{
         //    //Programmet körs igång och kallar på koden som ligger i metoden KörProgram().
@@ -52,6 +55,83 @@ namespace Metoder_Benny_och_Nicklas
         //    //Returnerar resultatet (en färdig kaka)
         //    return summa / 2;
         //}
+        //------------------------------------------------------------------------------------------------------------------
+        // ********************************************** NICKLAS LEKTION **************************************************
+        //------------------------------------------------------------------------------------------------------------------
+        //static void Main(string[] args)
+        //{
+        //    //Deklarerade variabler
+        //    int nummer1 = 5;
+        //    int nummer2 = 12;
+
+        //    //Kallar på en metod som enbart skriver ut text i console
+        //    PrintMethod();
+
+        //    //2 siffror in, ut kommer en WriteLine
+        //    //Siffrorna kan vara vad som helst
+        //    Input2NumbersAdded(4, 10);
+        //    Input2NumbersAdded(nummer1, nummer2); //Här skickas nummer1 och nummer2 in, deklarerades ovan
+
+        //    //Om vi vill spara summan in i en variabel
+        //    int summa = NewInput2NumbersAdded(4, 10);
+        //    Console.WriteLine(summa); //Testar skriva ut summan vi fick tillbaka från metoden.
+
+        //    int myInt = Metodraketen(5, 95);
+        //    Console.WriteLine(myInt);
+
+        //    int minSumma = DividedMethod(10, 33);
+
+
+        //}
+
+        //// static         void       /    int/string/bool osv.        Metodnamn      (int x) / (string namn, int age)  
+        ////   ^              ^                      ^                      ^            ^                ^
+        //// Alltid     Ger inget tbx       En variabel ges tbx         Metodnamn      Parameter som skickas in till metoden när den kallas
+
+
+
+        //static void PrintMethod() //Returnerar inget till användaren därav "void", den utför bara sin kod. 
+        //{
+        //    Console.WriteLine("Hello! This method only contains a \"WriteLine();\"");
+        //}
+
+        ////Denna metod tar in 2 variabler > kör sin kod > skriver ut till console
+        //static void Input2NumbersAdded(int x, int y)
+        //{
+        //    //x och y är nummer 1 och nummer 2 som vi skickar in när vi anropar vår metod
+        //    //variablerna får såklart döpas till vad man vill
+
+        //    int sum = x + y;
+        //    Console.WriteLine($"The sum of your addition is: {sum}");
+        //}
+
+        ////Samma metod som ovan.Men denna returnerar en int tillbaka till main
+        //static int NewInput2NumbersAdded(int x, int y)
+        //{
+        //    int sum = x + y;
+        //    return (sum); //Vi sparar värdet/variablen tillbaka till main, där vi sparar den som int summa;
+        //}
+
+        //static int Metodraketen(int myNumber1, int myNumber2)
+        //{
+        //    int myNewNumber = myNumber1 + myNumber2;
+        //    return Metodraketen2(myNewNumber);
+        //}
+
+        //static int Metodraketen2(int myNewNumber)
+        //{
+        //    int sum = myNewNumber * 2;
+
+        //    return sum;
+        //}
+        //static int DividedMethod(int x, int y)
+        //{
+        //    int sum = x / y;
+        //    return sum;
+        //}
+        //---------------------------------------------------------------------------------------------------------------------
+        // MINA ÖVNINGAR
+        //---------------------------------------------------------------------------------------------------------------------
         static void Main(string[] args)
         {
             StartProgram();
@@ -63,7 +143,7 @@ namespace Metoder_Benny_och_Nicklas
 
             do
             {
-                Console.WriteLine("Hej och välkommen till en pappskalles försök med metoder");
+                Console.WriteLine("Hej och välkommen till lek med metoder!");
                 Console.WriteLine("1. Gör en enkel beräkning");
                 Console.WriteLine("2. Slumpa ett nytt efternamn");
                 Console.WriteLine("3. Gissa talet");
