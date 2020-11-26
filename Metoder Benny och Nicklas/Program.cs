@@ -179,14 +179,17 @@ namespace Metoder_Benny_och_Nicklas
                     // användarens tal och det slumpade talet lagras i en array som skickas tillbaks
                     // till metoden StartProgram där en if sats styr vad som skrivs ut till användaren.
                     int[] answer = GuessNumber();
-                    if (answer[0] == answer[1])
+                    for (int i = 0; i < answer.Length; i++)
                     {
-                        Console.WriteLine($"Grattis du valde {answer[0]} and the winning number was {answer[1]}");
-                    }
-                    else if (answer[0] != answer[1])
-                    {
-                        Console.WriteLine($"Otur, du valde {answer[0]} och det vinnande numret var {answer[1]} bättre lycka nästa gång!");
-                    }
+                        if (answer[0] == answer[1])
+                        {
+                            Console.WriteLine($"Grattis du valde {answer[0]} and the winning number was {answer[1]}");
+                        }
+                        else if (answer[0] != answer[1])
+                        {
+                            Console.WriteLine($"Otur, du valde {answer[0]} och det vinnande numret var {answer[1]} bättre lycka nästa gång!");
+                        }
+                    }  
                 }
                 else if (choice == 4)
                 {
@@ -196,10 +199,14 @@ namespace Metoder_Benny_och_Nicklas
                 }
                 else if (choice == 5)
                 {
+                    // Användaren får skriva ett tal mellan 0 och 10, talet skickas in i metoden DippThekitty där det jämförs mot två arrayer.
+                    // Om talet är ojämnt så returneras värdet 1 och så kastas den stackars katten i sjön. 
+                    // Är talet jämt så vinner katten.
                     Console.WriteLine("Skriv ett nummer mellan 0 och 10.");
                     int numbIn = Convert.ToInt32(Console.ReadLine());
                     int wetDry = DippTheKitty(numbIn);
-
+                    Console.Clear();
+                    Console.WriteLine($"Du valde nummer {numbIn}");
                     if (wetDry == 1)
                     {
                         Console.WriteLine("Fel nummer: Katten vann!");
@@ -207,15 +214,18 @@ namespace Metoder_Benny_och_Nicklas
                     else if (wetDry == 2)
                     {
                         Console.WriteLine("Rätt nummer: Du kastade den stackars katten i sjön!");
+                        Console.WriteLine("Inte konstigt att den är så arg... ;) ");
                     }
                     else if (wetDry == 3)
                     {
                         Console.WriteLine("Felaktig inmatning pappskalle!");
                     }
+                    Thread.Sleep(3000);
+                    Console.Clear();
                 }
                 else if (choice == 6)
                 {
-
+                    
                 }
                 else if (choice == 7)
                 {
@@ -224,7 +234,6 @@ namespace Metoder_Benny_och_Nicklas
                 else
                 {
                     Console.WriteLine("Fel val pappskalle, skärp dig!");
-
                 }
                 Console.WriteLine("Do you want to try again? ");
                 Console.WriteLine("1. Yes ");
@@ -236,7 +245,6 @@ namespace Metoder_Benny_och_Nicklas
                 {
                     Console.WriteLine("Tack för ditt deltagande, välkommen åter!");
                     keepGoing = false;
-
                 }
                 else
                 {
@@ -245,9 +253,6 @@ namespace Metoder_Benny_och_Nicklas
                 }
 
             } while (keepGoing == true);
-
-
-
         }
         static int SimpleCalculator(int a, int b)
         {
