@@ -179,17 +179,17 @@ namespace Metoder_Benny_och_Nicklas
                     // användarens tal och det slumpade talet lagras i en array som skickas tillbaks
                     // till metoden StartProgram där en if sats styr vad som skrivs ut till användaren.
                     int[] answer = GuessNumber();
-                    for (int i = 0; i < answer.Length; i++)
-                    {
-                        if (answer[0] == answer[1])
-                        {
-                            Console.WriteLine($"Grattis du valde {answer[0]} and the winning number was {answer[1]}");
-                        }
-                        else if (answer[0] != answer[1])
-                        {
-                            Console.WriteLine($"Otur, du valde {answer[0]} och det vinnande numret var {answer[1]} bättre lycka nästa gång!");
-                        }
-                    }  
+
+                     if (answer[0] == 1)
+                     {
+                        Console.WriteLine("Grattis du valde rätt nummer!");
+                     }
+                     else if (answer[1] == 0)
+                     {
+                        Console.WriteLine("Otur, du valde fel nummer bättre lycka nästa gång!");
+                     }
+                    Thread.Sleep(3000);
+                    Console.Clear();
                 }
                 else if (choice == 4)
                 {
@@ -231,6 +231,13 @@ namespace Metoder_Benny_och_Nicklas
                 {
 
                 }
+                else if (choice == 8)
+                {
+                    Console.WriteLine("Slipp då jäkla tråkmåns!");
+                    Thread.Sleep(3000);
+                    Console.Clear();
+                    break;
+                }
                 else
                 {
                     Console.WriteLine("Fel val pappskalle, skärp dig!");
@@ -264,7 +271,7 @@ namespace Metoder_Benny_och_Nicklas
             Console.WriteLine("Vad heter du?: ");
             string name = Console.ReadLine();
             Random rand = new Random();
-            string[] lastNames = new string[4] {"Saxbacke", "Laengstjaert", "Pjuttgren", "Stolpskott"};
+            string[] lastNames = new string[4] {"Saxbacke", "Laengstjaert", "Pjuttgjen", "Stolpskott"};
             lastNames[0] = "Saxbacke";
             lastNames[1] = "Laengstjaert";
             lastNames[2] = "Pjuttgren";
@@ -276,14 +283,23 @@ namespace Metoder_Benny_och_Nicklas
         static int[] GuessNumber()
         {
             int[] lucky7 = new int[7] { 1, 2, 3, 4, 5, 6, 7 };
+            int[] returnNumb = new int[2];
             Random rand = new Random();
-            int win = (rand.Next(lucky7.Length));
             Console.WriteLine("Skriv ett tal mellan 1 och 7");
             int numb = Convert.ToInt32(Console.ReadLine());
-            int[] returnNumb = new int[2];
-            returnNumb[0] = win;
-            returnNumb[1] = numb;
-
+            for (int i = 0; i < lucky7.Length; i++)
+            {
+                int win = rand.Next(lucky7[i]);
+                if (win == numb)
+                {
+                    returnNumb[0] = 1;
+                }
+                else
+                {
+                    returnNumb[1] = 0;
+                }
+            }
+           
             return returnNumb;
         }
         static void LoopThroughList()
