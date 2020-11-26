@@ -196,7 +196,22 @@ namespace Metoder_Benny_och_Nicklas
                 }
                 else if (choice == 5)
                 {
+                    Console.WriteLine("Skriv ett nummer mellan 0 och 10.");
+                    int numbIn = Convert.ToInt32(Console.ReadLine());
+                    int wetDry = DippTheKitty(numbIn);
 
+                    if (wetDry == 1)
+                    {
+                        Console.WriteLine("Fel nummer: Katten vann!");
+                    }
+                    else if (wetDry == 2)
+                    {
+                        Console.WriteLine("Rätt nummer: Du kastade den stackars katten i sjön!");
+                    }
+                    else if (wetDry == 3)
+                    {
+                        Console.WriteLine("Felaktig inmatning pappskalle!");
+                    }
                 }
                 else if (choice == 6)
                 {
@@ -282,6 +297,35 @@ namespace Metoder_Benny_och_Nicklas
             }
             Console.ReadLine();
             Console.Clear();
+        }
+        static int DippTheKitty(int x)
+        {
+            int numbOut = 0;
+            int[] even = new int[5] {2, 4, 6, 8, 10};
+            int[] unEven = new int[5] {1, 3, 5, 7, 9};
+
+            for (int i = 0; i < even.Length; i++)
+            {
+                if (even[i] == x)
+                {
+                    numbOut = 1;
+                }
+            }
+            for (int j = 0; j < unEven.Length; j++)
+            {
+                if (unEven[j] == x)
+                {
+                    numbOut = 2;
+                }
+            }    
+            if (numbOut == 1 || numbOut == 2)
+            {
+                return numbOut;
+            }
+            else
+            {
+                return 3;
+            }
         }
         // --------------------------------------------------------------------------------------------------------------------
         // ***************************************** ÖVNINGAR 5 V 3 ***********************************************************
