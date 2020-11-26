@@ -58,6 +58,7 @@ namespace Metoder_Benny_och_Nicklas
         //------------------------------------------------------------------------------------------------------------------
         // ********************************************** NICKLAS LEKTION **************************************************
         //------------------------------------------------------------------------------------------------------------------
+        // Console.WriteLine($"Hej {myArray.Lenght} Så här kan jag skriva för att göra allt kortare och snyggare myArray kan även skrivas {myArray[2]}");
         //static void Main(string[] args)
         //{
         //    //Deklarerade variabler
@@ -135,6 +136,7 @@ namespace Metoder_Benny_och_Nicklas
         static void Main(string[] args)
         {
             StartProgram();
+            Console.ReadLine();
         }
 
         static void StartProgram()
@@ -174,11 +176,11 @@ namespace Metoder_Benny_och_Nicklas
                     int[] answer = GuessNumber();
                     if (answer[0] == answer[1])
                     {
-                        Console.WriteLine("Grattis du valde {1} and the winning number was {2}", answer);
+                        Console.WriteLine($"Grattis du valde {answer[0]} and the winning number was {answer[1]}");
                     }
                     else if (answer[0] != answer[1])
                     {
-                        Console.WriteLine("Otur, du valde {1} och det vinnande numret var {0} bättre lycka nästa gång!", answer);
+                        Console.WriteLine($"Otur, du valde {answer[0]} och det vinnande numret var {answer[1]} bättre lycka nästa gång!");
                     }
                 }
                 else if (choice == 4)
@@ -210,8 +212,9 @@ namespace Metoder_Benny_och_Nicklas
                     keepGoing = true;
                 else if (yesNo == 2)
                 {
-                    Console.WriteLine("Tack för ");
+                    Console.WriteLine("Tack för ditt deltagande, välkommen åter!");
                     keepGoing = false;
+
                 }
                 else
                 {
@@ -234,13 +237,13 @@ namespace Metoder_Benny_och_Nicklas
             Console.WriteLine("Vad heter du?: ");
             string name = Console.ReadLine();
             Random rand = new Random();
-            string[] lastNames = new string[4]; (["Saxbacke"]["Laengstjaert"]["Pjuttgren"]["Stolpskott"]);
+            string[] lastNames = new string[4] {"Saxbacke", "Laengstjaert", "Pjuttgren", "Stolpskott"};
             lastNames[0] = "Saxbacke";
             lastNames[1] = "Laengstjaert";
             lastNames[2] = "Pjuttgren";
             lastNames[3] = "Stolpskott";
-            int mixed = (rand.Next(lastNames.Length));
-            Console.WriteLine("Hej " + name + mixed);
+            int mixed = rand.Next(lastNames.Length);
+            Console.WriteLine("Hej " + name + " " + lastNames[mixed]);
 
         }
         static int[] GuessNumber()
@@ -255,7 +258,7 @@ namespace Metoder_Benny_och_Nicklas
             returnNumb[1] = numb;
 
             return returnNumb;
-        }
+        }       
         // --------------------------------------------------------------------------------------------------------------------
         // ***************************************** ÖVNINGAR 5 V 3 ***********************************************************
         // --------------------------------------------------------------------------------------------------------------------
