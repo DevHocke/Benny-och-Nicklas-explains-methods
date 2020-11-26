@@ -169,10 +169,15 @@ namespace Metoder_Benny_och_Nicklas
                 }
                 else if (choice == 2)
                 {
+                    // Låter användaren skriva in sitt förnamn och får ett svar med ett random efternamn
+                    // som skrivs ut i consolen i metoden som är satt till void.
                     RandomLastname();
                 }
                 else if (choice == 3)
                 {
+                    // Låter användaren skriva in ett tal mellan 1 och 7 i metoden GuessNumber.
+                    // användarens tal och det slumpade talet lagras i en array som skickas tillbaks
+                    // till metoden StartProgram där en if sats styr vad som skrivs ut till användaren.
                     int[] answer = GuessNumber();
                     if (answer[0] == answer[1])
                     {
@@ -185,7 +190,9 @@ namespace Metoder_Benny_och_Nicklas
                 }
                 else if (choice == 4)
                 {
-
+                    // Låter användaren skriva in 10 heltal i metoden loopThroughList.
+                    // Listan skrivs sedan ut i en forloop i metoden som är satt till void.
+                    LoopThroughList();
                 }
                 else if (choice == 5)
                 {
@@ -258,7 +265,24 @@ namespace Metoder_Benny_och_Nicklas
             returnNumb[1] = numb;
 
             return returnNumb;
-        }       
+        }
+        static void LoopThroughList()
+        {
+            List<int> loopThrough = new List<int>();
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine($"{i} Skriv ett heltal"); 
+                int numbIn = Convert.ToInt32(Console.ReadLine());
+                loopThrough.Add(numbIn);
+            }
+            Console.Clear();
+            foreach(var item in loopThrough)
+            {
+                Console.WriteLine($"Du valde nummer {item}");
+            }
+            Console.ReadLine();
+            Console.Clear();
+        }
         // --------------------------------------------------------------------------------------------------------------------
         // ***************************************** ÖVNINGAR 5 V 3 ***********************************************************
         // --------------------------------------------------------------------------------------------------------------------
