@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading;
+using System.Threading; 
 
 namespace Metoder_Benny_och_Nicklas
 {
@@ -245,7 +245,7 @@ namespace Metoder_Benny_och_Nicklas
         //        Console.WriteLine("Do you want to try again? ");
         //        Console.WriteLine("1. Yes ");
         //        Console.WriteLine("2. No ");
-                
+
         //        int yesNo = Convert.ToInt32(Console.ReadLine());
         //        if (yesNo == 1)
         //            keepGoing = true;
@@ -299,7 +299,7 @@ namespace Metoder_Benny_och_Nicklas
         //            returnNumb[1] = 0;
         //        }
         //    }
-           
+
         //    return returnNumb;
         //}
         //static void LoopThroughList()
@@ -493,109 +493,166 @@ namespace Metoder_Benny_och_Nicklas
         //3. Skapa en metod som tar in två argument, int a, int b och returnera a / b
         //4. Skapa en metod som tar in två argument, int a, int b och returnera a* b
         //5. Ge alla dessa beskrivande namn
-         /*
+        /*
+       static void Main(string[] args)
+       {
+           bool keepGoing = false;
+           do
+           {
+               Console.WriteLine("Hej och välkommen till övningar 6");
+               Console.WriteLine("1. Gör en + beräkning ");
+               Console.WriteLine("2. Gör en - beräkning ");
+               Console.WriteLine("3. Gör en / beräkning ");
+               Console.WriteLine("4. Gör en * beräkning ");
+               Console.WriteLine("5. EXIT");
+               int choice = Convert.ToInt32(Console.ReadLine());
+
+               if (choice == 1)
+               {
+                   Console.WriteLine("Skriv in heltal 1: ");
+                   int numb1 = Convert.ToInt32(Console.ReadLine());
+                   Console.WriteLine("Skriv in heltal 2: ");
+                   int numb2 = Convert.ToInt32(Console.ReadLine());
+                   int sumPlus = PlusCalc(numb1, numb2);
+                   Console.WriteLine($"The sum is: {sumPlus}");                   
+               }
+               else if (choice == 2)
+               {
+                   Console.WriteLine("Skriv in heltal 1: ");
+                   int numb1 = Convert.ToInt32(Console.ReadLine());
+                   Console.WriteLine("Skriv in heltal 2: ");
+                   int numb2 = Convert.ToInt32(Console.ReadLine());
+                   int sumPlus = MinusCalc(numb1, numb2);
+                   Console.WriteLine($"The sum is: {sumPlus}");                  
+               }
+               else if (choice == 3)
+               {
+                   Console.WriteLine("Skriv in heltal 1: ");
+                   int numb1 = Convert.ToInt32(Console.ReadLine());
+                   Console.WriteLine("Skriv in heltal 2: ");
+                   int numb2 = Convert.ToInt32(Console.ReadLine());
+                   int sumPlus = DividedCalc(numb1, numb2);
+                   Console.WriteLine($"The sum is: {sumPlus}");  
+               }
+               else if (choice == 4)
+               {
+                   Console.WriteLine("Skriv in heltal 1: ");
+                   int numb1 = Convert.ToInt32(Console.ReadLine());
+                   Console.WriteLine("Skriv in heltal 2: ");
+                   int numb2 = Convert.ToInt32(Console.ReadLine());
+                   int sumPlus = MultCalc(numb1, numb2);
+                   Console.WriteLine($"The sum is: {sumPlus}");                    
+               }
+               else if (choice == 5)
+               {
+                   Console.WriteLine("Program EXIT");
+                   break;
+               }
+               Console.WriteLine("do you want to do any other calculation?");
+               Console.WriteLine("1. Yes.");
+               Console.WriteLine("2. No.");
+               int answer = Convert.ToInt32(Console.ReadLine());
+               if (answer == 1)
+               {
+                   keepGoing = true;
+               }
+               else if (answer == 2)
+               {
+                   keepGoing = false;
+               }
+               else
+               {
+                   break;
+               }
+           } while(keepGoing == true);
+
+           Console.WriteLine("Thank you for playing!");
+           Console.ReadLine();
+       }
+       static int PlusCalc(int a, int b)
+       {
+           int sum = a + b;
+           return sum;
+       }
+       static int MinusCalc(int a, int b)
+       {
+           int sum = a - b;
+           return sum;
+       }
+       static int DividedCalc(int a, int b)
+       {
+           int sum = a / b;
+           return sum;
+       }
+       static int MultCalc(int a, int b)
+       {
+           int sum = a * b;
+           return sum;
+       }
+       */
+        // ---------------------------------------------------------------------------------------------------------------------------
+        //6. Skapa en metod som tar in basen och höjden av en triangel och returnera arean.
+        //7. Skapa en metod som tar in en bool och returnera det motsatta.
+        //8. Skapa en metod som tar in en lista och returnerar det sista elementet.
+        //9. Skapa en metod som tar in ett heltal och multiplicera talet med 10. Kalla sedan på en annan metod från första metoden och returnera det talet delat på 5.
         static void Main(string[] args)
         {
-            bool keepGoing = false;
-            do
-            {
-                Console.WriteLine("Hej och välkommen till övningar 6");
-                Console.WriteLine("1. Gör en + beräkning ");
-                Console.WriteLine("2. Gör en - beräkning ");
-                Console.WriteLine("3. Gör en / beräkning ");
-                Console.WriteLine("4. Gör en * beräkning ");
-                Console.WriteLine("5. EXIT");
-                int choice = Convert.ToInt32(Console.ReadLine());
+            float width = 13;
+            float height = 8;
+            float answerTriangel = Triangel(width, height);
+            Console.WriteLine($"The area of the triangel is = {answerTriangel}");
 
-                if (choice == 1)
-                {
-                    Console.WriteLine("Skriv in heltal 1: ");
-                    int numb1 = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Skriv in heltal 2: ");
-                    int numb2 = Convert.ToInt32(Console.ReadLine());
-                    int sumPlus = PlusCalc(numb1, numb2);
-                    Console.WriteLine($"The sum is: {sumPlus}");                   
-                }
-                else if (choice == 2)
-                {
-                    Console.WriteLine("Skriv in heltal 1: ");
-                    int numb1 = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Skriv in heltal 2: ");
-                    int numb2 = Convert.ToInt32(Console.ReadLine());
-                    int sumPlus = MinusCalc(numb1, numb2);
-                    Console.WriteLine($"The sum is: {sumPlus}");                  
-                }
-                else if (choice == 3)
-                {
-                    Console.WriteLine("Skriv in heltal 1: ");
-                    int numb1 = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Skriv in heltal 2: ");
-                    int numb2 = Convert.ToInt32(Console.ReadLine());
-                    int sumPlus = DividedCalc(numb1, numb2);
-                    Console.WriteLine($"The sum is: {sumPlus}");  
-                }
-                else if (choice == 4)
-                {
-                    Console.WriteLine("Skriv in heltal 1: ");
-                    int numb1 = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Skriv in heltal 2: ");
-                    int numb2 = Convert.ToInt32(Console.ReadLine());
-                    int sumPlus = MultCalc(numb1, numb2);
-                    Console.WriteLine($"The sum is: {sumPlus}");                    
-                }
-                else if (choice == 5)
-                {
-                    Console.WriteLine("Program EXIT");
-                    break;
-                }
-                Console.WriteLine("do you want to do any other calculation?");
-                Console.WriteLine("1. Yes.");
-                Console.WriteLine("2. No.");
-                int answer = Convert.ToInt32(Console.ReadLine());
-                if (answer == 1)
-                {
-                    keepGoing = true;
-                }
-                else if (answer == 2)
-                {
-                    keepGoing = false;
-                }
-                else
-                {
-                    break;
-                }
-            } while(keepGoing == true);
+            bool sendOut = true;
+            bool answerBool = BoolOut(sendOut);
+            Console.WriteLine($"The bool was {sendOut} and is now {answerBool}");
 
-            Console.WriteLine("Thank you for playing!");
+            List<float> myList = new List<float>() { 1, 4, 6, 5, 89, 432, 5, 98 };
+            float lastNumb = LastNumbInList(myList);
+            Console.WriteLine($"The last number in the list is {lastNumb}");
+            
+
+            int finalnumb =  UserNumbIn();
+            Console.WriteLine($"Ditt tal * 10 / 5 är: {finalnumb}");
             Console.ReadLine();
         }
-        static int PlusCalc(int a, int b)
+        static float Triangel(float a, float b)
         {
-            int sum = a + b;
-            return sum;
+            float calculation = a * b / 2;
+            return calculation;
         }
-        static int MinusCalc(int a, int b)
+        static bool BoolOut(bool a)
         {
-            int sum = a - b;
-            return sum;
+            bool boolIn = a;
+            if (boolIn == true)
+            {
+                boolIn = false;
+            }
+            else if (boolIn == false)
+            {
+                boolIn = true;
+            }
+            return boolIn;
         }
-        static int DividedCalc(int a, int b)
+        static float LastNumbInList(List<float> x)
+        {            
+            float answer = x[x.Count -1]; // Or use float answer = x.Last(); men måste ha using Linq!
+            return answer;
+        }
+        static int UserNumbIn()
         {
-            int sum = a / b;
-            return sum;
+            Console.WriteLine("Skriv ett heltal: ");
+            int numb = Convert.ToInt32(Console.ReadLine());
+            int sendIt = (numb * 10);
+            return DivideNumb(sendIt);
         }
-        static int MultCalc(int a, int b)
+        static int DivideNumb(int sendIt)
         {
-            int sum = a * b;
-            return sum;
-        }
-        */
-        // ---------------------------------------------------------------------------------------------------------------------------
-        //6. Skapa en metod som tar in basen och höjden av en triangel och returnera arean
-        //7. Skapa en metod som tar in en bool och returnera det motsatta
-        //8. Skapa en metod som tar in en lista och returnerar det sista elementet
-        //9. Skapa en metod som tar in ett heltal och multiplicera talet med 10. Kalla sedan på en annan metod från första metoden och returnera det talet delat på 5
 
+            int finalnumb = (sendIt / 5);
+            return finalnumb;
+        }
+
+        // ---------------------------------------------------------------------------------------------------------------------------
         //10. Skapa en lista av strings med fyra element "Det" "var" "en" "gång..."
         //11. Ta listan av strings och skicka in den i en kedja av metoder.
         //12. För varje metod lägg till en string i listan
