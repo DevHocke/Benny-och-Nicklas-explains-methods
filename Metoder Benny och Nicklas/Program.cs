@@ -595,69 +595,111 @@ namespace Metoder_Benny_och_Nicklas
         //7. Skapa en metod som tar in en bool och returnera det motsatta.
         //8. Skapa en metod som tar in en lista och returnerar det sista elementet.
         //9. Skapa en metod som tar in ett heltal och multiplicera talet med 10. Kalla sedan på en annan metod från första metoden och returnera det talet delat på 5.
-        static void Main(string[] args)
-        {
-            float width = 13;
-            float height = 8;
-            float answerTriangel = Triangel(width, height);
-            Console.WriteLine($"The area of the triangel is = {answerTriangel}");
+        /*
+         static void Main(string[] args)
+         {
+             float width = 13;
+             float height = 8;
+             float answerTriangel = Triangel(width, height);
+             Console.WriteLine($"The area of the triangel is = {answerTriangel}");
 
-            bool sendOut = true;
-            bool answerBool = BoolOut(sendOut);
-            Console.WriteLine($"The bool was {sendOut} and is now {answerBool}");
+             bool sendOut = true;
+             bool answerBool = BoolOut(sendOut);
+             Console.WriteLine($"The bool was {sendOut} and is now {answerBool}");
 
-            List<float> myList = new List<float>() { 1, 4, 6, 5, 89, 432, 5, 98 };
-            float lastNumb = LastNumbInList(myList);
-            Console.WriteLine($"The last number in the list is {lastNumb}");
-            
+             List<float> myList = new List<float>() { 1, 4, 6, 5, 89, 432, 5, 98 };
+             float lastNumb = LastNumbInList(myList);
+             Console.WriteLine($"The last number in the list is {lastNumb}");
 
-            int finalnumb =  UserNumbIn();
-            Console.WriteLine($"Ditt tal * 10 / 5 är: {finalnumb}");
-            Console.ReadLine();
-        }
-        static float Triangel(float a, float b)
-        {
-            float calculation = a * b / 2;
-            return calculation;
-        }
-        static bool BoolOut(bool a)
-        {
-            bool boolIn = a;
-            if (boolIn == true)
-            {
-                boolIn = false;
-            }
-            else if (boolIn == false)
-            {
-                boolIn = true;
-            }
-            return boolIn;
-        }
-        static float LastNumbInList(List<float> x)
-        {            
-            float answer = x[x.Count -1]; // Or use float answer = x.Last(); men måste ha using Linq!
-            return answer;
-        }
-        static int UserNumbIn()
-        {
-            Console.WriteLine("Skriv ett heltal: ");
-            int numb = Convert.ToInt32(Console.ReadLine());
-            int sendIt = (numb * 10);
-            return DivideNumb(sendIt);
-        }
-        static int DivideNumb(int sendIt)
-        {
 
-            int finalnumb = (sendIt / 5);
-            return finalnumb;
-        }
+             int finalnumb =  UserNumbIn();
+             Console.WriteLine($"Ditt tal * 10 / 5 är: {finalnumb}");
+             Console.ReadLine();
+         }
+         static float Triangel(float a, float b)
+         {
+             float calculation = a * b / 2;
+             return calculation;
+         }
+         static bool BoolOut(bool a)
+         {
+             bool boolIn = a;
+             if (boolIn == true)
+             {
+                 boolIn = false;
+             }
+             else if (boolIn == false)
+             {
+                 boolIn = true;
+             }
+             return boolIn;
+         }
+         static float LastNumbInList(List<float> x)
+         {            
+             float answer = x[x.Count -1]; // Or use float answer = x.Last(); men måste ha using Linq!
+             return answer;
+         }
+         static int UserNumbIn()
+         {
+             Console.WriteLine("Skriv ett heltal: ");
+             int numb = Convert.ToInt32(Console.ReadLine());
+             int sendIt = (numb * 10);
+             return DivideNumb(sendIt);
+         }
+         static int DivideNumb(int sendIt)
+         {
 
-        // ---------------------------------------------------------------------------------------------------------------------------
+             int finalnumb = (sendIt / 5);
+             return finalnumb;
+         }
+        */
+        // ------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
         //10. Skapa en lista av strings med fyra element "Det" "var" "en" "gång..."
         //11. Ta listan av strings och skicka in den i en kedja av metoder.
         //12. För varje metod lägg till en string i listan
         //13. När det finns 10 element i listan, skriv ut allt på en rad separerat med,
-
+        /*
+        static void Main(string[] args)
+        {
+            List<string> myList = new List<string>() {"Det ", "var ", "en ", "gång " };
+            List<string> start = ChainOne(myList);
+            foreach (var item in start)
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadLine();
+        }
+        static List<string> ChainOne(List<string> start)
+        {
+            start.Add("en ");
+            return ChainTwo(start);
+        }
+        static List<string> ChainTwo(List<string> start)
+        {
+            start.Add("liten ");
+            return ChainThree(start);
+        }
+        static List<string> ChainThree(List<string> start)
+        {
+            start.Add("prutt ");
+            return ChainFour(start);
+        }
+        static List<string> ChainFour(List<string> start)
+        {
+            start.Add("som ");
+            return ChainFive(start);
+        }
+        static List<string> ChainFive(List<string> start)
+        {
+            start.Add("hette ");
+            return ChainSix(start);
+        }
+        static List<string> ChainSix(List<string> start)
+        {
+            start.Add("Benny ");
+            return start;
+        }
+        */
         //14. Skapa ett program som ber användaren mata in ett tal 10 gånger.Spara undan dessa i en lista
         //15. Skicka in listan i en metod som heter SortEven.
         //16. För varje element i listan: Kolla om talet är jämt
