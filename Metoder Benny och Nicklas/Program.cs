@@ -188,7 +188,7 @@ namespace Metoder_Benny_och_Nicklas
                      {
                         Console.WriteLine("Otur, du valde fel nummer bättre lycka nästa gång!");
                      }
-                    Thread.Sleep(3000);
+                    Console.ReadLine();
                     Console.Clear();
                 }
                 else if (choice == 4)
@@ -225,11 +225,11 @@ namespace Metoder_Benny_och_Nicklas
                 }
                 else if (choice == 6)
                 {
-                    
+                    break;
                 }
                 else if (choice == 7)
                 {
-
+                    break;
                 }
                 else if (choice == 8)
                 {
@@ -245,6 +245,7 @@ namespace Metoder_Benny_och_Nicklas
                 Console.WriteLine("Do you want to try again? ");
                 Console.WriteLine("1. Yes ");
                 Console.WriteLine("2. No ");
+                
                 int yesNo = Convert.ToInt32(Console.ReadLine());
                 if (yesNo == 1)
                     keepGoing = true;
@@ -278,7 +279,6 @@ namespace Metoder_Benny_och_Nicklas
             lastNames[3] = "Stolpskott";
             int mixed = rand.Next(lastNames.Length);
             Console.WriteLine("Hej " + name + " " + lastNames[mixed]);
-
         }
         static int[] GuessNumber()
         {
@@ -351,24 +351,89 @@ namespace Metoder_Benny_och_Nicklas
         // --------------------------------------------------------------------------------------------------------------------
         // ***************************************** ÖVNINGAR 5 V 3 ***********************************************************
         // --------------------------------------------------------------------------------------------------------------------
-
-
         //1.Skapa ett program som har en en array eller lista för strängar som du du kalla kompisLista.
         //2.Fyll den med minst tre namn.T.ex.Robin, Björn B, Björn S.
         //3.Skriv en foreach-loop för varje sträng kompis i kompisLista.
         //4.I din loop skriv ut "Hej " + namnet på en kompis så att alla kompisar har blivit hälsade på när loopen körts klart.
-
         //5.Skriv en metod static void HälsaPå(string kompis)
         //6.Flytta innehållet i forloop från uppgift 3.till din metod. 
         //7.I ditt huvudprogram(Main) gör så att loopen kallar på HälsaPå(kompis) istället för att skriva ut själv. 
         //    Bonusuppgift: För att göra hälsningen lite mindre stel testa att använda Random rnd = new Random(); och en
         //    string array med olika hälsningsfraser för att blanda vilka fraser du använder för att hälsa på dina kompisar
+        /*
+        static void Main(string[] args)
+        {
+        
+            List<string> friendsList = new List<string>();
+            friendsList.Add("Pelle");
+            friendsList.Add("BennyBulaDenLillaFula");
+            friendsList.Add("Kalle Stropp");
+
+            NewMethod(friendsList);
+
+            static void NewMethod(List<string> friendsList)
+            {
+                string[] myArray = new string[9];
+                myArray[0] = "Du luktar så gott ";
+                myArray[1] = "Imorgon är en ny dag ";
+                myArray[2] = "Inga bullar för dig ";
+                myArray[3] = "Massa bullar för dig ";
+                myArray[4] = "Kom in i matchen ";
+                myArray[5] = "Nope inte här heller ";
+                myArray[6] = "Vill du ha en kaka ";
+                myArray[7] = "Bussen gick för 5 min sedan ";
+                myArray[8] = "Du är en pappskalle ";
+                
+                
+                for (int i = 0; i < friendsList.Count; i++)
+                {
+                    Random rand = new Random();
+                    String random = myArray[rand.Next(myArray.Length)];
+                    Console.WriteLine(random + friendsList[i]);     
+                }
+            }
+
+        } */
 
         //8.Skriv en metod sorteraTreTal som tar tre tal som paramterar och returnerar en array.
         //9.Skapa en array och placera dina tre tal i storleksordning i arrayen.
         //    Du kan återanvända kod från tidigare uppgifter för att ta reda på vilket tal som är stört, mellan och minst.
         //10.Returnera arrayen.
         //11.Testa så att metoden fungerar genom att skriva ut arrayen med hjälp av en foreach-loop i huvudprogrammet.
+        // Default är en bool false.
+        /*
+        string enIfKontroll = default(string); // Default är en string "". Det går att kontrollera med isNullOrEmpty
+        if (string.IsNullOrEmpty(enIfKontroll))
+        {
+
+        }
+        
+        int[] sortArray = new int[3];
+
+
+         Console.WriteLine("Ange tal 1. ");
+         sortArray[0] = Convert.ToInt32(Console.ReadLine());
+         Console.WriteLine("Ange tal 2. ");
+         sortArray[1] = Convert.ToInt32(Console.ReadLine());
+         Console.WriteLine("Ange tal 3. ");
+         sortArray[2] = Convert.ToInt32(Console.ReadLine());
+
+        SorteraTreTal(sortArray);  // Kallar på metoden SorteraTreTal som tar in de tre talen från användaren och sorterar dem med Array.Sort
+
+        foreach (var item in sortArray)
+        {
+            Console.WriteLine(item);
+        }
+
+
+
+        static int[] SorteraTreTal(int[] bumbiBjörnarna) // Tar in en int Array samt returnerar en int array. 
+        {
+            Array.Sort(bumbiBjörnarna);
+        //  Array.Reverse(bumbiBjörnarna);  // Ändrar ordningen på arrayen.
+            return bumbiBjörnarna;
+        }
+        */
 
         //12.Skriv en metod static int Hexagontal som tar en int n som parameter. 
         //13.I metoden skapa en variabel för summan och sätt det till 0.
@@ -380,7 +445,24 @@ namespace Metoder_Benny_och_Nicklas
         //   För att kolla om du gjort rätt så ger n = 1-> 1, n = 2-> 6, n = 3-> 15, n = 4-> 28
 
         //   https://sv.wikipedia.org/wiki/Hexagontal 
+        /*
 
+            Console.WriteLine(Hexagontal(2));
+            
+            static int Hexagontal(int n)
+            {
+                int sum = default(int); // dafault in är 0.
+
+                for (int k = 0; k < n; k++)
+                {
+                    sum += 4 * k + 1;  // += lägger till summan + det nya värdet. endast = ändrar värdet i sum.
+                }
+
+                return sum;
+            }
+            Console.ReadLine();
+
+            */
 
         //Avancerad uppgift till er som vill ha lite utmaning: 
 
@@ -403,8 +485,40 @@ namespace Metoder_Benny_och_Nicklas
 
         // }
         // ------------------------------------------------------------------------------------------------------------------
-        // ************************************ START ÖVNINGAR 5 v 3 EXERCISES 5 ********************************************
+        // ************************************ START ÖVNINGAR 6 v 3 EXERCISES 6 ********************************************
         // ------------------------------------------------------------------------------------------------------------------
+        //                                  Metoder
+        //1. Skapa en metod som tar in två argument, int a, int b och returnera a + b
+        //2. Skapa en metod som tar in två argument, int a, int b och returnera a - b
+        //3. Skapa en metod som tar in två argument, int a, int b och returnera a / b
+        //4. Skapa en metod som tar in två argument, int a, int b och returnera a* b
+        //5. Ge alla dessa beskrivande namn
+
+        //6. Skapa en metod som tar in basen och höjden av en triangel och returnera arean
+        //7. Skapa en metod som tar in en bool och returnera det motsatta
+        //8. Skapa en metod som tar in en lista och returnerar det sista elementet
+        //9. Skapa en metod som tar in ett heltal och multiplicera talet med 10. Kalla sedan på en annan metod från första metoden och returnera det talet delat på 5
+
+        //10. Skapa en lista av strings med fyra element "Det" "var" "en" "gång..."
+        //11. Ta listan av strings och skicka in den i en kedja av metoder.
+        //12. För varje metod lägg till en string i listan
+        //13. När det finns 10 element i listan, skriv ut allt på en rad separerat med,
+
+        //14. Skapa ett program som ber användaren mata in ett tal 10 gånger.Spara undan dessa i en lista
+        //15. Skicka in listan i en metod som heter SortEven.
+        //16. För varje element i listan: Kolla om talet är jämt
+        //17. Om talet är jämt skicka in talet till en annan metod som lägger till det i en lista.
+        //18. Gör likadant med ojämna tal
+        //19. Skriv sedan ut de båda listorna med antalet jämna och ojämna tal
+
+        //20. Skriv en metod som tar konvertrar timmar till minuter
+        //21. Använd sedan minuterna som argument till en annan metod som konverterar minuter till sekunder. 
+        //22. Skriv sedan ut vad timmar blir i minuter och hur många sekunder det är totalt
+
+        //23. Hur mycket är sant? Skriv en metod som kollar en array av bool statements och retunera antalet true/false
+        //24. Om antalet true är mer än false skriv ut "In wine there is potatos!" annars skriv ut "lies lies lies..."
+
+
         //static void Main(string[] args)
         //{
 
