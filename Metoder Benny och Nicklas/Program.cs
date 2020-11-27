@@ -133,221 +133,221 @@ namespace Metoder_Benny_och_Nicklas
         //---------------------------------------------------------------------------------------------------------------------
         // MINA ÖVNINGAR: EGEN
         //---------------------------------------------------------------------------------------------------------------------
-        static void Main(string[] args)
-        {
-            StartProgram();
-            Console.ReadLine();
-        }
+        //static void Main(string[] args)
+        //{
+        //    StartProgram();
+        //    Console.ReadLine();
+        //}
 
-        static void StartProgram()
-        {
-            bool keepGoing = false;
+        //static void StartProgram()
+        //{
+        //    bool keepGoing = false;
 
-            do
-            {
-                Console.WriteLine("Hej och välkommen till lek med metoder! ");
-                Console.WriteLine("1. Gör en enkel beräkning ");
-                Console.WriteLine("2. Slumpa ett nytt efternamn ");
-                Console.WriteLine("3. Gissa talet ");
-                Console.WriteLine("4. Loopa igenom en lista ");
-                Console.WriteLine("5. Bada en arg katt ");
-                Console.WriteLine("6. Gör allting ");
-                Console.WriteLine("7. Mixa ditt telefonnummer ");
-                Console.WriteLine("8. EXIT");
-                int choice = Convert.ToInt32(Console.ReadLine());
+        //    do
+        //    {
+        //        Console.WriteLine("Hej och välkommen till lek med metoder! ");
+        //        Console.WriteLine("1. Gör en enkel beräkning ");
+        //        Console.WriteLine("2. Slumpa ett nytt efternamn ");
+        //        Console.WriteLine("3. Gissa talet ");
+        //        Console.WriteLine("4. Loopa igenom en lista ");
+        //        Console.WriteLine("5. Bada en arg katt ");
+        //        Console.WriteLine("6. Gör allting ");
+        //        Console.WriteLine("7. Mixa ditt telefonnummer ");
+        //        Console.WriteLine("8. EXIT");
+        //        int choice = Convert.ToInt32(Console.ReadLine());
 
-                if (choice == 1)
-                {
-                    // Låter användaren skriva in två int tal som sedan skickar de två värdena till metoden SimpleCalculator,
-                    // i metoden SimpleCalculator adderas talen ihop och svaret returneras till metoden StartProgram och skriver ut det i konsolen.
-                    Console.WriteLine("Skriv ditt första tal: ");
-                    int numb1 = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Skriv ditt andra tal: ");
-                    int numb2 = Convert.ToInt32(Console.ReadLine());
-                    int answer = SimpleCalculator(numb1, numb2);
-                    Console.WriteLine("Talet är: " + answer);
-                }
-                else if (choice == 2)
-                {
-                    // Låter användaren skriva in sitt förnamn och får ett svar med ett random efternamn
-                    // som skrivs ut i consolen i metoden som är satt till void.
-                    RandomLastname();
-                }
-                else if (choice == 3)
-                {
-                    // Låter användaren skriva in ett tal mellan 1 och 7 i metoden GuessNumber.
-                    // användarens tal och det slumpade talet lagras i en array som skickas tillbaks
-                    // till metoden StartProgram där en if sats styr vad som skrivs ut till användaren.
-                    int[] answer = GuessNumber();
+        //        if (choice == 1)
+        //        {
+        //            // Låter användaren skriva in två int tal som sedan skickar de två värdena till metoden SimpleCalculator,
+        //            // i metoden SimpleCalculator adderas talen ihop och svaret returneras till metoden StartProgram och skriver ut det i konsolen.
+        //            Console.WriteLine("Skriv ditt första tal: ");
+        //            int numb1 = Convert.ToInt32(Console.ReadLine());
+        //            Console.WriteLine("Skriv ditt andra tal: ");
+        //            int numb2 = Convert.ToInt32(Console.ReadLine());
+        //            int answer = SimpleCalculator(numb1, numb2);
+        //            Console.WriteLine("Talet är: " + answer);
+        //        }
+        //        else if (choice == 2)
+        //        {
+        //            // Låter användaren skriva in sitt förnamn och får ett svar med ett random efternamn
+        //            // som skrivs ut i consolen i metoden som är satt till void.
+        //            RandomLastname();
+        //        }
+        //        else if (choice == 3)
+        //        {
+        //            // Låter användaren skriva in ett tal mellan 1 och 7 i metoden GuessNumber.
+        //            // användarens tal och det slumpade talet lagras i en array som skickas tillbaks
+        //            // till metoden StartProgram där en if sats styr vad som skrivs ut till användaren.
+        //            int[] answer = GuessNumber();
 
-                     if (answer[0] == 1)
-                     {
-                        Console.WriteLine("Grattis du valde rätt nummer!");
-                     }
-                     else if (answer[1] == 0)
-                     {
-                        Console.WriteLine("Otur, du valde fel nummer bättre lycka nästa gång!");
-                     }
-                    Console.ReadLine();
-                    Console.Clear();
-                }
-                else if (choice == 4)
-                {
-                    // Låter användaren skriva in 10 heltal i metoden loopThroughList.
-                    // Listan skrivs sedan ut i en forloop i metoden som är satt till void.
-                    LoopThroughList();
-                }
-                else if (choice == 5)
-                {
-                    // Användaren får skriva ett tal mellan 0 och 10, talet skickas in i metoden DippThekitty där det jämförs mot två arrayer.
-                    // Om talet är ojämnt så returneras värdet 1 och så kastas den stackars katten i sjön. 
-                    // Är talet jämt så vinner katten.
-                    Console.WriteLine("Skriv ett nummer mellan 0 och 10.");
-                    int numbIn = Convert.ToInt32(Console.ReadLine());
-                    int wetDry = DippTheKitty(numbIn);
-                    Console.Clear();
-                    Console.WriteLine($"Du valde nummer {numbIn}");
-                    if (wetDry == 1)
-                    {
-                        Console.WriteLine("Fel nummer: Katten vann!");
-                    }
-                    else if (wetDry == 2)
-                    {
-                        Console.WriteLine("Rätt nummer: Du kastade den stackars katten i sjön!");
-                        Console.WriteLine("Inte konstigt att den är så arg... ;) ");
-                    }
-                    else if (wetDry == 3)
-                    {
-                        Console.WriteLine("Felaktig inmatning pappskalle!");
-                    }
-                    Thread.Sleep(3000);
-                    Console.Clear();
-                }
-                else if (choice == 6)
-                {
-                    break;
-                }
-                else if (choice == 7)
-                {
-                    break;
-                }
-                else if (choice == 8)
-                {
-                    Console.WriteLine("Slipp då jäkla tråkmåns!");
-                    Thread.Sleep(3000);
-                    Console.Clear();
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Fel val pappskalle, skärp dig!");
-                }
-                Console.WriteLine("Do you want to try again? ");
-                Console.WriteLine("1. Yes ");
-                Console.WriteLine("2. No ");
+        //             if (answer[0] == 1)
+        //             {
+        //                Console.WriteLine("Grattis du valde rätt nummer!");
+        //             }
+        //             else if (answer[1] == 0)
+        //             {
+        //                Console.WriteLine("Otur, du valde fel nummer bättre lycka nästa gång!");
+        //             }
+        //            Console.ReadLine();
+        //            Console.Clear();
+        //        }
+        //        else if (choice == 4)
+        //        {
+        //            // Låter användaren skriva in 10 heltal i metoden loopThroughList.
+        //            // Listan skrivs sedan ut i en forloop i metoden som är satt till void.
+        //            LoopThroughList();
+        //        }
+        //        else if (choice == 5)
+        //        {
+        //            // Användaren får skriva ett tal mellan 0 och 10, talet skickas in i metoden DippThekitty där det jämförs mot två arrayer.
+        //            // Om talet är ojämnt så returneras värdet 1 och så kastas den stackars katten i sjön. 
+        //            // Är talet jämt så vinner katten.
+        //            Console.WriteLine("Skriv ett nummer mellan 0 och 10.");
+        //            int numbIn = Convert.ToInt32(Console.ReadLine());
+        //            int wetDry = DippTheKitty(numbIn);
+        //            Console.Clear();
+        //            Console.WriteLine($"Du valde nummer {numbIn}");
+        //            if (wetDry == 1)
+        //            {
+        //                Console.WriteLine("Fel nummer: Katten vann!");
+        //            }
+        //            else if (wetDry == 2)
+        //            {
+        //                Console.WriteLine("Rätt nummer: Du kastade den stackars katten i sjön!");
+        //                Console.WriteLine("Inte konstigt att den är så arg... ;) ");
+        //            }
+        //            else if (wetDry == 3)
+        //            {
+        //                Console.WriteLine("Felaktig inmatning pappskalle!");
+        //            }
+        //            Thread.Sleep(3000);
+        //            Console.Clear();
+        //        }
+        //        else if (choice == 6)
+        //        {
+        //            break;
+        //        }
+        //        else if (choice == 7)
+        //        {
+        //            break;
+        //        }
+        //        else if (choice == 8)
+        //        {
+        //            Console.WriteLine("Slipp då jäkla tråkmåns!");
+        //            Thread.Sleep(3000);
+        //            Console.Clear();
+        //            break;
+        //        }
+        //        else
+        //        {
+        //            Console.WriteLine("Fel val pappskalle, skärp dig!");
+        //        }
+        //        Console.WriteLine("Do you want to try again? ");
+        //        Console.WriteLine("1. Yes ");
+        //        Console.WriteLine("2. No ");
                 
-                int yesNo = Convert.ToInt32(Console.ReadLine());
-                if (yesNo == 1)
-                    keepGoing = true;
-                else if (yesNo == 2)
-                {
-                    Console.WriteLine("Tack för ditt deltagande, välkommen åter!");
-                    keepGoing = false;
-                }
-                else
-                {
-                    Console.WriteLine("Felaktig inmatning.");
-                    keepGoing = true;
-                }
+        //        int yesNo = Convert.ToInt32(Console.ReadLine());
+        //        if (yesNo == 1)
+        //            keepGoing = true;
+        //        else if (yesNo == 2)
+        //        {
+        //            Console.WriteLine("Tack för ditt deltagande, välkommen åter!");
+        //            keepGoing = false;
+        //        }
+        //        else
+        //        {
+        //            Console.WriteLine("Felaktig inmatning.");
+        //            keepGoing = true;
+        //        }
 
-            } while (keepGoing == true);
-        }
-        static int SimpleCalculator(int a, int b)
-        {
-            int sum = a + b;
-            return sum;
-        }
-        static void RandomLastname()
-        {
-            Console.WriteLine("Vad heter du?: ");
-            string name = Console.ReadLine();
-            Random rand = new Random();
-            string[] lastNames = new string[4] {"Saxbacke", "Laengstjaert", "Pjuttgjen", "Stolpskott"};
-            lastNames[0] = "Saxbacke";
-            lastNames[1] = "Laengstjaert";
-            lastNames[2] = "Pjuttgren";
-            lastNames[3] = "Stolpskott";
-            int mixed = rand.Next(lastNames.Length);
-            Console.WriteLine("Hej " + name + " " + lastNames[mixed]);
-        }
-        static int[] GuessNumber()
-        {
-            int[] lucky7 = new int[7] { 1, 2, 3, 4, 5, 6, 7 };
-            int[] returnNumb = new int[2];
-            Random rand = new Random();
-            Console.WriteLine("Skriv ett tal mellan 1 och 7");
-            int numb = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < lucky7.Length; i++)
-            {
-                int win = rand.Next(lucky7[i]);
-                if (win == numb)
-                {
-                    returnNumb[0] = 1;
-                }
-                else
-                {
-                    returnNumb[1] = 0;
-                }
-            }
+        //    } while (keepGoing == true);
+        //}
+        //static int SimpleCalculator(int a, int b)
+        //{
+        //    int sum = a + b;
+        //    return sum;
+        //}
+        //static void RandomLastname()
+        //{
+        //    Console.WriteLine("Vad heter du?: ");
+        //    string name = Console.ReadLine();
+        //    Random rand = new Random();
+        //    string[] lastNames = new string[4] {"Saxbacke", "Laengstjaert", "Pjuttgjen", "Stolpskott"};
+        //    lastNames[0] = "Saxbacke";
+        //    lastNames[1] = "Laengstjaert";
+        //    lastNames[2] = "Pjuttgren";
+        //    lastNames[3] = "Stolpskott";
+        //    int mixed = rand.Next(lastNames.Length);
+        //    Console.WriteLine("Hej " + name + " " + lastNames[mixed]);
+        //}
+        //static int[] GuessNumber()
+        //{
+        //    int[] lucky7 = new int[7] { 1, 2, 3, 4, 5, 6, 7 };
+        //    int[] returnNumb = new int[2];
+        //    Random rand = new Random();
+        //    Console.WriteLine("Skriv ett tal mellan 1 och 7");
+        //    int numb = Convert.ToInt32(Console.ReadLine());
+        //    for (int i = 0; i < lucky7.Length; i++)
+        //    {
+        //        int win = rand.Next(lucky7[i]);
+        //        if (win == numb)
+        //        {
+        //            returnNumb[0] = 1;
+        //        }
+        //        else
+        //        {
+        //            returnNumb[1] = 0;
+        //        }
+        //    }
            
-            return returnNumb;
-        }
-        static void LoopThroughList()
-        {
-            List<int> loopThrough = new List<int>();
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine($"{i} Skriv ett heltal"); 
-                int numbIn = Convert.ToInt32(Console.ReadLine());
-                loopThrough.Add(numbIn);
-            }
-            Console.Clear();
-            foreach(var item in loopThrough)
-            {
-                Console.WriteLine($"Du valde nummer {item}");
-            }
-            Console.ReadLine();
-            Console.Clear();
-        }
-        static int DippTheKitty(int x)
-        {
-            int numbOut = 0;
-            int[] even = new int[5] {2, 4, 6, 8, 10};
-            int[] unEven = new int[5] {1, 3, 5, 7, 9};
+        //    return returnNumb;
+        //}
+        //static void LoopThroughList()
+        //{
+        //    List<int> loopThrough = new List<int>();
+        //    for (int i = 0; i < 10; i++)
+        //    {
+        //        Console.WriteLine($"{i} Skriv ett heltal"); 
+        //        int numbIn = Convert.ToInt32(Console.ReadLine());
+        //        loopThrough.Add(numbIn);
+        //    }
+        //    Console.Clear();
+        //    foreach(var item in loopThrough)
+        //    {
+        //        Console.WriteLine($"Du valde nummer {item}");
+        //    }
+        //    Console.ReadLine();
+        //    Console.Clear();
+        //}
+        //static int DippTheKitty(int x)
+        //{
+        //    int numbOut = 0;
+        //    int[] even = new int[5] {2, 4, 6, 8, 10};
+        //    int[] unEven = new int[5] {1, 3, 5, 7, 9};
 
-            for (int i = 0; i < even.Length; i++)
-            {
-                if (even[i] == x)
-                {
-                    numbOut = 1;
-                }
-            }
-            for (int j = 0; j < unEven.Length; j++)
-            {
-                if (unEven[j] == x)
-                {
-                    numbOut = 2;
-                }
-            }    
-            if (numbOut == 1 || numbOut == 2)
-            {
-                return numbOut;
-            }
-            else
-            {
-                return 3;
-            }
-        }
+        //    for (int i = 0; i < even.Length; i++)
+        //    {
+        //        if (even[i] == x)
+        //        {
+        //            numbOut = 1;
+        //        }
+        //    }
+        //    for (int j = 0; j < unEven.Length; j++)
+        //    {
+        //        if (unEven[j] == x)
+        //        {
+        //            numbOut = 2;
+        //        }
+        //    }    
+        //    if (numbOut == 1 || numbOut == 2)
+        //    {
+        //        return numbOut;
+        //    }
+        //    else
+        //    {
+        //        return 3;
+        //    }
+        //}
         // --------------------------------------------------------------------------------------------------------------------
         // ***************************************** ÖVNINGAR 5 V 3 ***********************************************************
         // --------------------------------------------------------------------------------------------------------------------
@@ -493,7 +493,104 @@ namespace Metoder_Benny_och_Nicklas
         //3. Skapa en metod som tar in två argument, int a, int b och returnera a / b
         //4. Skapa en metod som tar in två argument, int a, int b och returnera a* b
         //5. Ge alla dessa beskrivande namn
+         /*
+        static void Main(string[] args)
+        {
+            bool keepGoing = false;
+            do
+            {
+                Console.WriteLine("Hej och välkommen till övningar 6");
+                Console.WriteLine("1. Gör en + beräkning ");
+                Console.WriteLine("2. Gör en - beräkning ");
+                Console.WriteLine("3. Gör en / beräkning ");
+                Console.WriteLine("4. Gör en * beräkning ");
+                Console.WriteLine("5. EXIT");
+                int choice = Convert.ToInt32(Console.ReadLine());
 
+                if (choice == 1)
+                {
+                    Console.WriteLine("Skriv in heltal 1: ");
+                    int numb1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Skriv in heltal 2: ");
+                    int numb2 = Convert.ToInt32(Console.ReadLine());
+                    int sumPlus = PlusCalc(numb1, numb2);
+                    Console.WriteLine($"The sum is: {sumPlus}");                   
+                }
+                else if (choice == 2)
+                {
+                    Console.WriteLine("Skriv in heltal 1: ");
+                    int numb1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Skriv in heltal 2: ");
+                    int numb2 = Convert.ToInt32(Console.ReadLine());
+                    int sumPlus = MinusCalc(numb1, numb2);
+                    Console.WriteLine($"The sum is: {sumPlus}");                  
+                }
+                else if (choice == 3)
+                {
+                    Console.WriteLine("Skriv in heltal 1: ");
+                    int numb1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Skriv in heltal 2: ");
+                    int numb2 = Convert.ToInt32(Console.ReadLine());
+                    int sumPlus = DividedCalc(numb1, numb2);
+                    Console.WriteLine($"The sum is: {sumPlus}");  
+                }
+                else if (choice == 4)
+                {
+                    Console.WriteLine("Skriv in heltal 1: ");
+                    int numb1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Skriv in heltal 2: ");
+                    int numb2 = Convert.ToInt32(Console.ReadLine());
+                    int sumPlus = MultCalc(numb1, numb2);
+                    Console.WriteLine($"The sum is: {sumPlus}");                    
+                }
+                else if (choice == 5)
+                {
+                    Console.WriteLine("Program EXIT");
+                    break;
+                }
+                Console.WriteLine("do you want to do any other calculation?");
+                Console.WriteLine("1. Yes.");
+                Console.WriteLine("2. No.");
+                int answer = Convert.ToInt32(Console.ReadLine());
+                if (answer == 1)
+                {
+                    keepGoing = true;
+                }
+                else if (answer == 2)
+                {
+                    keepGoing = false;
+                }
+                else
+                {
+                    break;
+                }
+            } while(keepGoing == true);
+
+            Console.WriteLine("Thank you for playing!");
+            Console.ReadLine();
+        }
+        static int PlusCalc(int a, int b)
+        {
+            int sum = a + b;
+            return sum;
+        }
+        static int MinusCalc(int a, int b)
+        {
+            int sum = a - b;
+            return sum;
+        }
+        static int DividedCalc(int a, int b)
+        {
+            int sum = a / b;
+            return sum;
+        }
+        static int MultCalc(int a, int b)
+        {
+            int sum = a * b;
+            return sum;
+        }
+        */
+        // ---------------------------------------------------------------------------------------------------------------------------
         //6. Skapa en metod som tar in basen och höjden av en triangel och returnera arean
         //7. Skapa en metod som tar in en bool och returnera det motsatta
         //8. Skapa en metod som tar in en lista och returnerar det sista elementet
