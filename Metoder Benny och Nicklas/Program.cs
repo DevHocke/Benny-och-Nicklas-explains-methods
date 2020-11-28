@@ -700,26 +700,84 @@ namespace Metoder_Benny_och_Nicklas
             return start;
         }
         */
-        //14. Skapa ett program som ber användaren mata in ett tal 10 gånger.Spara undan dessa i en lista
+        //14. Skapa ett program som ber användaren mata in ett tal 10 gånger. Spara undan dessa i en lista
         //15. Skicka in listan i en metod som heter SortEven.
         //16. För varje element i listan: Kolla om talet är jämt
         //17. Om talet är jämt skicka in talet till en annan metod som lägger till det i en lista.
         //18. Gör likadant med ojämna tal
         //19. Skriv sedan ut de båda listorna med antalet jämna och ojämna tal
 
+        static void Main(string[] args)
+        {
+            List<int> numbIn = new List<int>();
+            for (int i = 0; i < 11; i++)
+            {
+                Console.WriteLine($"{i}Skriv in ett heltal: ");
+                numbIn.Add(Convert.ToInt32(Console.ReadLine()));   // <-- seriöst, 3 ))) det måste gå att göra smidigare!?
+            }
+            List<int> even = SortEven(numbIn);
+            List<int> unEven = SortUneven(numbIn);
+            foreach (var item in even)
+            {
+                int i = 0;
+                i++;
+                Console.WriteLine($"{i} Dina jämna tal var: {even}");  
+            }
+            foreach (var item in even)
+            {
+                int i = 0;
+                i++;
+                Console.WriteLine($"{i} Dina ojämna tal var: {unEven}");
+            }
+            Console.ReadLine();
+        }
+        static List<int> SortEven(List<int>numbIn)
+        {
+
+            foreach (var item in numbIn)
+            {
+                if (item % 2 == 0)
+                {
+                    EvenNumbers(numbIn);
+                }
+            }
+            return EvenNumbers(numbIn);
+        }
+        static List<int> EvenNumbers(List<int> even)
+        {
+            foreach (var item in even)
+            {
+                even.Add(item);
+            }
+            return even;
+        }
+        static List<int> SortUneven(List<int> numbIn)
+        {
+            foreach (var item in numbIn)
+            {
+                if (item % 1 == 0) 
+                {
+                    UnEvenNumbers(numbIn);
+                }
+            }
+            return UnEvenNumbers(numbIn);
+        }
+        static List<int> UnEvenNumbers(List<int> unEven)
+        {
+            foreach (var item in unEven)
+            {
+                unEven.Add(item);
+            }
+            return unEven;
+        }
+
+        // ------------------------------------------------------------------------------------------------------------
         //20. Skriv en metod som tar konvertrar timmar till minuter
         //21. Använd sedan minuterna som argument till en annan metod som konverterar minuter till sekunder. 
         //22. Skriv sedan ut vad timmar blir i minuter och hur många sekunder det är totalt
 
         //23. Hur mycket är sant? Skriv en metod som kollar en array av bool statements och retunera antalet true/false
         //24. Om antalet true är mer än false skriv ut "In wine there is potatos!" annars skriv ut "lies lies lies..."
-
-
-        //static void Main(string[] args)
-        //{
-
-        //}
-
 
 
     }
