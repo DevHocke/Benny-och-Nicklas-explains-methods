@@ -784,5 +784,24 @@ namespace Metoder_Benny_och_Nicklas
             
         }
         */
+
+        // -------------------------------------------------------------------------------------------
+        // **************************** ÖVNINGAR del 7 KLASSER ***************************************
+        // -------------------------------------------------------------------------------------------
+        // 1.Skapa en class som heter Fordon
+        // 2. Ge denna klass generella egenskaper hos ett fordon
+        // 3. Skapa ett object som skall efterlikna ett flygplan
+        // 4. Skapa ett object som skall efterlinkna en pansarvagn
+        // 5. Skapa ett object som skall efterlikna en elstyrd scooter
+        // 6. Ge klassen en Describe metod som skriver ut de olika delarna
+        // 7. Ge alla klasser en GoForward metod som beskriver hur ett sådant fordon rör på sig
+        // 8. Skapa en class som heter fastigheter
+        // 9. Ge denna klass generella egenskaper hos en fastighet(såsom rum, kök etc)
+        // 10. Skapa ett object som skall efterlikna ett radhus
+        // 11. Skapa ett object som skall efterlikna villa
+        // 12. Skapa ett object som skall efterlikna ett lägenhetskomplex
+        // 13. Ge alla klasser en passande Describe metod
+        // 14. Skapa ett program som låter användaren välja vilken av dessa som hen vill få beskrivet till sig.
+
     }
 }
