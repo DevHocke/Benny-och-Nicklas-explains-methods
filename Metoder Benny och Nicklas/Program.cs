@@ -788,9 +788,9 @@ namespace Metoder_Benny_och_Nicklas
         // -------------------------------------------------------------------------------------------
         // **************************** ÖVNINGAR del 7 KLASSER ***************************************
         // -------------------------------------------------------------------------------------------
-        // 1.Skapa en class som heter Fordon
-        // 2. Ge denna klass generella egenskaper hos ett fordon
-        // 3. Skapa ett object som skall efterlikna ett flygplan
+        // 1.Skapa en class som heter Fordon !
+        // 2. Ge denna klass generella egenskaper hos ett fordon !
+        // 3. Skapa ett object som skall efterlikna ett flygplan 
         // 4. Skapa ett object som skall efterlinkna en pansarvagn
         // 5. Skapa ett object som skall efterlikna en elstyrd scooter
         // 6. Ge klassen en Describe metod som skriver ut de olika delarna
@@ -804,8 +804,63 @@ namespace Metoder_Benny_och_Nicklas
         // 14. Skapa ett program som låter användaren välja vilken av dessa som hen vill få beskrivet till sig.
 
     }
-    class Fordon
-    {
+    // 1- 2 
+    /*
+  class vehicle
+  {
+      public string brand;
+      public string model;
+      public int year;
+      public string color;
+      public bool damaged;
+      public int speed;
+      public int charge;
+      public string InStock()
+      {
+          string answer = ("This car is " + brand + " " + model + " from " + year + " The color is " + color + " Damaged or used status: " + damaged + " It has the top speed of " + speed + " and comes with a full tank " + charge + "%");
+          return answer;
+      }
 
+      static void Main(string[] args)
+      {
+          vehicle MyFirstVehicle = new vehicle();
+          MyFirstVehicle.brand = "Lexus";
+          MyFirstVehicle.model = "LC 500";
+          MyFirstVehicle.year = 2020;
+          MyFirstVehicle.color = "Candy apple red";
+          MyFirstVehicle.damaged = false;
+          MyFirstVehicle.speed = 320;
+          MyFirstVehicle.charge = 100;
+          Console.WriteLine(MyFirstVehicle.InStock());
+      }         
+  } 
+    */
+    class vehicle
+    {
+        public string brand;
+        public string model;
+        public int year;
+        public string color;
+        public bool damaged;
+        public int speed;
+        public int charge;
+        public string InStock()
+        {
+            string answer = ("This car is " + brand + " " + model + " from " + year + " The color is " + color + " Damaged or used status: " + damaged + " It has the top speed of " + speed + " and comes with a full tank " + charge + "%");
+            return answer;
+        }
+
+        static void Main(string[] args)
+        {
+            vehicle MyFirstVehicle = new vehicle();
+            MyFirstVehicle.brand = "Lexus";
+            MyFirstVehicle.model = "LC 500";
+            MyFirstVehicle.year = 2020;
+            MyFirstVehicle.color = "Candy apple red";
+            MyFirstVehicle.damaged = false;
+            MyFirstVehicle.speed = 320;
+            MyFirstVehicle.charge = 100;
+            Console.WriteLine(MyFirstVehicle.InStock());
+        }
     }
 }
