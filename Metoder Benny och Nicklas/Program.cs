@@ -804,4 +804,8 @@ namespace Metoder_Benny_och_Nicklas
         // 14. Skapa ett program som låter användaren välja vilken av dessa som hen vill få beskrivet till sig.
 
     }
+    class Fordon
+    {
+
+    }
 }
