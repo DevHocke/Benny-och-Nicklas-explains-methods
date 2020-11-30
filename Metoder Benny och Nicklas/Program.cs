@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading; 
+using System.Threading;
+using System.Linq;
 
 namespace Metoder_Benny_och_Nicklas
 {
@@ -663,10 +664,9 @@ namespace Metoder_Benny_och_Nicklas
         {
             List<string> myList = new List<string>() {"Det ", "var ", "en ", "gång " };
             List<string> start = ChainOne(myList);
-            foreach (var item in start)
-            {
-                Console.WriteLine(item);
-            }
+
+            Console.Write(string.Join(",", myList);
+            
             Console.ReadLine();
         }
         static List<string> ChainOne(List<string> start)
@@ -706,13 +706,13 @@ namespace Metoder_Benny_och_Nicklas
         //17. Om talet är jämt skicka in talet till en annan metod som lägger till det i en lista.
         //18. Gör likadant med ojämna tal
         //19. Skriv sedan ut de båda listorna med antalet jämna och ojämna tal
-
+        /*
         static void Main(string[] args)
         {
             List<int> numbIn = new List<int>();
             for (int i = 0; i < 11; i++)
             {
-                Console.WriteLine($"{i}Skriv in ett heltal: ");
+                Console.WriteLine($"{i}. Skriv in ett heltal: ");
                 numbIn.Add(Convert.ToInt32(Console.ReadLine()));   // <-- seriöst, 3 ))) det måste gå att göra smidigare!?
             }
             List<int> even = SortEven(numbIn);
@@ -721,20 +721,20 @@ namespace Metoder_Benny_och_Nicklas
             {
                 int i = 0;
                 i++;
-                Console.WriteLine($"{i} Dina jämna tal var: {even}");  
+                Console.WriteLine($"{i}. Dina jämna tal var: {even}");  
             }
             foreach (var item in even)
             {
                 int i = 0;
                 i++;
-                Console.WriteLine($"{i} Dina ojämna tal var: {unEven}");
+                Console.WriteLine($"{i}. Dina ojämna tal var: {unEven}");
             }
             Console.ReadLine();
         }
         static List<int> SortEven(List<int>numbIn)
         {
 
-            foreach (var item in numbIn)
+            foreach (int item in numbIn)
             {
                 if (item % 2 == 0)
                 {
@@ -743,17 +743,17 @@ namespace Metoder_Benny_och_Nicklas
             }
             return EvenNumbers(numbIn);
         }
-        static List<int> EvenNumbers(List<int> even)
+        static List<int> EvenNumbers(List<int> numbIn)
         {
-            foreach (var item in even)
+            foreach (int item in numbIn)
             {
-                even.Add(item);
+                numbIn.Add(numbIn);
             }
-            return even;
+            return numbIn;
         }
         static List<int> SortUneven(List<int> numbIn)
         {
-            foreach (var item in numbIn)
+            foreach (int item in numbIn)
             {
                 if (item % 1 == 0) 
                 {
@@ -762,15 +762,15 @@ namespace Metoder_Benny_och_Nicklas
             }
             return UnEvenNumbers(numbIn);
         }
-        static List<int> UnEvenNumbers(List<int> unEven)
+        static List<int> UnEvenNumbers(List<int> numbIn)
         {
-            foreach (var item in unEven)
+            foreach (int item in numbIn)
             {
-                unEven.Add(item);
+                numbIn.Add(numbIn);
             }
-            return unEven;
+            return numbIn;
         }
-
+        */
         // ------------------------------------------------------------------------------------------------------------
         //20. Skriv en metod som tar konvertrar timmar till minuter
         //21. Använd sedan minuterna som argument till en annan metod som konverterar minuter till sekunder. 
@@ -778,7 +778,11 @@ namespace Metoder_Benny_och_Nicklas
 
         //23. Hur mycket är sant? Skriv en metod som kollar en array av bool statements och retunera antalet true/false
         //24. Om antalet true är mer än false skriv ut "In wine there is potatos!" annars skriv ut "lies lies lies..."
-
-
+        /*
+        static void Main(string[] args)
+        {
+            
+        }
+        */
     }
 }
