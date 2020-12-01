@@ -775,18 +775,64 @@ namespace Metoder_Benny_och_Nicklas
         }
         */
         // ------------------------------------------------------------------------------------------------------------
-        //20. Skriv en metod som tar konverterar timmar till minuter
+        //20. Skriv en metod som konverterar timmar till minuter
         //21. Använd sedan minuterna som argument till en annan metod som konverterar minuter till sekunder. 
         //22. Skriv sedan ut vad timmar blir i minuter och hur många sekunder det är totalt
-
-        //23. Hur mycket är sant? Skriv en metod som kollar en array av bool statements och retunera antalet true/false
-        //24. Om antalet true är mer än false skriv ut "In wine there is potatos!" annars skriv ut "lies lies lies..."
         /*
         static void Main(string[] args)
         {
-            
+          
+        
+        ConvertTime();
         }
         */
+        //23. Hur mycket är sant? Skriv en metod som kollar en array av bool statements och retunera antalet true/false
+        //24. Om antalet true är mer än false skriv ut "In wine there is potatos!" annars skriv ut "lies lies lies..."
+        
+        static void Main(string[] args)
+        {
+            bool[] yesNo = new bool[10];
+
+            yesNo[0] = true;
+            yesNo[1] = true;
+            yesNo[2] = false;
+            yesNo[3] = false;
+            yesNo[4] = true;
+            yesNo[5] = false;
+            yesNo[6] = true;
+            yesNo[7] = false;
+            yesNo[8] = true;
+            yesNo[9] = true;
+            Fixa(yesNo);
+
+            static void Fixa(bool[] yesNo)
+            {
+                int sant = 0;
+                int falskt = 0;
+                for (int i = 0; i < yesNo.Length; i++)
+                {
+                    if (yesNo[i] == false)
+                    {
+                        falskt ++;
+                    }
+                    else if (yesNo[i] == true)
+                    {
+                        sant ++;
+                    }
+                }
+                Console.WriteLine($"False var {falskt} st. True var {sant} st.");
+                Console.WriteLine("------------------------------");
+                 if (sant > falskt)
+                 {
+                    Console.WriteLine($"In wine there is potatoes?!? ");
+                 }
+                 else if (sant < falskt)
+                 {
+                    Console.WriteLine($"lies lies lies...");
+                 }
+            }
+        }
+        
 
         // -------------------------------------------------------------------------------------------
         // **************************** ÖVNINGAR del 7 KLASSER ***************************************
@@ -798,7 +844,7 @@ namespace Metoder_Benny_och_Nicklas
         // 5. Skapa ett object som skall efterlikna en elstyrd scooter
         // 6. Ge klassen en Describe metod som skriver ut de olika delarna
         // 7. Ge alla klasser en GoForward metod som beskriver hur ett sådant fordon rör på sig
-        
+        /*
         static void Main(string[] args)
         {
             Airplane Airplane = new Airplane();
@@ -837,10 +883,10 @@ namespace Metoder_Benny_och_Nicklas
             Scooter.GoForward();
             Console.WriteLine(Environment.NewLine);
 
-        }
+        } */
 
     }
-
+    /*
     class Vehicle
     {
         public string brand;
@@ -935,7 +981,7 @@ namespace Metoder_Benny_och_Nicklas
         static void Main(string[] args)
         {
             Fastigheter radhus = new Fastigheter(12, 4, 4, 6, 8);
-
+      */ /*
             //------------------------------------------------------
             //                   UPPGIFT 1-7
             // -----------------------------------------------------
