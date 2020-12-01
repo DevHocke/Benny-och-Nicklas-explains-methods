@@ -706,72 +706,54 @@ namespace Metoder_Benny_och_Nicklas
         //17. Om talet är jämt skicka in talet till en annan metod som lägger till det i en lista.
         //18. Gör likadant med ojämna tal
         //19. Skriv sedan ut de båda listorna med antalet jämna och ojämna tal
-
-
+        
         /*
         static void Main(string[] args)
         {
             List<int> numbIn = new List<int>();
-            List<int> even = SortEven(numbIn);
-            List<int> unEven = SortUneven(numbIn);
-            for (int i = 0; i < 11; i++)
+
+            for (int i = 0; i < 10; i++)
             {
-                Console.WriteLine($"{i}. Skriv in ett heltal: ");
-                numbIn.Add(Convert.ToInt32(Console.ReadLine()));   // <-- seriöst, 3 ))) det måste gå att göra smidigare!?
+                Console.WriteLine("Skriv in ett heltal: ");
+                numbIn.Add(Convert.ToInt32(Console.ReadLine()));
             }
-            
-            foreach (var item in even)
-            {
-                int i = 0;
-                i++;
-                Console.WriteLine($"{i}. Dina jämna tal var: {even}");  
-            }
-            foreach (var item in even)
-            {
-                int i = 0;
-                i++;
-                Console.WriteLine($"{i}. Dina ojämna tal var: {unEven}");
-            }
+            SortEven(numbIn);
+
             Console.ReadLine();
         }
-        static List<int> SortEven(List<int>numbIn)
+        static void SortEven(List<int> numbIn)
         {
-
-            foreach (int item in numbIn)
+            
+            foreach (var item in numbIn)    
             {
                 if (item % 2 == 0)
                 {
                     EvenNumbers(numbIn);
                 }
-            }
-            return EvenNumbers(numbIn);
-        }
-        static List<int> EvenNumbers(List<int> even)
-        {
-            foreach (int item in even)
-            {
-                even.Add(item);
-            }
-            return even;
-        }
-        static List<int> SortUneven(List<int> numbIn)
-        {
-            foreach (int item in numbIn)
-            {
-                if (item % 1 == 0) 
+                else if (item % 1 == 0)
                 {
                     UnEvenNumbers(numbIn);
                 }
-            }
-            return UnEvenNumbers(numbIn);
+            }            
         }
-        static List<int> UnEvenNumbers(List<int> unEven)  
+        static List<int> EvenNumbers(List<int> even)
         {
-            foreach (int item in unEven)
+            List<int> answer = new List<int>();
+            for (int i = 0; i < even.Count; i++)
             {
-                unEven.Add(item);
+                answer.Add(i);   
             }
-            return unEven;
+            return answer;
+        }
+        static List<int> UnEvenNumbers(List<int> unEven)
+        {
+            List<int> unEvenAnswer = new List<int>();
+            for (int i = 0; i < unEven.Count; i++)
+            {
+                unEvenAnswer.Add(i);
+                
+            }
+            return unEvenAnswer;
         }
         */
         // ------------------------------------------------------------------------------------------------------------
@@ -788,7 +770,7 @@ namespace Metoder_Benny_och_Nicklas
         */
         //23. Hur mycket är sant? Skriv en metod som kollar en array av bool statements och retunera antalet true/false
         //24. Om antalet true är mer än false skriv ut "In wine there is potatos!" annars skriv ut "lies lies lies..."
-        
+        /*
         static void Main(string[] args)
         {
             bool[] yesNo = new bool[10];
@@ -832,7 +814,7 @@ namespace Metoder_Benny_och_Nicklas
                  }
             }
         }
-        
+        */
 
         // -------------------------------------------------------------------------------------------
         // **************************** ÖVNINGAR del 7 KLASSER ***************************************
