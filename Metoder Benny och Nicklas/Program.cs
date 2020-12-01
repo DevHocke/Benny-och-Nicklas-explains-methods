@@ -706,17 +706,20 @@ namespace Metoder_Benny_och_Nicklas
         //17. Om talet är jämt skicka in talet till en annan metod som lägger till det i en lista.
         //18. Gör likadant med ojämna tal
         //19. Skriv sedan ut de båda listorna med antalet jämna och ojämna tal
+
+
         /*
         static void Main(string[] args)
         {
             List<int> numbIn = new List<int>();
+            List<int> even = SortEven(numbIn);
+            List<int> unEven = SortUneven(numbIn);
             for (int i = 0; i < 11; i++)
             {
                 Console.WriteLine($"{i}. Skriv in ett heltal: ");
                 numbIn.Add(Convert.ToInt32(Console.ReadLine()));   // <-- seriöst, 3 ))) det måste gå att göra smidigare!?
             }
-            List<int> even = SortEven(numbIn);
-            List<int> unEven = SortUneven(numbIn);
+            
             foreach (var item in even)
             {
                 int i = 0;
@@ -743,13 +746,13 @@ namespace Metoder_Benny_och_Nicklas
             }
             return EvenNumbers(numbIn);
         }
-        static List<int> EvenNumbers(List<int> numbIn)
+        static List<int> EvenNumbers(List<int> even)
         {
-            foreach (int item in numbIn)
+            foreach (int item in even)
             {
-                numbIn.Add(numbIn);
+                even.Add(item);
             }
-            return numbIn;
+            return even;
         }
         static List<int> SortUneven(List<int> numbIn)
         {
@@ -762,17 +765,17 @@ namespace Metoder_Benny_och_Nicklas
             }
             return UnEvenNumbers(numbIn);
         }
-        static List<int> UnEvenNumbers(List<int> numbIn)
+        static List<int> UnEvenNumbers(List<int> unEven)  
         {
-            foreach (int item in numbIn)
+            foreach (int item in unEven)
             {
-                numbIn.Add(numbIn);
+                unEven.Add(item);
             }
-            return numbIn;
+            return unEven;
         }
         */
         // ------------------------------------------------------------------------------------------------------------
-        //20. Skriv en metod som tar konvertrar timmar till minuter
+        //20. Skriv en metod som tar konverterar timmar till minuter
         //21. Använd sedan minuterna som argument till en annan metod som konverterar minuter till sekunder. 
         //22. Skriv sedan ut vad timmar blir i minuter och hur många sekunder det är totalt
 
@@ -795,47 +798,50 @@ namespace Metoder_Benny_och_Nicklas
         // 5. Skapa ett object som skall efterlikna en elstyrd scooter
         // 6. Ge klassen en Describe metod som skriver ut de olika delarna
         // 7. Ge alla klasser en GoForward metod som beskriver hur ett sådant fordon rör på sig
-        // 8. Skapa en class som heter fastigheter
-        // 9. Ge denna klass generella egenskaper hos en fastighet(såsom rum, kök etc)
-        // 10. Skapa ett object som skall efterlikna ett radhus
-        // 11. Skapa ett object som skall efterlikna villa
-        // 12. Skapa ett object som skall efterlikna ett lägenhetskomplex
-        // 13. Ge alla klasser en passande Describe metod
-        // 14. Skapa ett program som låter användaren välja vilken av dessa som hen vill få beskrivet till sig.
+        
+        static void Main(string[] args)
+        {
+            Airplane Airplane = new Airplane();
+            Airplane.brand = "Saab";
+            Airplane.model = "Jas 39 Gripen";
+            Airplane.year = 2020;
+            Airplane.color = "Militärbajsbrun";
+            Airplane.damaged = true;
+            Airplane.speed = 2500;
+            Airplane.charge = 100;
+            Console.WriteLine(Airplane.Describe());
+            Airplane.GoForward();
+            Console.WriteLine(Environment.NewLine);
+
+            Tank Tank = new Tank();
+            Tank.brand = "Pansarvagn 90";
+            Tank.model = "Tiger";
+            Tank.year = 1965;
+            Tank.color = "Militärbajsgrön";
+            Tank.damaged = true;
+            Tank.speed = 80;
+            Tank.charge = 50;
+            Console.WriteLine(Tank.Describe());
+            Tank.GoForward();
+            Console.WriteLine(Environment.NewLine);
+
+            Scooter Scooter = new Scooter();
+            Scooter.brand = "ChingChong";
+            Scooter.model = "Fjong bong";
+            Scooter.year = 2018;
+            Scooter.color = "GrisRosa";
+            Scooter.damaged = false;
+            Scooter.speed = 250;
+            Scooter.charge = 100;
+            Console.WriteLine(Scooter.Describe());
+            Scooter.GoForward();
+            Console.WriteLine(Environment.NewLine);
+
+        }
 
     }
-    // 1- 2 
-    /*
-  class vehicle
-  {
-      public string brand;
-      public string model;
-      public int year;
-      public string color;
-      public bool damaged;
-      public int speed;
-      public int charge;
-      public string InStock()
-      {
-          string answer = ("This car is " + brand + " " + model + " from " + year + " The color is " + color + " Damaged or used status: " + damaged + " It has the top speed of " + speed + " and comes with a full tank " + charge + "%");
-          return answer;
-      }
 
-      static void Main(string[] args)
-      {
-          vehicle MyFirstVehicle = new vehicle();
-          MyFirstVehicle.brand = "Lexus";
-          MyFirstVehicle.model = "LC 500";
-          MyFirstVehicle.year = 2020;
-          MyFirstVehicle.color = "Candy apple red";
-          MyFirstVehicle.damaged = false;
-          MyFirstVehicle.speed = 320;
-          MyFirstVehicle.charge = 100;
-          Console.WriteLine(MyFirstVehicle.InStock());
-      }         
-  } 
-    */
-    class vehicle
+    class Vehicle
     {
         public string brand;
         public string model;
@@ -844,23 +850,46 @@ namespace Metoder_Benny_och_Nicklas
         public bool damaged;
         public int speed;
         public int charge;
-        public string InStock()
+
+        public string Describe()
         {
-            string answer = ("This car is " + brand + " " + model + " from " + year + " The color is " + color + " Damaged or used status: " + damaged + " It has the top speed of " + speed + " and comes with a full tank " + charge + "%");
+            string answer = ("This vehicle is " + brand + " " + model + " from " + year + " The color is " + color + " Damaged or used status: " + damaged + " It has the top speed of " + speed + " and comes with a full tank " + charge + "%");
             return answer;
         }
 
-        static void Main(string[] args)
+    }
+
+    class Airplane : Vehicle
+    {
+        public void GoForward()
         {
-            vehicle MyFirstVehicle = new vehicle();
-            MyFirstVehicle.brand = "Lexus";
-            MyFirstVehicle.model = "LC 500";
-            MyFirstVehicle.year = 2020;
-            MyFirstVehicle.color = "Candy apple red";
-            MyFirstVehicle.damaged = false;
-            MyFirstVehicle.speed = 320;
-            MyFirstVehicle.charge = 100;
-            Console.WriteLine(MyFirstVehicle.InStock());
+            Console.WriteLine("Planet flyger fram");
         }
     }
+
+    class Scooter : Vehicle
+    {
+        public void GoForward()
+        {
+            Console.WriteLine("Scootern swishar fram...");
+        }
+    }
+
+    class Tank : Vehicle
+    {
+        public void GoForward()
+        {
+                Console.WriteLine("Tanken mosar allt i sin väg när den kör genom skogen.");
+        }
+    }
+    /* 
+        8. Skapa en class som heter fastigheter
+        9. Ge denna klass generella egenskaper hos en fastighet (såsom rum, kök etc)
+        10. Skapa ett object som skall efterlikna ett radhus
+        11. Skapa ett object som skall efterlikna villa
+        12. Skapa ett object som skall efterlikna ett lägenhetskomplex
+        13. Ge alla klasser en passande Describe metod
+        14. Skapa ett program som låter användaren välja vilken av dessa som hen vill få beskrivet till sig.
+        */
+
 }
