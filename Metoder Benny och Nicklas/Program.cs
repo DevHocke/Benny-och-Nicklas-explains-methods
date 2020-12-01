@@ -891,5 +891,91 @@ namespace Metoder_Benny_och_Nicklas
         13. Ge alla klasser en passande Describe metod
         14. Skapa ett program som låter användaren välja vilken av dessa som hen vill få beskrivet till sig.
         */
+      /*
+    class Fastigheter
+    {
+        int sovrum;
+        int badrum;
+        int allrum;
+        int klädkammare;
+        int toalett;
 
+        public Fastigheter(int Sovrum, int Badrum, int Allrum, int Klädkammare, int Toalett)
+        {
+            this.sovrum = Sovrum;
+            this.badrum = Badrum;
+            this.allrum = Allrum;
+            this.klädkammare = Klädkammare;
+            this.toalett = Toalett;
+        }
+
+    }
+
+    class Villa : Fastigheter
+    {
+        public Villa(int Sovrum, int Badrum, int Allrum, int Klädkammare, int Toalett)
+        {
+            // SER DU DETTA ? du förvinner och kommer tillbaks i en sekund eller två sen borta igen.
+            // Ja jag ser det, men har 100% packet loss i 30 sekunder, sen tillbaka i 20... sen packetloss igen.
+            this.sovrum = Sovrum;
+            this.badrum = Badrum;
+            this.allrum = Allrum;
+            this.klädkammare = Klädkammare;
+            this.toalett = Toalett;
+        }
+
+        public void Describe()
+        {
+            Console.WriteLine("Gummibralla");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Fastigheter radhus = new Fastigheter(12, 4, 4, 6, 8);
+
+            //------------------------------------------------------
+            //                   UPPGIFT 1-7
+            // -----------------------------------------------------
+
+            //Airplane Airplane = new Airplane();
+            //Airplane.brand = "Saab";
+            //Airplane.model = "Jas 39 Gripen";
+            //Airplane.year = 2020;
+            //Airplane.color = "Militärbajsbrun";
+            //Airplane.damaged = true;
+            //Airplane.speed = 2500;
+            //Airplane.charge = 100;
+            //Console.WriteLine(Airplane.Describe());
+            //Airplane.GoForward();
+            //Console.WriteLine(Environment.NewLine);
+
+            //Tank Tank = new Tank();
+            //Tank.brand = "Pansarvagn 90";
+            //Tank.model = "Tiger";
+            //Tank.year = 1965;
+            //Tank.color = "Militärbajsgrön";
+            //Tank.damaged = true;
+            //Tank.speed = 80;
+            //Tank.charge = 50;
+            //Console.WriteLine(Tank.Describe());
+            //Tank.GoForward();
+            //Console.WriteLine(Environment.NewLine);
+
+            //Scooter Scooter = new Scooter();
+            //Scooter.brand = "ChingChong";
+            //Scooter.model = "Fjong bong";
+            //Scooter.year = 2018;
+            //Scooter.color = "GrisRosa";
+            //Scooter.damaged = false;
+            //Scooter.speed = 250;
+            //Scooter.charge = 100;
+            //Console.WriteLine(Scooter.Describe());
+            //Scooter.GoForward();
+            //Console.WriteLine(Environment.NewLine);
+
+        }
+    } */
 }
