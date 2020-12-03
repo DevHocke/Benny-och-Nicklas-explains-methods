@@ -839,7 +839,7 @@ namespace Metoder_Benny_och_Nicklas
     // 5. Skapa ett object som skall efterlikna en elstyrd scooter!
     // 6. Ge klassen en Describe metod som skriver ut de olika delarna!
     // 7. Ge alla klasser en GoForward metod som beskriver hur ett sådant fordon rör på sig!
-
+    /*
     class Vehicle // Klassen Vehicle är föräldern och representerar blueprinten som används i klasserna som ärver förälderns egenskaper.
     {
         private string brand;
@@ -848,7 +848,7 @@ namespace Metoder_Benny_och_Nicklas
         private string color;
         private int gas;
 
-        public string Brand
+        public string Brand 
         {
             get
             {
@@ -1269,4 +1269,19 @@ namespace Metoder_Benny_och_Nicklas
             
         }
     }*/
+        // 1. Börja med att välkomna användaren
+        // 2. Fylla listan med uppgifter
+        // 3. Visa alla uppgifter
+        // 4. Samla allt hittills i en meny där man kan kalla på de andra metoderna
+        //    Nästa steg är att lägga till 3 metoder och 3 nya menyalternativ. Denna gång får du pröva att hitta på dina egna metoddefinitioner!
+        // 5. Flytta avklarade uppgifter från tasks till completedTasks
+        // 6. Visa allt i completedTasks
+        // 7. Ta bort uppgifter från tasks
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+        }
+    }
 }
