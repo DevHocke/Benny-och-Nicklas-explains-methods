@@ -4,7 +4,7 @@ using System.Threading;
 using System.Linq;
 
 namespace Metoder_Benny_och_Nicklas
-{
+{    /*
     class Program
     {
         // ----------------------------------------------------------------------------------------------------------------
@@ -396,478 +396,480 @@ namespace Metoder_Benny_och_Nicklas
 
         } */
 
-        //8.Skriv en metod sorteraTreTal som tar tre tal som paramterar och returnerar en array.
-        //9.Skapa en array och placera dina tre tal i storleksordning i arrayen.
-        //    Du kan återanvända kod från tidigare uppgifter för att ta reda på vilket tal som är stört, mellan och minst.
-        //10.Returnera arrayen.
-        //11.Testa så att metoden fungerar genom att skriva ut arrayen med hjälp av en foreach-loop i huvudprogrammet.
-        // Default är en bool false.
-        /*
-        string enIfKontroll = default(string); // Default är en string "". Det går att kontrollera med isNullOrEmpty
-        if (string.IsNullOrEmpty(enIfKontroll))
-        {
-
-        }
-        
-        int[] sortArray = new int[3];
-
-
-         Console.WriteLine("Ange tal 1. ");
-         sortArray[0] = Convert.ToInt32(Console.ReadLine());
-         Console.WriteLine("Ange tal 2. ");
-         sortArray[1] = Convert.ToInt32(Console.ReadLine());
-         Console.WriteLine("Ange tal 3. ");
-         sortArray[2] = Convert.ToInt32(Console.ReadLine());
-
-        SorteraTreTal(sortArray);  // Kallar på metoden SorteraTreTal som tar in de tre talen från användaren och sorterar dem med Array.Sort
-
-        foreach (var item in sortArray)
-        {
-            Console.WriteLine(item);
-        }
-
-
-
-        static int[] SorteraTreTal(int[] bumbiBjörnarna) // Tar in en int Array samt returnerar en int array. 
-        {
-            Array.Sort(bumbiBjörnarna);
-        //  Array.Reverse(bumbiBjörnarna);  // Ändrar ordningen på arrayen.
-            return bumbiBjörnarna;
-        }
-        */
-
-        //12.Skriv en metod static int Hexagontal som tar en int n som parameter. 
-        //13.I metoden skapa en variabel för summan och sätt det till 0.
-        //14.Skriv en for-loop som går från k = 0 till k < n.
-        //15.I loopen öka summan med 4 * k + 1.
-        //16.Returnera summan
-        //17.I huvudprogrammet anropa på metoden och skriv ut returvärdet till konsolen.
-
-        //   För att kolla om du gjort rätt så ger n = 1-> 1, n = 2-> 6, n = 3-> 15, n = 4-> 28
-
-        //   https://sv.wikipedia.org/wiki/Hexagontal 
-        /*
-
-            Console.WriteLine(Hexagontal(2));
-            
-            static int Hexagontal(int n)
-            {
-                int sum = default(int); // dafault in är 0.
-
-                for (int k = 0; k < n; k++)
-                {
-                    sum += 4 * k + 1;  // += lägger till summan + det nya värdet. endast = ändrar värdet i sum.
-                }
-
-                return sum;
-            }
-            Console.ReadLine();
-
-            */
-
-        //Avancerad uppgift till er som vill ha lite utmaning: 
-
-
-        //Triangeltal är som kan modelleras som trianglar eller trappor.T.ex. 3 = 1 + 2 eller 10 = 1 + 2 + 3 + 4.
-        //19.Skapa en metod som givit ett tal testar med hjälp utav en loop ifall det talet är ett triangel tal.
-
-        //   Så i det här fallet ska du bruteforca talet på något sätt eftersom det är programmering vi ska öva på och inte matte.
-        //20.Om talet är ett triangeltal så ska metoden kalla på en annan metod som skriver ut det i trapform:
-
-        //                  10
-
-        //               6  9
-
-        //           3  5  7
-
-        //       1  2  3  4
-
-        //   Dvs varje position i trappan ska skriva ut antalet platser till vänster och under det.
-
-        // }
-        // ------------------------------------------------------------------------------------------------------------------
-        // ************************************ START ÖVNINGAR 6 v 3 EXERCISES 6 ********************************************
-        // ------------------------------------------------------------------------------------------------------------------
-        //                                  Metoder
-        //1. Skapa en metod som tar in två argument, int a, int b och returnera a + b
-        //2. Skapa en metod som tar in två argument, int a, int b och returnera a - b
-        //3. Skapa en metod som tar in två argument, int a, int b och returnera a / b
-        //4. Skapa en metod som tar in två argument, int a, int b och returnera a* b
-        //5. Ge alla dessa beskrivande namn
-        /*
-       static void Main(string[] args)
-       {
-           bool keepGoing = false;
-           do
-           {
-               Console.WriteLine("Hej och välkommen till övningar 6");
-               Console.WriteLine("1. Gör en + beräkning ");
-               Console.WriteLine("2. Gör en - beräkning ");
-               Console.WriteLine("3. Gör en / beräkning ");
-               Console.WriteLine("4. Gör en * beräkning ");
-               Console.WriteLine("5. EXIT");
-               int choice = Convert.ToInt32(Console.ReadLine());
-
-               if (choice == 1)
-               {
-                   Console.WriteLine("Skriv in heltal 1: ");
-                   int numb1 = Convert.ToInt32(Console.ReadLine());
-                   Console.WriteLine("Skriv in heltal 2: ");
-                   int numb2 = Convert.ToInt32(Console.ReadLine());
-                   int sumPlus = PlusCalc(numb1, numb2);
-                   Console.WriteLine($"The sum is: {sumPlus}");                   
-               }
-               else if (choice == 2)
-               {
-                   Console.WriteLine("Skriv in heltal 1: ");
-                   int numb1 = Convert.ToInt32(Console.ReadLine());
-                   Console.WriteLine("Skriv in heltal 2: ");
-                   int numb2 = Convert.ToInt32(Console.ReadLine());
-                   int sumPlus = MinusCalc(numb1, numb2);
-                   Console.WriteLine($"The sum is: {sumPlus}");                  
-               }
-               else if (choice == 3)
-               {
-                   Console.WriteLine("Skriv in heltal 1: ");
-                   int numb1 = Convert.ToInt32(Console.ReadLine());
-                   Console.WriteLine("Skriv in heltal 2: ");
-                   int numb2 = Convert.ToInt32(Console.ReadLine());
-                   int sumPlus = DividedCalc(numb1, numb2);
-                   Console.WriteLine($"The sum is: {sumPlus}");  
-               }
-               else if (choice == 4)
-               {
-                   Console.WriteLine("Skriv in heltal 1: ");
-                   int numb1 = Convert.ToInt32(Console.ReadLine());
-                   Console.WriteLine("Skriv in heltal 2: ");
-                   int numb2 = Convert.ToInt32(Console.ReadLine());
-                   int sumPlus = MultCalc(numb1, numb2);
-                   Console.WriteLine($"The sum is: {sumPlus}");                    
-               }
-               else if (choice == 5)
-               {
-                   Console.WriteLine("Program EXIT");
-                   break;
-               }
-               Console.WriteLine("do you want to do any other calculation?");
-               Console.WriteLine("1. Yes.");
-               Console.WriteLine("2. No.");
-               int answer = Convert.ToInt32(Console.ReadLine());
-               if (answer == 1)
-               {
-                   keepGoing = true;
-               }
-               else if (answer == 2)
-               {
-                   keepGoing = false;
-               }
-               else
-               {
-                   break;
-               }
-           } while(keepGoing == true);
-
-           Console.WriteLine("Thank you for playing!");
-           Console.ReadLine();
-       }
-       static int PlusCalc(int a, int b)
-       {
-           int sum = a + b;
-           return sum;
-       }
-       static int MinusCalc(int a, int b)
-       {
-           int sum = a - b;
-           return sum;
-       }
-       static int DividedCalc(int a, int b)
-       {
-           int sum = a / b;
-           return sum;
-       }
-       static int MultCalc(int a, int b)
-       {
-           int sum = a * b;
-           return sum;
-       }
-       */
-        // ---------------------------------------------------------------------------------------------------------------------------
-        //6. Skapa en metod som tar in basen och höjden av en triangel och returnera arean.
-        //7. Skapa en metod som tar in en bool och returnera det motsatta.
-        //8. Skapa en metod som tar in en lista och returnerar det sista elementet.
-        //9. Skapa en metod som tar in ett heltal och multiplicera talet med 10. Kalla sedan på en annan metod från första metoden och returnera det talet delat på 5.
-        /*
-         static void Main(string[] args)
-         {
-             float width = 13;
-             float height = 8;
-             float answerTriangel = Triangel(width, height);
-             Console.WriteLine($"The area of the triangel is = {answerTriangel}");
-
-             bool sendOut = true;
-             bool answerBool = BoolOut(sendOut);
-             Console.WriteLine($"The bool was {sendOut} and is now {answerBool}");
-
-             List<float> myList = new List<float>() { 1, 4, 6, 5, 89, 432, 5, 98 };
-             float lastNumb = LastNumbInList(myList);
-             Console.WriteLine($"The last number in the list is {lastNumb}");
-
-
-             int finalnumb =  UserNumbIn();
-             Console.WriteLine($"Ditt tal * 10 / 5 är: {finalnumb}");
-             Console.ReadLine();
-         }
-         static float Triangel(float a, float b)
-         {
-             float calculation = a * b / 2;
-             return calculation;
-         }
-         static bool BoolOut(bool a)
-         {
-             bool boolIn = a;
-             if (boolIn == true)
-             {
-                 boolIn = false;
-             }
-             else if (boolIn == false)
-             {
-                 boolIn = true;
-             }
-             return boolIn;
-         }
-         static float LastNumbInList(List<float> x)
-         {            
-             float answer = x[x.Count -1]; // Or use float answer = x.Last(); men måste ha using Linq!
-             return answer;
-         }
-         static int UserNumbIn()
-         {
-             Console.WriteLine("Skriv ett heltal: ");
-             int numb = Convert.ToInt32(Console.ReadLine());
-             int sendIt = (numb * 10);
-             return DivideNumb(sendIt);
-         }
-         static int DivideNumb(int sendIt)
-         {
-
-             int finalnumb = (sendIt / 5);
-             return finalnumb;
-         }
-        */
-        // ------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
-        //10. Skapa en lista av strings med fyra element "Det" "var" "en" "gång..."
-        //11. Ta listan av strings och skicka in den i en kedja av metoder.
-        //12. För varje metod lägg till en string i listan
-        //13. När det finns 10 element i listan, skriv ut allt på en rad separerat med,
-        /*
-        static void Main(string[] args)
-        {
-            List<string> myList = new List<string>() {"Det ", "var ", "en ", "gång " };
-            List<string> start = ChainOne(myList);
-
-            Console.Write(string.Join(",", myList);
-            
-            Console.ReadLine();
-        }
-        static List<string> ChainOne(List<string> start)
-        {
-            start.Add("en ");
-            return ChainTwo(start);
-        }
-        static List<string> ChainTwo(List<string> start)
-        {
-            start.Add("liten ");
-            return ChainThree(start);
-        }
-        static List<string> ChainThree(List<string> start)
-        {
-            start.Add("prutt ");
-            return ChainFour(start);
-        }
-        static List<string> ChainFour(List<string> start)
-        {
-            start.Add("som ");
-            return ChainFive(start);
-        }
-        static List<string> ChainFive(List<string> start)
-        {
-            start.Add("hette ");
-            return ChainSix(start);
-        }
-        static List<string> ChainSix(List<string> start)
-        {
-            start.Add("Benny ");
-            return start;
-        }
-        */
-        //14. Skapa ett program som ber användaren mata in ett tal 10 gånger. Spara undan dessa i en lista
-        //15. Skicka in listan i en metod som heter SortEven.
-        //16. För varje element i listan: Kolla om talet är jämt
-        //17. Om talet är jämt skicka in talet till en annan metod som lägger till det i en lista.
-        //18. Gör likadant med ojämna tal
-        //19. Skriv sedan ut de båda listorna med antalet jämna och ojämna tal
-        
-        /*
-        static void Main(string[] args)
-        {
-            List<int> numbIn = new List<int>();
-
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine("Skriv in ett heltal: ");
-                numbIn.Add(Convert.ToInt32(Console.ReadLine()));
-            }
-            SortEven(numbIn);
-
-            Console.ReadLine();
-        }
-        static void SortEven(List<int> numbIn)
-        {
-            
-            foreach (var item in numbIn)    
-            {
-                if (item % 2 == 0)
-                {
-                    EvenNumbers(numbIn);
-                }
-                else if (item % 1 == 0)
-                {
-                    UnEvenNumbers(numbIn);
-                }
-            }            
-        }
-        static List<int> EvenNumbers(List<int> even)
-        {
-            List<int> answer = new List<int>();
-            for (int i = 0; i < even.Count; i++)
-            {
-                answer.Add(i);   
-            }
-            return answer;
-        }
-        static List<int> UnEvenNumbers(List<int> unEven)
-        {
-            List<int> unEvenAnswer = new List<int>();
-            for (int i = 0; i < unEven.Count; i++)
-            {
-                unEvenAnswer.Add(i);
-                
-            }
-            return unEvenAnswer;
-        }
-        */
-        // ------------------------------------------------------------------------------------------------------------
-        //20. Skriv en metod som konverterar timmar till minuter
-        //21. Använd sedan minuterna som argument till en annan metod som konverterar minuter till sekunder. 
-        //22. Skriv sedan ut vad timmar blir i minuter och hur många sekunder det är totalt
-        /*
-        static void Main(string[] args)
-        {
-          
-        
-        ConvertTime();
-        }
-        */
-        //23. Hur mycket är sant? Skriv en metod som kollar en array av bool statements och retunera antalet true/false
-        //24. Om antalet true är mer än false skriv ut "In wine there is potatos!" annars skriv ut "lies lies lies..."
-        /*
-        static void Main(string[] args)
-        {
-            bool[] yesNo = new bool[10];
-
-            yesNo[0] = true;
-            yesNo[1] = true;
-            yesNo[2] = false;
-            yesNo[3] = false;
-            yesNo[4] = true;
-            yesNo[5] = false;
-            yesNo[6] = true;
-            yesNo[7] = false;
-            yesNo[8] = true;
-            yesNo[9] = true;
-            Fixa(yesNo);
-
-            static void Fixa(bool[] yesNo)
-            {
-                int sant = 0;
-                int falskt = 0;
-                for (int i = 0; i < yesNo.Length; i++)
-                {
-                    if (yesNo[i] == false)
-                    {
-                        falskt ++;
-                    }
-                    else if (yesNo[i] == true)
-                    {
-                        sant ++;
-                    }
-                }
-                Console.WriteLine($"False var {falskt} st. True var {sant} st.");
-                Console.WriteLine("------------------------------");
-                 if (sant > falskt)
-                 {
-                    Console.WriteLine($"In wine there is potatoes?!? ");
-                 }
-                 else if (sant < falskt)
-                 {
-                    Console.WriteLine($"lies lies lies...");
-                 }
-            }
-        }
-        */
-
-        // -------------------------------------------------------------------------------------------
-        // **************************** ÖVNINGAR del 7 KLASSER ***************************************
-        // -------------------------------------------------------------------------------------------
-        // 1.Skapa en class som heter Fordon !
-        // 2. Ge denna klass generella egenskaper hos ett fordon !
-        // 3. Skapa ett object som skall efterlikna ett flygplan 
-        // 4. Skapa ett object som skall efterlinkna en pansarvagn
-        // 5. Skapa ett object som skall efterlikna en elstyrd scooter
-        // 6. Ge klassen en Describe metod som skriver ut de olika delarna
-        // 7. Ge alla klasser en GoForward metod som beskriver hur ett sådant fordon rör på sig
-        /*
-        static void Main(string[] args)
-        {
-            Airplane Airplane = new Airplane();
-            Airplane.brand = "Saab";
-            Airplane.model = "Jas 39 Gripen";
-            Airplane.year = 2020;
-            Airplane.color = "Militärbajsbrun";
-            Airplane.damaged = true;
-            Airplane.speed = 2500;
-            Airplane.charge = 100;
-            Console.WriteLine(Airplane.Describe());
-            Airplane.GoForward();
-            Console.WriteLine(Environment.NewLine);
-
-            Tank Tank = new Tank();
-            Tank.brand = "Pansarvagn 90";
-            Tank.model = "Tiger";
-            Tank.year = 1965;
-            Tank.color = "Militärbajsgrön";
-            Tank.damaged = true;
-            Tank.speed = 80;
-            Tank.charge = 50;
-            Console.WriteLine(Tank.Describe());
-            Tank.GoForward();
-            Console.WriteLine(Environment.NewLine);
-
-            Scooter Scooter = new Scooter();
-            Scooter.brand = "ChingChong";
-            Scooter.model = "Fjong bong";
-            Scooter.year = 2018;
-            Scooter.color = "GrisRosa";
-            Scooter.damaged = false;
-            Scooter.speed = 250;
-            Scooter.charge = 100;
-            Console.WriteLine(Scooter.Describe());
-            Scooter.GoForward();
-            Console.WriteLine(Environment.NewLine);
-
-        } */
+    //8.Skriv en metod sorteraTreTal som tar tre tal som paramterar och returnerar en array.
+    //9.Skapa en array och placera dina tre tal i storleksordning i arrayen.
+    //    Du kan återanvända kod från tidigare uppgifter för att ta reda på vilket tal som är stört, mellan och minst.
+    //10.Returnera arrayen.
+    //11.Testa så att metoden fungerar genom att skriva ut arrayen med hjälp av en foreach-loop i huvudprogrammet.
+    // Default är en bool false.
+    /*
+    string enIfKontroll = default(string); // Default är en string "". Det går att kontrollera med isNullOrEmpty
+    if (string.IsNullOrEmpty(enIfKontroll))
+    {
 
     }
+
+    int[] sortArray = new int[3];
+
+
+     Console.WriteLine("Ange tal 1. ");
+     sortArray[0] = Convert.ToInt32(Console.ReadLine());
+     Console.WriteLine("Ange tal 2. ");
+     sortArray[1] = Convert.ToInt32(Console.ReadLine());
+     Console.WriteLine("Ange tal 3. ");
+     sortArray[2] = Convert.ToInt32(Console.ReadLine());
+
+    SorteraTreTal(sortArray);  // Kallar på metoden SorteraTreTal som tar in de tre talen från användaren och sorterar dem med Array.Sort
+
+    foreach (var item in sortArray)
+    {
+        Console.WriteLine(item);
+    }
+
+
+
+    static int[] SorteraTreTal(int[] bumbiBjörnarna) // Tar in en int Array samt returnerar en int array. 
+    {
+        Array.Sort(bumbiBjörnarna);
+    //  Array.Reverse(bumbiBjörnarna);  // Ändrar ordningen på arrayen.
+        return bumbiBjörnarna;
+    }
+    */
+
+    //12.Skriv en metod static int Hexagontal som tar en int n som parameter. 
+    //13.I metoden skapa en variabel för summan och sätt det till 0.
+    //14.Skriv en for-loop som går från k = 0 till k < n.
+    //15.I loopen öka summan med 4 * k + 1.
+    //16.Returnera summan
+    //17.I huvudprogrammet anropa på metoden och skriv ut returvärdet till konsolen.
+
+    //   För att kolla om du gjort rätt så ger n = 1-> 1, n = 2-> 6, n = 3-> 15, n = 4-> 28
+
+    //   https://sv.wikipedia.org/wiki/Hexagontal 
+    /*
+
+        Console.WriteLine(Hexagontal(2));
+
+        static int Hexagontal(int n)
+        {
+            int sum = default(int); // dafault in är 0.
+
+            for (int k = 0; k < n; k++)
+            {
+                sum += 4 * k + 1;  // += lägger till summan + det nya värdet. endast = ändrar värdet i sum.
+            }
+
+            return sum;
+        }
+        Console.ReadLine();
+
+        */
+
+    //Avancerad uppgift till er som vill ha lite utmaning: 
+
+
+    //Triangeltal är som kan modelleras som trianglar eller trappor.T.ex. 3 = 1 + 2 eller 10 = 1 + 2 + 3 + 4.
+    //19.Skapa en metod som givit ett tal testar med hjälp utav en loop ifall det talet är ett triangel tal.
+
+    //   Så i det här fallet ska du bruteforca talet på något sätt eftersom det är programmering vi ska öva på och inte matte.
+    //20.Om talet är ett triangeltal så ska metoden kalla på en annan metod som skriver ut det i trapform:
+
+    //                  10
+
+    //               6  9
+
+    //           3  5  7
+
+    //       1  2  3  4
+
+    //   Dvs varje position i trappan ska skriva ut antalet platser till vänster och under det.
+
+    // }
+    // ------------------------------------------------------------------------------------------------------------------
+    // ************************************ START ÖVNINGAR 6 v 3 EXERCISES 6 ********************************************
+    // ------------------------------------------------------------------------------------------------------------------
+    //                                  Metoder
+    //1. Skapa en metod som tar in två argument, int a, int b och returnera a + b
+    //2. Skapa en metod som tar in två argument, int a, int b och returnera a - b
+    //3. Skapa en metod som tar in två argument, int a, int b och returnera a / b
+    //4. Skapa en metod som tar in två argument, int a, int b och returnera a* b
+    //5. Ge alla dessa beskrivande namn
+    /*
+   static void Main(string[] args)
+   {
+       bool keepGoing = false;
+       do
+       {
+           Console.WriteLine("Hej och välkommen till övningar 6");
+           Console.WriteLine("1. Gör en + beräkning ");
+           Console.WriteLine("2. Gör en - beräkning ");
+           Console.WriteLine("3. Gör en / beräkning ");
+           Console.WriteLine("4. Gör en * beräkning ");
+           Console.WriteLine("5. EXIT");
+           int choice = Convert.ToInt32(Console.ReadLine());
+
+           if (choice == 1)
+           {
+               Console.WriteLine("Skriv in heltal 1: ");
+               int numb1 = Convert.ToInt32(Console.ReadLine());
+               Console.WriteLine("Skriv in heltal 2: ");
+               int numb2 = Convert.ToInt32(Console.ReadLine());
+               int sumPlus = PlusCalc(numb1, numb2);
+               Console.WriteLine($"The sum is: {sumPlus}");                   
+           }
+           else if (choice == 2)
+           {
+               Console.WriteLine("Skriv in heltal 1: ");
+               int numb1 = Convert.ToInt32(Console.ReadLine());
+               Console.WriteLine("Skriv in heltal 2: ");
+               int numb2 = Convert.ToInt32(Console.ReadLine());
+               int sumPlus = MinusCalc(numb1, numb2);
+               Console.WriteLine($"The sum is: {sumPlus}");                  
+           }
+           else if (choice == 3)
+           {
+               Console.WriteLine("Skriv in heltal 1: ");
+               int numb1 = Convert.ToInt32(Console.ReadLine());
+               Console.WriteLine("Skriv in heltal 2: ");
+               int numb2 = Convert.ToInt32(Console.ReadLine());
+               int sumPlus = DividedCalc(numb1, numb2);
+               Console.WriteLine($"The sum is: {sumPlus}");  
+           }
+           else if (choice == 4)
+           {
+               Console.WriteLine("Skriv in heltal 1: ");
+               int numb1 = Convert.ToInt32(Console.ReadLine());
+               Console.WriteLine("Skriv in heltal 2: ");
+               int numb2 = Convert.ToInt32(Console.ReadLine());
+               int sumPlus = MultCalc(numb1, numb2);
+               Console.WriteLine($"The sum is: {sumPlus}");                    
+           }
+           else if (choice == 5)
+           {
+               Console.WriteLine("Program EXIT");
+               break;
+           }
+           Console.WriteLine("do you want to do any other calculation?");
+           Console.WriteLine("1. Yes.");
+           Console.WriteLine("2. No.");
+           int answer = Convert.ToInt32(Console.ReadLine());
+           if (answer == 1)
+           {
+               keepGoing = true;
+           }
+           else if (answer == 2)
+           {
+               keepGoing = false;
+           }
+           else
+           {
+               break;
+           }
+       } while(keepGoing == true);
+
+       Console.WriteLine("Thank you for playing!");
+       Console.ReadLine();
+   }
+   static int PlusCalc(int a, int b)
+   {
+       int sum = a + b;
+       return sum;
+   }
+   static int MinusCalc(int a, int b)
+   {
+       int sum = a - b;
+       return sum;
+   }
+   static int DividedCalc(int a, int b)
+   {
+       int sum = a / b;
+       return sum;
+   }
+   static int MultCalc(int a, int b)
+   {
+       int sum = a * b;
+       return sum;
+   }
+   */
+    // ---------------------------------------------------------------------------------------------------------------------------
+    //6. Skapa en metod som tar in basen och höjden av en triangel och returnera arean.
+    //7. Skapa en metod som tar in en bool och returnera det motsatta.
+    //8. Skapa en metod som tar in en lista och returnerar det sista elementet.
+    //9. Skapa en metod som tar in ett heltal och multiplicera talet med 10. Kalla sedan på en annan metod från första metoden och returnera det talet delat på 5.
+    /*
+     static void Main(string[] args)
+     {
+         float width = 13;
+         float height = 8;
+         float answerTriangel = Triangel(width, height);
+         Console.WriteLine($"The area of the triangel is = {answerTriangel}");
+
+         bool sendOut = true;
+         bool answerBool = BoolOut(sendOut);
+         Console.WriteLine($"The bool was {sendOut} and is now {answerBool}");
+
+         List<float> myList = new List<float>() { 1, 4, 6, 5, 89, 432, 5, 98 };
+         float lastNumb = LastNumbInList(myList);
+         Console.WriteLine($"The last number in the list is {lastNumb}");
+
+
+         int finalnumb =  UserNumbIn();
+         Console.WriteLine($"Ditt tal * 10 / 5 är: {finalnumb}");
+         Console.ReadLine();
+     }
+     static float Triangel(float a, float b)
+     {
+         float calculation = a * b / 2;
+         return calculation;
+     }
+     static bool BoolOut(bool a)
+     {
+         bool boolIn = a;
+         if (boolIn == true)
+         {
+             boolIn = false;
+         }
+         else if (boolIn == false)
+         {
+             boolIn = true;
+         }
+         return boolIn;
+     }
+     static float LastNumbInList(List<float> x)
+     {            
+         float answer = x[x.Count -1]; // Or use float answer = x.Last(); men måste ha using Linq!
+         return answer;
+     }
+     static int UserNumbIn()
+     {
+         Console.WriteLine("Skriv ett heltal: ");
+         int numb = Convert.ToInt32(Console.ReadLine());
+         int sendIt = (numb * 10);
+         return DivideNumb(sendIt);
+     }
+     static int DivideNumb(int sendIt)
+     {
+
+         int finalnumb = (sendIt / 5);
+         return finalnumb;
+     }
+    */
+    // ------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+    //10. Skapa en lista av strings med fyra element "Det" "var" "en" "gång..."
+    //11. Ta listan av strings och skicka in den i en kedja av metoder.
+    //12. För varje metod lägg till en string i listan
+    //13. När det finns 10 element i listan, skriv ut allt på en rad separerat med,
+    /*
+    static void Main(string[] args)
+    {
+        List<string> myList = new List<string>() {"Det ", "var ", "en ", "gång " };
+        List<string> start = ChainOne(myList);
+
+        Console.Write(string.Join(",", myList);
+
+        Console.ReadLine();
+    }
+    static List<string> ChainOne(List<string> start)
+    {
+        start.Add("en ");
+        return ChainTwo(start);
+    }
+    static List<string> ChainTwo(List<string> start)
+    {
+        start.Add("liten ");
+        return ChainThree(start);
+    }
+    static List<string> ChainThree(List<string> start)
+    {
+        start.Add("prutt ");
+        return ChainFour(start);
+    }
+    static List<string> ChainFour(List<string> start)
+    {
+        start.Add("som ");
+        return ChainFive(start);
+    }
+    static List<string> ChainFive(List<string> start)
+    {
+        start.Add("hette ");
+        return ChainSix(start);
+    }
+    static List<string> ChainSix(List<string> start)
+    {
+        start.Add("Benny ");
+        return start;
+    }
+    */
+    //14. Skapa ett program som ber användaren mata in ett tal 10 gånger. Spara undan dessa i en lista
+    //15. Skicka in listan i en metod som heter SortEven.
+    //16. För varje element i listan: Kolla om talet är jämt
+    //17. Om talet är jämt skicka in talet till en annan metod som lägger till det i en lista.
+    //18. Gör likadant med ojämna tal
+    //19. Skriv sedan ut de båda listorna med antalet jämna och ojämna tal
+
+    /*
+    static void Main(string[] args)
+    {
+        StartProgram();
+
+    }
+      private static void StartProgram()
+            {
+                Console.WriteLine("Hej. Skriv in tio tal.");
+                for (int i = 1; i < 11; i++)
+                {
+                    Console.Write($"Tal {i}: ");
+                    listOfNumbers.Add(Convert.ToInt32(Console.ReadLine()));
+                }
+                Sort(listOfNumbers);
+                Console.WriteLine(" ");
+                Console.WriteLine("Even numbers:");
+                Console.Write(string.Join(", ", evenNumbs));
+                Console.WriteLine(" ");
+                Console.WriteLine("------------------");
+                Console.WriteLine("Odd numbers:");
+                Console.Write(string.Join(", ", oddNumbs));
+            }
+            
+            static void Sort(List<int> listOfNumbers)
+                {
+                    foreach (var item in listOfNumbers)
+                    {
+                        if (item % 2 == 0)
+                        {
+
+                            EvenNumbers(item);
+                        }
+                        else
+                        {
+                            OddNumbers(item);
+                        }
+                    }
+                }
+                static void EvenNumbers(int even)
+                {
+                    evenNumbs.Add(even);
+                }
+                static void OddNumbers(int odd)
+                {
+                    oddNumbs.Add(odd);
+                }
+
+
+
+    */
+    // ------------------------------------------------------------------------------------------------------------
+    //20. Skriv en metod som konverterar timmar till minuter
+    //21. Använd sedan minuterna som argument till en annan metod som konverterar minuter till sekunder. 
+    //22. Skriv sedan ut vad timmar blir i minuter och hur många sekunder det är totalt
+    /*
+    static void Main(string[] args)
+    {
+
+
+    ConvertTime();
+    }
+    */
+    //23. Hur mycket är sant? Skriv en metod som kollar en array av bool statements och retunera antalet true/false
+    //24. Om antalet true är mer än false skriv ut "In wine there is potatos!" annars skriv ut "lies lies lies..."
+    /*
+    static void Main(string[] args)
+    {
+        bool[] yesNo = new bool[10];
+
+        yesNo[0] = true;
+        yesNo[1] = true;
+        yesNo[2] = false;
+        yesNo[3] = false;
+        yesNo[4] = true;
+        yesNo[5] = false;
+        yesNo[6] = true;
+        yesNo[7] = false;
+        yesNo[8] = true;
+        yesNo[9] = true;
+        Fixa(yesNo);
+
+        static void Fixa(bool[] yesNo)
+        {
+            int sant = 0;
+            int falskt = 0;
+            for (int i = 0; i < yesNo.Length; i++)
+            {
+                if (yesNo[i] == false)
+                {
+                    falskt ++;
+                }
+                else if (yesNo[i] == true)
+                {
+                    sant ++;
+                }
+            }
+            Console.WriteLine($"False var {falskt} st. True var {sant} st.");
+            Console.WriteLine("------------------------------");
+             if (sant > falskt)
+             {
+                Console.WriteLine($"In wine there is potatoes?!? ");
+             }
+             else if (sant < falskt)
+             {
+                Console.WriteLine($"lies lies lies...");
+             }
+        }
+    }
+    */
+
+    // -------------------------------------------------------------------------------------------
+    // **************************** ÖVNINGAR del 7 KLASSER ***************************************
+    // -------------------------------------------------------------------------------------------
+    // 1.Skapa en class som heter Fordon !
+    // 2. Ge denna klass generella egenskaper hos ett fordon !
+    // 3. Skapa ett object som skall efterlikna ett flygplan 
+    // 4. Skapa ett object som skall efterlinkna en pansarvagn
+    // 5. Skapa ett object som skall efterlikna en elstyrd scooter
+    // 6. Ge klassen en Describe metod som skriver ut de olika delarna
+    // 7. Ge alla klasser en GoForward metod som beskriver hur ett sådant fordon rör på sig
+    /*
+    static void Main(string[] args)
+    {
+        Airplane Airplane = new Airplane();
+        Airplane.brand = "Saab";
+        Airplane.model = "Jas 39 Gripen";
+        Airplane.year = 2020;
+        Airplane.color = "Militärbajsbrun";
+        Airplane.damaged = true;
+        Airplane.speed = 2500;
+        Airplane.charge = 100;
+        Console.WriteLine(Airplane.Describe());
+        Airplane.GoForward();
+        Console.WriteLine(Environment.NewLine);
+
+        Tank Tank = new Tank();
+        Tank.brand = "Pansarvagn 90";
+        Tank.model = "Tiger";
+        Tank.year = 1965;
+        Tank.color = "Militärbajsgrön";
+        Tank.damaged = true;
+        Tank.speed = 80;
+        Tank.charge = 50;
+        Console.WriteLine(Tank.Describe());
+        Tank.GoForward();
+        Console.WriteLine(Environment.NewLine);
+
+        Scooter Scooter = new Scooter();
+        Scooter.brand = "ChingChong";
+        Scooter.model = "Fjong bong";
+        Scooter.year = 2018;
+        Scooter.color = "GrisRosa";
+        Scooter.damaged = false;
+        Scooter.speed = 250;
+        Scooter.charge = 100;
+        Console.WriteLine(Scooter.Describe());
+        Scooter.GoForward();
+        Console.WriteLine(Environment.NewLine);
+
+    } */
+
+    // KLASS PROGRAMS SLUT --->  }
     /*
     class Vehicle
     {
@@ -919,91 +921,105 @@ namespace Metoder_Benny_och_Nicklas
         13. Ge alla klasser en passande Describe metod
         14. Skapa ett program som låter användaren välja vilken av dessa som hen vill få beskrivet till sig.
         */
-      /*
-    class Fastigheter
-    {
-        int sovrum;
-        int badrum;
-        int allrum;
-        int klädkammare;
-        int toalett;
+    /*
+  class Fastigheter
+  {
+      int sovrum;
+      int badrum;
+      int allrum;
+      int klädkammare;
+      int toalett;
 
-        public Fastigheter(int Sovrum, int Badrum, int Allrum, int Klädkammare, int Toalett)
-        {
-            this.sovrum = Sovrum;
-            this.badrum = Badrum;
-            this.allrum = Allrum;
-            this.klädkammare = Klädkammare;
-            this.toalett = Toalett;
-        }
+      public Fastigheter(int Sovrum, int Badrum, int Allrum, int Klädkammare, int Toalett)
+      {
+          this.sovrum = Sovrum;
+          this.badrum = Badrum;
+          this.allrum = Allrum;
+          this.klädkammare = Klädkammare;
+          this.toalett = Toalett;
+      }
 
-    }
+  }
 
-    class Villa : Fastigheter
-    {
-        public Villa(int Sovrum, int Badrum, int Allrum, int Klädkammare, int Toalett)
-        {
-            // SER DU DETTA ? du förvinner och kommer tillbaks i en sekund eller två sen borta igen.
-            // Ja jag ser det, men har 100% packet loss i 30 sekunder, sen tillbaka i 20... sen packetloss igen.
-            this.sovrum = Sovrum;
-            this.badrum = Badrum;
-            this.allrum = Allrum;
-            this.klädkammare = Klädkammare;
-            this.toalett = Toalett;
-        }
+  class Villa : Fastigheter
+  {
+      public Villa(int Sovrum, int Badrum, int Allrum, int Klädkammare, int Toalett)
+      {           
+          this.sovrum = Sovrum;
+          this.badrum = Badrum;
+          this.allrum = Allrum;
+          this.klädkammare = Klädkammare;
+          this.toalett = Toalett;
+      }
 
-        public void Describe()
-        {
-            Console.WriteLine("Gummibralla");
-        }
-    }
+      public void Describe()
+      {
+          Console.WriteLine("Gummibralla");
+      }
+  }
+
+  class Program
+  {
+      static void Main(string[] args)
+      {
+          Fastigheter radhus = new Fastigheter(12, 4, 4, 6, 8);
+    */ /*
+          //------------------------------------------------------
+          //                   UPPGIFT 1-7
+          // -----------------------------------------------------
+
+          //Airplane Airplane = new Airplane();
+          //Airplane.brand = "Saab";
+          //Airplane.model = "Jas 39 Gripen";
+          //Airplane.year = 2020;
+          //Airplane.color = "Militärbajsbrun";
+          //Airplane.damaged = true;
+          //Airplane.speed = 2500;
+          //Airplane.charge = 100;
+          //Console.WriteLine(Airplane.Describe());
+          //Airplane.GoForward();
+          //Console.WriteLine(Environment.NewLine);
+
+          //Tank Tank = new Tank();
+          //Tank.brand = "Pansarvagn 90";
+          //Tank.model = "Tiger";
+          //Tank.year = 1965;
+          //Tank.color = "Militärbajsgrön";
+          //Tank.damaged = true;
+          //Tank.speed = 80;
+          //Tank.charge = 50;
+          //Console.WriteLine(Tank.Describe());
+          //Tank.GoForward();
+          //Console.WriteLine(Environment.NewLine);
+
+          //Scooter Scooter = new Scooter();
+          //Scooter.brand = "ChingChong";
+          //Scooter.model = "Fjong bong";
+          //Scooter.year = 2018;
+          //Scooter.color = "GrisRosa";
+          //Scooter.damaged = false;
+          //Scooter.speed = 250;
+          //Scooter.charge = 100;
+          //Console.WriteLine(Scooter.Describe());
+          //Scooter.GoForward();
+          //Console.WriteLine(Environment.NewLine);
+
+      }
+  } */
+
+    // 8. Skapa en class som heter fastigheter
+    // 9. Ge denna klass generella egenskaper hos en fastighet(såsom rum, kök etc)
+    // 10. Skapa ett object som skall efterlikna ett radhus
+    // 11. Skapa ett object som skall efterlikna villa
+    // 12. Skapa ett object som skall efterlikna ett lägenhetskomplex
+    // 13. Ge alla klasser en passande Describe metod
+    // 14. Skapa ett program som låter användaren välja vilken av dessa som hen vill få beskrivet till sig.
 
     class Program
     {
         static void Main(string[] args)
         {
-            Fastigheter radhus = new Fastigheter(12, 4, 4, 6, 8);
-      */ /*
-            //------------------------------------------------------
-            //                   UPPGIFT 1-7
-            // -----------------------------------------------------
-
-            //Airplane Airplane = new Airplane();
-            //Airplane.brand = "Saab";
-            //Airplane.model = "Jas 39 Gripen";
-            //Airplane.year = 2020;
-            //Airplane.color = "Militärbajsbrun";
-            //Airplane.damaged = true;
-            //Airplane.speed = 2500;
-            //Airplane.charge = 100;
-            //Console.WriteLine(Airplane.Describe());
-            //Airplane.GoForward();
-            //Console.WriteLine(Environment.NewLine);
-
-            //Tank Tank = new Tank();
-            //Tank.brand = "Pansarvagn 90";
-            //Tank.model = "Tiger";
-            //Tank.year = 1965;
-            //Tank.color = "Militärbajsgrön";
-            //Tank.damaged = true;
-            //Tank.speed = 80;
-            //Tank.charge = 50;
-            //Console.WriteLine(Tank.Describe());
-            //Tank.GoForward();
-            //Console.WriteLine(Environment.NewLine);
-
-            //Scooter Scooter = new Scooter();
-            //Scooter.brand = "ChingChong";
-            //Scooter.model = "Fjong bong";
-            //Scooter.year = 2018;
-            //Scooter.color = "GrisRosa";
-            //Scooter.damaged = false;
-            //Scooter.speed = 250;
-            //Scooter.charge = 100;
-            //Console.WriteLine(Scooter.Describe());
-            //Scooter.GoForward();
-            //Console.WriteLine(Environment.NewLine);
 
         }
-    } */
+    }
 }
