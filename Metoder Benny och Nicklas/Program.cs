@@ -1279,9 +1279,31 @@ namespace Metoder_Benny_och_Nicklas
         // 7. Ta bort uppgifter från tasks
     class Program
     {
+        
+
+        
         static void Main(string[] args)
         {
+            var tasks = new List<string>();
+            var completedTasks = new List<string>();
+            
+            Welcome();
+
 
         }
+        static void Welcome()
+        {
+            Console.WriteLine("Welcome to the ToDoList");
+            StartProgram();
+        }
+        static void StartProgram()
+        {
+            bool keepGoing = true;
+            do
+            {
+
+            } while (keepGoing = true);
+        }
     }
+
 }
