@@ -4,7 +4,8 @@ using System.Threading;
 using System.Linq;
 
 namespace Metoder_Benny_och_Nicklas
-{    /*
+{
+    /*
     class Program
     {
         // ----------------------------------------------------------------------------------------------------------------
@@ -448,22 +449,22 @@ namespace Metoder_Benny_och_Nicklas
     //   https://sv.wikipedia.org/wiki/Hexagontal 
     /*
 
-        Console.WriteLine(Hexagontal(2));
+    Console.WriteLine(Hexagontal(2));
 
-        static int Hexagontal(int n)
+    static int Hexagontal(int n)
+    {
+        int sum = default(int); // dafault in är 0.
+
+        for (int k = 0; k < n; k++)
         {
-            int sum = default(int); // dafault in är 0.
-
-            for (int k = 0; k < n; k++)
-            {
-                sum += 4 * k + 1;  // += lägger till summan + det nya värdet. endast = ändrar värdet i sum.
-            }
-
-            return sum;
+            sum += 4 * k + 1;  // += lägger till summan + det nya värdet. endast = ändrar värdet i sum.
         }
-        Console.ReadLine();
 
-        */
+        return sum;
+    }
+    Console.ReadLine();
+
+    */
 
     //Avancerad uppgift till er som vill ha lite utmaning: 
 
@@ -706,54 +707,64 @@ namespace Metoder_Benny_och_Nicklas
     //17. Om talet är jämt skicka in talet till en annan metod som lägger till det i en lista.
     //18. Gör likadant med ojämna tal
     //19. Skriv sedan ut de båda listorna med antalet jämna och ojämna tal
-
     /*
+    static List<int> oddNumbs = new List<int>();
+    static List<int> evenNumbs = new List<int>();
+
     static void Main(string[] args)
     {
         StartProgram();
 
     }
-      private static void StartProgram()
+    private static void StartProgram()
+    {
+        List<int> listOfNumbers = new List<int>();
+
+
+
+        Console.WriteLine("Hej. Skriv in tio tal.");
+         for (int i = 0; i < 10; i++)
+         {
+             Console.Write($"Tal {i}: ");
+             listOfNumbers.Add(Convert.ToInt32(Console.ReadLine()));
+         }
+         Sort(listOfNumbers);
+         Console.WriteLine(" ");
+         Console.WriteLine("Even numbers:");
+         Console.Write(string.Join(", ", evenNumbs));
+         Console.WriteLine(" ");
+         Console.WriteLine("------------------");
+         Console.WriteLine("Odd numbers:");
+         Console.Write(string.Join(", ", oddNumbs));
+    }
+
+    static void Sort(List<int> listOfNumbers)
+    {
+        foreach (var item in listOfNumbers)
+        {
+            if (item % 2 == 0)
             {
-                Console.WriteLine("Hej. Skriv in tio tal.");
-                for (int i = 1; i < 11; i++)
-                {
-                    Console.Write($"Tal {i}: ");
-                    listOfNumbers.Add(Convert.ToInt32(Console.ReadLine()));
-                }
-                Sort(listOfNumbers);
-                Console.WriteLine(" ");
-                Console.WriteLine("Even numbers:");
-                Console.Write(string.Join(", ", evenNumbs));
-                Console.WriteLine(" ");
-                Console.WriteLine("------------------");
-                Console.WriteLine("Odd numbers:");
-                Console.Write(string.Join(", ", oddNumbs));
+
+                EvenNumbers(item);
             }
+            else
+            {
+                OddNumbers(item);
+            }
+        }
+    }
+    static int EvenNumbers(int even)
+    {
 
-            static void Sort(List<int> listOfNumbers)
-                {
-                    foreach (var item in listOfNumbers)
-                    {
-                        if (item % 2 == 0)
-                        {
+        evenNumbs.Add(even);
+        return even;
+    }
+    static int OddNumbers(int odd)
+    {
 
-                            EvenNumbers(item);
-                        }
-                        else
-                        {
-                            OddNumbers(item);
-                        }
-                    }
-                }
-                static void EvenNumbers(int even)
-                {
-                    evenNumbs.Add(even);
-                }
-                static void OddNumbers(int odd)
-                {
-                    oddNumbs.Add(odd);
-                }
+        oddNumbs.Add(odd);
+        return odd;
+    }
 
 
 
@@ -815,254 +826,403 @@ namespace Metoder_Benny_och_Nicklas
                 Console.WriteLine($"lies lies lies...");
              }
         }*/
-    /* } */
+    /* } */ // <---- TA BORT DETTA ÄR CLASS PROGRAMS AVSLUT
 
 
     // -------------------------------------------------------------------------------------------
     // **************************** ÖVNINGAR del 7 KLASSER ***************************************
     // -------------------------------------------------------------------------------------------
-    // 1.Skapa en class som heter Fordon 
-    // 2. Ge denna klass generella egenskaper hos ett fordon 
-    // 3. Skapa ett object som skall efterlikna ett flygplan 
-    // 4. Skapa ett object som skall efterlinkna en pansarvagn
-    // 5. Skapa ett object som skall efterlikna en elstyrd scooter
-    // 6. Ge klassen en Describe metod som skriver ut de olika delarna
-    // 7. Ge alla klasser en GoForward metod som beskriver hur ett sådant fordon rör på sig
+    // 1.Skapa en class som heter Fordon!
+    // 2. Ge denna klass generella egenskaper hos ett fordon!
+    // 3. Skapa ett object som skall efterlikna ett flygplan!
+    // 4. Skapa ett object som skall efterlinkna en pansarvagn!
+    // 5. Skapa ett object som skall efterlikna en elstyrd scooter!
+    // 6. Ge klassen en Describe metod som skriver ut de olika delarna!
+    // 7. Ge alla klasser en GoForward metod som beskriver hur ett sådant fordon rör på sig!
 
+    class Vehicle // Klassen Vehicle är föräldern och representerar blueprinten som används i klasserna som ärver förälderns egenskaper.
+    {
+        private string brand;
+        private string model;
+        private int modelYear;
+        private string color;
+        private int gas;
+
+        public string Brand
+        {
+            get
+            {
+                return brand;
+            }
+            set
+            {
+                brand = value;
+            }
+        }
+        public string Model
+        {
+            get
+            {
+                return model;
+            }
+            set
+            {
+                model = value;
+            }
+        }
+        public int ModelYear
+        {
+            get
+            {
+                return modelYear;
+            }
+            set
+            {
+                modelYear = value;
+            }
+        }
+        public string Color
+        {
+            get
+            {
+                return color;
+            }
+            set
+            {
+                color = value;
+            }
+        }
+        public int Gas
+        {
+            get
+            {
+                return gas;
+            }
+            set
+            {
+                gas = value;
+            }
+        }
+        public string Describe()
+        {
+            string answer = ($"The vehicle is of the make {brand} and the model is {model}. It was produced {modelYear} and has the color {color} and {gas} litres of fuel.");
+            return answer;
+        }
+    }
+
+    class Airplane : Vehicle // Classen Airplane ärver från classen Vehicle vilket indikeras med Förälderns namn : Childs namn.
+    {
+        public Airplane() // TOM KONSTRUKTOR
+        {
+          
+        }
+        public Airplane(string brand, string model, int modelYear, string color, int gas) // KONSTRUKTOR som tar inparametrar. Dessa måste skrivas i rätt ordning string brand först för att den ligger först i konstruktorn och föräldern.
+        {
+            this.Brand = brand;
+            this.Model = model;
+            this.ModelYear = modelYear;
+            this.Color = color;
+            this.Gas = gas;
+        }
+        public void GoForward()
+        {
+            Console.WriteLine("The airplane is to old and the engine died, you will crash and die in 2 seconds.");
+        }
+         
+    }
+    class Tank : Vehicle // Classen Tank ärver från classen Vehicle vilket indikeras med Förälderns namn : Childs namn.
+    {
+        public Tank() // TOM KONSTRUKTOR
+        {
+           
+        }
+        public Tank(string brand, string model, int modelYear, string color, int gas) // KONSTRUKTOR som tar inparametrar. Dessa måste skrivas i rätt ordning string brand först för att den ligger först i konstruktorn och föräldern.
+        {
+            this.Brand = brand;
+            this.Model = model;
+            this.ModelYear = modelYear;
+            this.Color = color;
+            this.Gas = gas;
+        }
+        public void GoForward()
+        {
+            Console.WriteLine("The Tank is out of ammo and will instead try to run enemies over");
+        }
+    }
+    class Scooter : Vehicle // Classen Scooter ärver från classen Vehicle vilket indikeras med Förälderns namn : Childs namn.
+    {
+        public Scooter() // TOM KONSTRUKTOR
+        {
+           
+        }
+
+        public Scooter(string brand, string model, int modelYear, string color, int gas) // KONSTRUKTOR som tar inparametrar. Dessa måste skrivas i rätt ordning string brand först för att den ligger först i konstruktorn och föräldern.
+        {
+            this.Brand = brand;
+            this.Model = model;
+            this.ModelYear = modelYear;
+            this.Color = color;
+            this.Gas = gas;
+        }
+        public void GoForward()
+        {
+            Console.WriteLine("The scooter is to slow, the zombie horde catches you and you die...");
+        }
+    }
     class Program 
     {
         static void Main(string[] args)
         {
+            Airplane plane = new Airplane();
+            plane.Brand = "Piper"; // <--- brand cant be reached due to its protection lvl.
+            plane.Model = "Cessna";
+            plane.ModelYear = 1932;
+            plane.Color = "White";
+            plane.Gas = 500;
 
-        }
+            Scooter myScooter = new Scooter("TeenyWeeny", "StringBikini", 2005, "Faluröd", 3);
+            Tank wreckingBall = new Tank("KillerMachines", "KillYaAss", 1937, "Candy apple red", 53);
+            Console.WriteLine(plane.Describe());
+            plane.GoForward();
+            Console.WriteLine(Environment.NewLine); 
+            Console.WriteLine(myScooter.Describe());
+            myScooter.GoForward();
+            Console.WriteLine(Environment.NewLine);
+            wreckingBall.GoForward();
+            Console.WriteLine(wreckingBall.Describe());
+
+        }    
     }
 
+
     
+
+
     
     /*
     class Program
     {
-        static void Main(string[] args)
-        {
-            Airplane Airplane = new Airplane();
-            Airplane.brand = "Saab";
-            Airplane.model = "Jas 39 Gripen";
-            Airplane.year = 2020;
-            Airplane.color = "Militärbajsbrun";
-            Airplane.damaged = true;
-            Airplane.speed = 2500;
-            Airplane.charge = 100;
-            Console.WriteLine(Airplane.Describe());
-            Airplane.GoForward();
-            Console.WriteLine(Environment.NewLine);
-
-            Tank Tank = new Tank();
-            Tank.brand = "Pansarvagn 90";
-            Tank.model = "Tiger";
-            Tank.year = 1965;
-            Tank.color = "Militärbajsgrön";
-            Tank.damaged = true;
-            Tank.speed = 80;
-            Tank.charge = 50;
-            Console.WriteLine(Tank.Describe());
-            Tank.GoForward();
-            Console.WriteLine(Environment.NewLine);
-
-            Scooter Scooter = new Scooter();
-            Scooter.brand = "ChingChong";
-            Scooter.model = "Fjong bong";
-            Scooter.year = 2018;
-            Scooter.color = "GrisRosa";
-            Scooter.damaged = false;
-            Scooter.speed = 250;
-            Scooter.charge = 100;
-            Console.WriteLine(Scooter.Describe());
-            Scooter.GoForward();
-            Console.WriteLine(Environment.NewLine);
-
-        }
-
-        class Vehicle
-        {
-            public string brand;
-            public string model;
-            public int year;
-            public string color;
-            public bool damaged;
-            public int speed;
-            public int charge;
-
-            public string Describe()
+            static void Main(string[] args)
             {
-                string answer = ("This vehicle is " + brand + " " + model + " from " + year + " The color is " + color + " Damaged or used status: " + damaged + " It has the top speed of " + speed + " and comes with a full tank " + charge + "%");
-                return answer;
+                Airplane Airplane = new Airplane();
+                Airplane.brand = "Saab";
+                Airplane.model = "Jas 39 Gripen";
+                Airplane.year = 2020;
+                Airplane.color = "Militärbajsbrun";
+                Airplane.damaged = true;
+                Airplane.speed = 2500;
+                Airplane.charge = 100;
+                Console.WriteLine(Airplane.Describe());
+                Airplane.GoForward();
+                Console.WriteLine(Environment.NewLine);
+
+                Tank Tank = new Tank();
+                Tank.brand = "Pansarvagn 90";
+                Tank.model = "Tiger";
+                Tank.year = 1965;
+                Tank.color = "Militärbajsgrön";
+                Tank.damaged = true;
+                Tank.speed = 80;
+                Tank.charge = 50;
+                Console.WriteLine(Tank.Describe());
+                Tank.GoForward();
+                Console.WriteLine(Environment.NewLine);
+
+                Scooter Scooter = new Scooter();
+                Scooter.brand = "ChingChong";
+                Scooter.model = "Fjong bong";
+                Scooter.year = 2018;
+                Scooter.color = "GrisRosa";
+                Scooter.damaged = false;
+                Scooter.speed = 250;
+                Scooter.charge = 100;
+                Console.WriteLine(Scooter.Describe());
+                Scooter.GoForward();
+                Console.WriteLine(Environment.NewLine);
+
             }
 
-        }
-        class Airplane : Vehicle
-        {
-            public void GoForward()
+            class Vehicle
             {
-                Console.WriteLine("Planet flyger fram");
+                public string brand;
+                public string model;
+                public int year;
+                public string color;
+                public bool damaged;
+                public int speed;
+                public int charge;
+
+                public string Describe()
+                {
+                    string answer = ("This vehicle is " + brand + " " + model + " from " + year + " The color is " + color + " Damaged or used status: " + damaged + " It has the top speed of " + speed + " and comes with a full tank " + charge + "%");
+                    return answer;
+                }
+
+            }
+            class Airplane : Vehicle
+            {
+                public void GoForward()
+                {
+                    Console.WriteLine("Planet flyger fram");
+                }
+            }
+            class Scooter : Vehicle
+            {
+                public void GoForward()
+                {
+                    Console.WriteLine("Scootern swishar fram...");
+                }
+            }
+            class Tank : Vehicle
+            {
+                public void GoForward()
+                {
+                    Console.WriteLine("Tanken mosar allt i sin väg när den kör genom skogen.");
+                }
             }
         }
-        class Scooter : Vehicle
-        {
-            public void GoForward()
-            {
-                Console.WriteLine("Scootern swishar fram...");
-            }
-        }
-        class Tank : Vehicle
-        {
-            public void GoForward()
-            {
-                Console.WriteLine("Tanken mosar allt i sin väg när den kör genom skogen.");
-            }
-        }
-    }
-    */
-          /* 
-        8. Skapa en class som heter fastigheter
-        9. Ge denna klass generella egenskaper hos en fastighet (såsom rum, kök etc)
-        10. Skapa ett object som skall efterlikna ett radhus
-        11. Skapa ett object som skall efterlikna villa
-        12. Skapa ett object som skall efterlikna ett lägenhetskomplex
-        13. Ge alla klasser en passande Describe metod
-        14. Skapa ett program som låter användaren välja vilken av dessa som hen vill få beskrivet till sig.
         */
-    /*
-   class Fastigheter
-   {
-      int sovrum;
-      int badrum;
-      int allrum;
-      int klädkammare;
-      int toalett;
+              /* 
+            8. Skapa en class som heter fastigheter
+            9. Ge denna klass generella egenskaper hos en fastighet (såsom rum, kök etc)
+            10. Skapa ett object som skall efterlikna ett radhus
+            11. Skapa ett object som skall efterlikna villa
+            12. Skapa ett object som skall efterlikna ett lägenhetskomplex
+            13. Ge alla klasser en passande Describe metod
+            14. Skapa ett program som låter användaren välja vilken av dessa som hen vill få beskrivet till sig.
+            */
+        /*
+       class Fastigheter
+       {
+          int sovrum;
+          int badrum;
+          int allrum;
+          int klädkammare;
+          int toalett;
 
-      public Fastigheter(int Sovrum, int Badrum, int Allrum, int Klädkammare, int Toalett)
-      {
-          this.sovrum = Sovrum;
-          this.badrum = Badrum;
-          this.allrum = Allrum;
-          this.klädkammare = Klädkammare;
-          this.toalett = Toalett;
-      }
+          public Fastigheter(int Sovrum, int Badrum, int Allrum, int Klädkammare, int Toalett)
+          {
+              this.sovrum = Sovrum;
+              this.badrum = Badrum;
+              this.allrum = Allrum;
+              this.klädkammare = Klädkammare;
+              this.toalett = Toalett;
+          }
 
-   }
+       }
 
-   class Villa : Fastigheter
-   {
-      public Villa(int Sovrum, int Badrum, int Allrum, int Klädkammare, int Toalett)
-      {           
-          this.sovrum = Sovrum;
-          this.badrum = Badrum;
-          this.allrum = Allrum;
-          this.klädkammare = Klädkammare;
-          this.toalett = Toalett;
-      }
+       class Villa : Fastigheter
+       {
+          public Villa(int Sovrum, int Badrum, int Allrum, int Klädkammare, int Toalett)
+          {           
+              this.sovrum = Sovrum;
+              this.badrum = Badrum;
+              this.allrum = Allrum;
+              this.klädkammare = Klädkammare;
+              this.toalett = Toalett;
+          }
 
-      public void Describe()
-      {
-          Console.WriteLine("Gummibralla");
-      }
-   }
+          public void Describe()
+          {
+              Console.WriteLine("Gummibralla");
+          }
+       }
 
-   class Program
-   {
+       class Program
+       {
        
-   } 
+       } 
 
-    // 8. Skapa en class som heter fastigheter
-    // 9. Ge denna klass generella egenskaper hos en fastighet(såsom rum, kök etc)
-    // 10. Skapa ett object som skall efterlikna ett radhus
-    // 11. Skapa ett object som skall efterlikna villa
-    // 12. Skapa ett object som skall efterlikna ett lägenhetskomplex
-    // 13. Ge alla klasser en passande Describe metod
-    // 14. Skapa ett program som låter användaren välja vilken av dessa som hen vill få beskrivet till sig.
-    /*
-     public class Fastigheter //Parent -  äger Field + Property (Get och Set)
-     {
-        //Field
-        private int sovrum;
-        private int badrum;
-        private int allrum;
-        private int klädkammare;
-        private int toalett;
-        private int kök;
+        // 8. Skapa en class som heter fastigheter
+        // 9. Ge denna klass generella egenskaper hos en fastighet(såsom rum, kök etc)
+        // 10. Skapa ett object som skall efterlikna ett radhus
+        // 11. Skapa ett object som skall efterlikna villa
+        // 12. Skapa ett object som skall efterlikna ett lägenhetskomplex
+        // 13. Ge alla klasser en passande Describe metod
+        // 14. Skapa ett program som låter användaren välja vilken av dessa som hen vill få beskrivet till sig.
+        /*
+         public class Fastigheter //Parent -  äger Field + Property (Get och Set)
+         {
+            //Field
+            private int sovrum;
+            private int badrum;
+            private int allrum;
+            private int klädkammare;
+            private int toalett;
+            private int kök;
 
-        //property
-        public int Sovrum
-        {
-            get
+            //property
+            public int Sovrum
             {
-                return sovrum;
+                get
+                {
+                    return sovrum;
+                }
+                set 
+                {
+                    sovrum = value;
+                }
             }
-            set 
+            public int Badrum
             {
-                sovrum = value;
+                get
+                {
+                    return badrum;
+                }
+                set
+                {
+                    badrum = value;
+                }
             }
-        }
-        public int Badrum
-        {
-            get
+            public int Allrum
             {
-                return badrum;
+                get
+                {
+                    return allrum;
+                }
+                set
+                {
+                    allrum = value;
+                }
             }
-            set
+            public int Klädkammare
             {
-                badrum = value;
+                get
+                {
+                    return klädkammare;
+                }
+                set
+                {
+                    klädkammare = value;
+                }
             }
-        }
-        public int Allrum
-        {
-            get
+            public int Toalett
             {
-                return allrum;
+                get
+                {
+                    return toalett;
+                }
+                set
+                {
+                    toalett = value;
+                }
             }
-            set
+            public int Kök
             {
-                allrum = value;
+                get
+                {
+                    return kök;
+                }
+                set
+                {
+                    kök = value;
+                }
             }
-        }
-        public int Klädkammare
-        {
-            get
-            {
-                return klädkammare;
-            }
-            set
-            {
-                klädkammare = value;
-            }
-        }
-        public int Toalett
-        {
-            get
-            {
-                return toalett;
-            }
-            set
-            {
-                toalett = value;
-            }
-        }
-        public int Kök
-        {
-            get
-            {
-                return kök;
-            }
-            set
-            {
-                kök = value;
-            }
-        }
 
-     }
+         }
 
-     class Radhus : Fastigheter // Child
-     {
+    class Radhus : Fastigheter // Child
+    {
         //Construktor 
         public Radhus(int sovrum, int badrum, int allrum, int klädkammare, int toalett, int kök)
         {
@@ -1073,10 +1233,10 @@ namespace Metoder_Benny_och_Nicklas
             this.Toalett = toalett;
             this.Kök = kök;
         }
-     }
+    }
 
-     class Villa : Fastigheter // Child
-     {
+    class Villa : Fastigheter // Child
+    {
         public Villa(int sovrum, int badrum, int allrum, int klädkammare, int toalett, int kök)
         {
             this.Sovrum = sovrum;
@@ -1090,10 +1250,10 @@ namespace Metoder_Benny_och_Nicklas
         {
             Console.WriteLine("Gummibralla");
         }
-     }
+    }
 
-     class Program
-     {
+    class Program
+    {
         static void Main(string[] args)
         {
             Radhus radhusBadhus = new Radhus(12, 4, 4, 6, 8, 1);  // Vill vi bygga en Radhus så skriver vi så här.
@@ -1108,5 +1268,5 @@ namespace Metoder_Benny_och_Nicklas
             }
             
         }
-     }*/
+    }*/
 }
