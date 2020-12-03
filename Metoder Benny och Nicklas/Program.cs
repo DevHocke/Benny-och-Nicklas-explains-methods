@@ -1313,12 +1313,12 @@ namespace Metoder_Benny_och_Nicklas
                 switch (menu)
                 {
                     case 1:
-                        tasks = AddToDo(); // FUNGERAR
+                        tasks = AddToDo(); 
                         break;
                     case 2:
-                        CheckToDo(tasks); // FUNGERAR
+                        CheckToDo(tasks); 
                         break;
-                    case 3: // FUNGERAR
+                    case 3: 
                         Exit();
                         break;
                 }
@@ -1341,7 +1341,7 @@ namespace Metoder_Benny_och_Nicklas
             {
                 Console.WriteLine($"{index++} {item}");
             }
-            Console.WriteLine("Do you want to mark any ToDo as finished?");
+            Console.WriteLine("Do you want to remove any ToDo's?");
             Console.WriteLine("1. Go to main menu. ");
             Console.WriteLine("2. Remove ToDo tasks ");
             int menu = Convert.ToInt32(Console.ReadLine());
