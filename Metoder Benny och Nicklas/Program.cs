@@ -1280,17 +1280,12 @@ namespace Metoder_Benny_och_Nicklas
     class Program
     {
         
-
-        
         static void Main(string[] args)
         {
-            var tasks = new List<string>();
-            var completedTasks = new List<string>();
-            
+
             Welcome();
 
-
-        }
+        } 
         static void Welcome()
         {
             Console.WriteLine("Welcome to the ToDoList");
@@ -1298,11 +1293,54 @@ namespace Metoder_Benny_och_Nicklas
         }
         static void StartProgram()
         {
+            List<string> tasks = new List<string>();
+            var completedTasks = new List<string>();
             bool keepGoing = true;
             do
             {
+                Console.WriteLine("***************************************");
+                Console.WriteLine("****** Welcome to the to do list! *****");
+                Console.WriteLine("******* What do you want to do? *******");
+                Console.WriteLine("***************************************");
+                Console.WriteLine("* 1. Add a new to do to the list.     *");
+                Console.WriteLine("* 2. Check the to do list.            *");
+                Console.WriteLine("* 3.  Quit                            *"); 
+                Console.WriteLine("***************************************");
 
-            } while (keepGoing = true);
+                int menu = 0;
+                switch (menu)
+                {
+                    case 1:
+                      tasks = AddToDo();
+                        break;
+                    case 2:
+                        CheckToDo(tasks);
+                        break;
+                    case 3:
+                        Exit();
+                        break;
+                }
+
+            } while (keepGoing == true);
+        }
+        static List<string> AddToDo()
+        {
+            List<string> toDo = new List<string>();
+            Console.WriteLine("Write a To Do and then press enter to save it: ");
+            toDo.Add(Console.ReadLine()); 
+            return toDo;
+        }
+        static void CheckToDo(List<string> tasks)
+        {
+            int index = 1;
+            foreach (var item in tasks)
+            {
+                Console.WriteLine($"{index++} {item}");
+            }
+        }
+        static void Exit()
+        {
+            Environment.Exit(0);
         }
     }
 
