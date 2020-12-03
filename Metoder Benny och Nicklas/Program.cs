@@ -1015,11 +1015,132 @@ namespace Metoder_Benny_och_Nicklas
     // 13. Ge alla klasser en passande Describe metod
     // 14. Skapa ett program som låter användaren välja vilken av dessa som hen vill få beskrivet till sig.
 
+    public class Fastigheter //Parent -  äger Field + Property (Get och Set)
+    {
+        //Field
+        private int sovrum;
+        private int badrum;
+        private int allrum;
+        private int klädkammare;
+        private int toalett;
+        private int kök;
+
+        //property
+        public int Sovrum
+        {
+            get
+            {
+                return sovrum;
+            }
+            set 
+            {
+                sovrum = value;
+            }
+        }
+        public int Badrum
+        {
+            get
+            {
+                return badrum;
+            }
+            set
+            {
+                badrum = value;
+            }
+        }
+        public int Allrum
+        {
+            get
+            {
+                return allrum;
+            }
+            set
+            {
+                allrum = value;
+            }
+        }
+        public int Klädkammare
+        {
+            get
+            {
+                return klädkammare;
+            }
+            set
+            {
+                klädkammare = value;
+            }
+        }
+        public int Toalett
+        {
+            get
+            {
+                return toalett;
+            }
+            set
+            {
+                toalett = value;
+            }
+        }
+        public int Kök
+        {
+            get
+            {
+                return kök;
+            }
+            set
+            {
+                kök = value;
+            }
+        }
+
+    }
+
+    class Radhus : Fastigheter // Child
+    {
+        //Construktor 
+        public Radhus(int sovrum, int badrum, int allrum, int klädkammare, int toalett, int kök)
+        {
+            this.Sovrum = sovrum; //Säger att er property-Sovrum är samma som Parent-field's variabler
+            this.Badrum = badrum;
+            this.Allrum = allrum;
+            this.Klädkammare = klädkammare;
+            this.Toalett = toalett;
+            this.Kök = kök;
+        }
+    }
+
+    class Villa : Fastigheter // Child
+    {
+        public Villa(int sovrum, int badrum, int allrum, int klädkammare, int toalett, int kök)
+        {
+            this.Sovrum = sovrum;
+            this.Badrum = badrum;
+            this.Allrum = allrum;
+            this.Klädkammare = klädkammare;
+            this.Toalett = toalett;
+            this.Kök = kök;
+        }
+
+        public void Describe()
+        {
+            Console.WriteLine("Gummibralla");
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
+            Radhus radhusBadhus = new Radhus(12, 4, 4, 6, 8, 1);  // Vill vi bygga en Radhus så skriver vi så här.
+            Villa villaVillekulla = new Villa(5, 2, 1, 3, 2, 1);  // Vill vi bygga en villa så skriver vi så här.
+            Villa villaVillekulla2 = new Villa(6, 1, 2, 4, 3, 2); // Villa nr 2.
 
+            List<Villa> husLista = new List<Villa>() { villaVillekulla, villaVillekulla2 };
+            int index = 1;
+            foreach (var hus in husLista)
+            {
+                Console.WriteLine($"Hus{index++} har {hus.Badrum} badrum.");
+            }
         }
     }
 }
