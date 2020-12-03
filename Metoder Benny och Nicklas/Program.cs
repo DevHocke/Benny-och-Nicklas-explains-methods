@@ -1279,7 +1279,8 @@ namespace Metoder_Benny_och_Nicklas
         // 7. Ta bort uppgifter från tasks
     class Program
     {
-        
+        static List<string> tasks = new List<string>();
+        static List<string> completedTasks = new List<string>();
         static void Main(string[] args)
         {
 
@@ -1293,9 +1294,10 @@ namespace Metoder_Benny_och_Nicklas
         }
         static void StartProgram()
         {
-            List<string> tasks = new List<string>();
-            var completedTasks = new List<string>();
+            
             bool keepGoing = true;
+            int menu;
+
             do
             {
                 Console.WriteLine("***************************************");
@@ -1304,31 +1306,33 @@ namespace Metoder_Benny_och_Nicklas
                 Console.WriteLine("***************************************");
                 Console.WriteLine("* 1. Add a new to do to the list.     *");
                 Console.WriteLine("* 2. Check the to do list.            *");
-                Console.WriteLine("* 3.  Quit                            *"); 
+                Console.WriteLine("* 3.  Quit                            *");
                 Console.WriteLine("***************************************");
 
-                int menu = 0;
+                menu = Convert.ToInt32(Console.ReadLine());
                 switch (menu)
                 {
                     case 1:
-                      tasks = AddToDo();
+                        tasks = AddToDo(); // FUNGERAR
                         break;
                     case 2:
-                        CheckToDo(tasks);
+                        CheckToDo(tasks); // FUNGERAR
                         break;
-                    case 3:
+                    case 3: // FUNGERAR
                         Exit();
                         break;
                 }
-
-            } while (keepGoing == true);
+            } while (menu != 3);
+            
         }
         static List<string> AddToDo()
         {
-            List<string> toDo = new List<string>();
+            
             Console.WriteLine("Write a To Do and then press enter to save it: ");
-            toDo.Add(Console.ReadLine()); 
-            return toDo;
+            string toDoIn = Console.ReadLine();
+            tasks.Add(toDoIn);
+            Console.Clear();
+            return tasks;
         }
         static void CheckToDo(List<string> tasks)
         {
@@ -1337,10 +1341,37 @@ namespace Metoder_Benny_och_Nicklas
             {
                 Console.WriteLine($"{index++} {item}");
             }
+            Console.WriteLine("Do you want to mark any ToDo as finished?");
+            Console.WriteLine("1. Go to main menu. ");
+            Console.WriteLine("2. Remove ToDo tasks ");
+            int menu = Convert.ToInt32(Console.ReadLine());
+            
+            switch (menu)
+            {
+                case 1:
+                    StartProgram();
+                    break;
+                case 2:
+                    IsFinished();
+                    break;            
+            }
         }
+
         static void Exit()
         {
             Environment.Exit(0);
+        }
+        static void IsFinished()
+        {
+            int index = 1;
+            foreach (var item in tasks)
+            {
+                Console.WriteLine($"{index++} {item}");
+            }
+            Console.WriteLine("Wich task do you want to remove?");
+            int answer = Convert.ToInt32(Console.ReadLine());
+            tasks.RemoveAt(answer -1);
+
         }
     }
 
