@@ -1400,28 +1400,40 @@ class Program
     //4. Ändra så att dina fält är privata och testa så att det endast går att uppdatera dem genom dina properties.
     //5. Ändra på ditt property för antalet studenter så att om någon försöker mata in ett negativt antal studenter så sparas 0 istället.
 
-
-    /*
     class Program
     {
         static void Main(string[] args)
         {
-            CourseClass hej = new CourseClass("Gummikursen", 69);
+            //  1.Skapa en publik klass som reprsenterar en kurs.!
+            //  2.Deklarera två publika fält, en sträng för namnet på kursen och en int för!
+            //    antalet studenter som läser kursen(t.ex. "Objektorienterad programmering i C#" och 56)
+            //  3.Lägg till propertier(get och set) för ett fält i taget.
+            //  4.Ändra så att dina fält är privata och testa så att det endast går att uppdatera dem genom dina
+            //    properties.
+            //  5.Ändra på ditt property för antalet studenter så att om någon försöker mata in ett negativt
+            //    antal studenter så sparas 0 istället.
 
-            hej.Course = "Latexkurs";
-            hej.Students = -15;
-            Console.WriteLine(hej.Course);
-            Console.WriteLine(hej.Students);
+            /* CourseClass hej = new CourseClass("Gummikursen", 69);
+
+             hej.Course = "Latexkurs";
+             hej.Students = 15;
+             Console.WriteLine(hej.Course);
+             Console.WriteLine(hej.Students);*/
+            CourseClass Course1 = new CourseClass(".Net Utvecklare", 57);
+            Teacher minLarare = new Teacher("Håkan", 44, 187);
+            minLarare.TeacherInfo();
+
         }
     }
     // 1.
-    class CourseClass
+    public class CourseClass  // Skapar en class med namn CourseClass. 
     {
         // 2. 4.
-        private string course;
-        private int students;
+        private string course; //  
+        private int students;  // 
 
-        public CourseClass()
+
+        public CourseClass() // Vi skapar ett tomt fält för att 
         {
 
         }
@@ -1436,7 +1448,7 @@ class Program
         public string Course
         {
             get { return course; }
-            set { this.course = value; }
+            set { course = value; }
         }
         public int Students
         {
@@ -1445,29 +1457,107 @@ class Program
             {
                 if (value > 0)
                 {
-                    this.students = value;
+                    students = value;
                 }
                 else
                 {
-                    this.students = 0;
+                    students = 0;
                 }
 
             }
         }
-    } */
+
+    }
+
     // -----------------------------------------------------------------------------------------------------------
     // *************************************** ÖVNINGSUPPGIFT 8 del 2*********************************************
     // -----------------------------------------------------------------------------------------------------------
-    //6. Skapa en klass human, och ge dem fält för namn, ålder och längd.
-    //7. Skapa en klass teacher som ärver ifrån human. 
-    //8. Ge teacher ett fält för kursen som du skapade i deluppgifter 1-5, och skriv en property för att ändra den. 
-    //9. Skriv en metod för teacher som skriver ut "Hej mitt namn är {namn} och jag under visar {antalet studenter} i kursen {namnet på kursen}." till terminalen. 
-    //10. Gör en egen klass för student som läser en kurs och skriv sedan en metod där den studenten introducerar sig och vilken kurs hen läser.
-    class Program
+    // 6. Skapa en klass human, och ge dem fält för namn, ålder och längd.
+    // 7. Skapa en klass teacher som ärver ifrån human. 
+    // 8. Ge teacher ett fält för kursen som du skapade i deluppgifter 1-5, och skriv en property för att ändra den. 
+    //9. Skriv en metod för teacher som skriver ut "Hej mitt namn är {namn} och jag undervisar {antalet studenter} 
+    //   i kursen {namnet på kursen}." till terminalen. 
+    // 10. Gör en egen klass för student som läser en kurs och skriv sedan en metod där den studenten introducerar sig och vilken kurs hen läser.
+
+    // 6.
+    class Human
     {
-        static void Main(string[] args)
+        // 6.
+        private string name;
+        private int age;
+        private int height;
+
+        public Human()
         {
-            
+
+        }
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+        public int Age
+        {
+            get
+            {
+                return age;
+            }
+            set
+            {
+                age = value;
+            }
+        }
+        public int Height
+        {
+            get
+            {
+                return height;
+            }
+            set
+            {
+                height = value;
+            }
+        }
+    }
+    // 7
+    class Teacher : Human
+    {
+
+        public Teacher(string name, int age, int height)
+        {
+            this.Name = name;
+            this.Age = age;
+            this.Height = height;
+        }
+
+        // 8.
+        string teacherCourse = Course1.Course;
+        public string TeacherCourse
+        {
+            get
+            {
+                return teacherCourse;
+            }
+
+            set
+            {
+                teacherCourse = "Poopface";
+
+            }
+        }
+
+        public void TeacherInfo(object Course1)
+        {
+
+            Console.WriteLine($"Hej mitt namn är {minLarare.Name} och jag undervisar {Students} i kursen {TeacherCourse} ");
+
         }
     }
 }
