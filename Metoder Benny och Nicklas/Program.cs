@@ -395,47 +395,47 @@ namespace Metoder_Benny_och_Nicklas
                 }
             }
 
-        } */
+        } /*
 
-    //8.Skriv en metod sorteraTreTal som tar tre tal som paramterar och returnerar en array.
-    //9.Skapa en array och placera dina tre tal i storleksordning i arrayen.
-    //    Du kan återanvända kod från tidigare uppgifter för att ta reda på vilket tal som är stört, mellan och minst.
-    //10.Returnera arrayen.
-    //11.Testa så att metoden fungerar genom att skriva ut arrayen med hjälp av en foreach-loop i huvudprogrammet.
-    // Default är en bool false.
-    /*
-    string enIfKontroll = default(string); // Default är en string "". Det går att kontrollera med isNullOrEmpty
-    if (string.IsNullOrEmpty(enIfKontroll))
-    {
+        //8.Skriv en metod sorteraTreTal som tar tre tal som paramterar och returnerar en array.
+        //9.Skapa en array och placera dina tre tal i storleksordning i arrayen.
+        //    Du kan återanvända kod från tidigare uppgifter för att ta reda på vilket tal som är stört, mellan och minst.
+        //10.Returnera arrayen.
+        //11.Testa så att metoden fungerar genom att skriva ut arrayen med hjälp av en foreach-loop i huvudprogrammet.
+        // Default är en bool false.
+        /*
+        string enIfKontroll = default(string); // Default är en string "". Det går att kontrollera med isNullOrEmpty
+        if (string.IsNullOrEmpty(enIfKontroll))
+        {
 
-    }
+        }
 
-    int[] sortArray = new int[3];
-
-
-     Console.WriteLine("Ange tal 1. ");
-     sortArray[0] = Convert.ToInt32(Console.ReadLine());
-     Console.WriteLine("Ange tal 2. ");
-     sortArray[1] = Convert.ToInt32(Console.ReadLine());
-     Console.WriteLine("Ange tal 3. ");
-     sortArray[2] = Convert.ToInt32(Console.ReadLine());
-
-    SorteraTreTal(sortArray);  // Kallar på metoden SorteraTreTal som tar in de tre talen från användaren och sorterar dem med Array.Sort
-
-    foreach (var item in sortArray)
-    {
-        Console.WriteLine(item);
-    }
+        int[] sortArray = new int[3];
 
 
+         Console.WriteLine("Ange tal 1. ");
+         sortArray[0] = Convert.ToInt32(Console.ReadLine());
+         Console.WriteLine("Ange tal 2. ");
+         sortArray[1] = Convert.ToInt32(Console.ReadLine());
+         Console.WriteLine("Ange tal 3. ");
+         sortArray[2] = Convert.ToInt32(Console.ReadLine());
 
-    static int[] SorteraTreTal(int[] bumbiBjörnarna) // Tar in en int Array samt returnerar en int array. 
-    {
-        Array.Sort(bumbiBjörnarna);
-    //  Array.Reverse(bumbiBjörnarna);  // Ändrar ordningen på arrayen.
-        return bumbiBjörnarna;
-    }
-    */
+        SorteraTreTal(sortArray);  // Kallar på metoden SorteraTreTal som tar in de tre talen från användaren och sorterar dem med Array.Sort
+
+        foreach (var item in sortArray)
+        {
+            Console.WriteLine(item);
+        }
+
+
+
+        static int[] SorteraTreTal(int[] bumbiBjörnarna) // Tar in en int Array samt returnerar en int array. 
+        {
+            Array.Sort(bumbiBjörnarna);
+        //  Array.Reverse(bumbiBjörnarna);  // Ändrar ordningen på arrayen.
+            return bumbiBjörnarna;
+        }
+        */
 
     //12.Skriv en metod static int Hexagontal som tar en int n som parameter. 
     //13.I metoden skapa en variabel för summan och sätt det till 0.
@@ -774,11 +774,26 @@ namespace Metoder_Benny_och_Nicklas
     //21. Använd sedan minuterna som argument till en annan metod som konverterar minuter till sekunder. 
     //22. Skriv sedan ut vad timmar blir i minuter och hur många sekunder det är totalt
     /*
-    static void Main(string[] args)
-    {
+    class Program{
+        static void Main(string[] args)
+        {
+            int minutes = (HourToMinutes(1));
+            int sek = MinutesToSec(minutes);
+            Console.WriteLine($"En timme är {minutes} minuter och  {sek} sekunder.");
 
+        }
+        static int HourToMinutes(int time)
+        {
 
-    ConvertTime();
+            return time * 60;
+        }
+
+        static int MinutesToSec(int time)
+        {
+            time = time * 60;
+            return time;
+        }
+
     }
     */
     //23. Hur mycket är sant? Skriv en metod som kollar en array av bool statements och retunera antalet true/false
@@ -1082,297 +1097,377 @@ namespace Metoder_Benny_och_Nicklas
             }
         }
         */
-              /* 
-            8. Skapa en class som heter fastigheter
-            9. Ge denna klass generella egenskaper hos en fastighet (såsom rum, kök etc)
-            10. Skapa ett object som skall efterlikna ett radhus
-            11. Skapa ett object som skall efterlikna villa
-            12. Skapa ett object som skall efterlikna ett lägenhetskomplex
-            13. Ge alla klasser en passande Describe metod
-            14. Skapa ett program som låter användaren välja vilken av dessa som hen vill få beskrivet till sig.
-            */
-        /*
-       class Fastigheter
-       {
-          int sovrum;
-          int badrum;
-          int allrum;
-          int klädkammare;
-          int toalett;
+    /* 
+  8. Skapa en class som heter fastigheter
+  9. Ge denna klass generella egenskaper hos en fastighet (såsom rum, kök etc)
+  10. Skapa ett object som skall efterlikna ett radhus
+  11. Skapa ett object som skall efterlikna villa
+  12. Skapa ett object som skall efterlikna ett lägenhetskomplex
+  13. Ge alla klasser en passande Describe metod
+  14. Skapa ett program som låter användaren välja vilken av dessa som hen vill få beskrivet till sig.
+  */
+    /*
+   class Fastigheter
+   {
+      int sovrum;
+      int badrum;
+      int allrum;
+      int klädkammare;
+      int toalett;
 
-          public Fastigheter(int Sovrum, int Badrum, int Allrum, int Klädkammare, int Toalett)
-          {
-              this.sovrum = Sovrum;
-              this.badrum = Badrum;
-              this.allrum = Allrum;
-              this.klädkammare = Klädkammare;
-              this.toalett = Toalett;
-          }
+      public Fastigheter(int Sovrum, int Badrum, int Allrum, int Klädkammare, int Toalett)
+      {
+          this.sovrum = Sovrum;
+          this.badrum = Badrum;
+          this.allrum = Allrum;
+          this.klädkammare = Klädkammare;
+          this.toalett = Toalett;
+      }
 
-       }
+   }
 
-       class Villa : Fastigheter
-       {
-          public Villa(int Sovrum, int Badrum, int Allrum, int Klädkammare, int Toalett)
-          {           
-              this.sovrum = Sovrum;
-              this.badrum = Badrum;
-              this.allrum = Allrum;
-              this.klädkammare = Klädkammare;
-              this.toalett = Toalett;
-          }
+   class Villa : Fastigheter
+   {
+      public Villa(int Sovrum, int Badrum, int Allrum, int Klädkammare, int Toalett)
+      {           
+          this.sovrum = Sovrum;
+          this.badrum = Badrum;
+          this.allrum = Allrum;
+          this.klädkammare = Klädkammare;
+          this.toalett = Toalett;
+      }
 
-          public void Describe()
-          {
-              Console.WriteLine("Gummibralla");
-          }
-       }
+      public void Describe()
+      {
+          Console.WriteLine("Gummibralla");
+      }
+   }
 
-       class Program
-       {
-       
-       } 
+   class Program
+   {
 
-        // 8. Skapa en class som heter fastigheter
-        // 9. Ge denna klass generella egenskaper hos en fastighet(såsom rum, kök etc)
-        // 10. Skapa ett object som skall efterlikna ett radhus
-        // 11. Skapa ett object som skall efterlikna villa
-        // 12. Skapa ett object som skall efterlikna ett lägenhetskomplex
-        // 13. Ge alla klasser en passande Describe metod
-        // 14. Skapa ett program som låter användaren välja vilken av dessa som hen vill få beskrivet till sig.
-        /*
-         public class Fastigheter //Parent -  äger Field + Property (Get och Set)
-         {
-            //Field
-            private int sovrum;
-            private int badrum;
-            private int allrum;
-            private int klädkammare;
-            private int toalett;
-            private int kök;
+   } 
 
-            //property
-            public int Sovrum
-            {
-                get
-                {
-                    return sovrum;
-                }
-                set 
-                {
-                    sovrum = value;
-                }
-            }
-            public int Badrum
-            {
-                get
-                {
-                    return badrum;
-                }
-                set
-                {
-                    badrum = value;
-                }
-            }
-            public int Allrum
-            {
-                get
-                {
-                    return allrum;
-                }
-                set
-                {
-                    allrum = value;
-                }
-            }
-            public int Klädkammare
-            {
-                get
-                {
-                    return klädkammare;
-                }
-                set
-                {
-                    klädkammare = value;
-                }
-            }
-            public int Toalett
-            {
-                get
-                {
-                    return toalett;
-                }
-                set
-                {
-                    toalett = value;
-                }
-            }
-            public int Kök
-            {
-                get
-                {
-                    return kök;
-                }
-                set
-                {
-                    kök = value;
-                }
-            }
+    // 8. Skapa en class som heter fastigheter
+    // 9. Ge denna klass generella egenskaper hos en fastighet(såsom rum, kök etc)
+    // 10. Skapa ett object som skall efterlikna ett radhus
+    // 11. Skapa ett object som skall efterlikna villa
+    // 12. Skapa ett object som skall efterlikna ett lägenhetskomplex
+    // 13. Ge alla klasser en passande Describe metod
+    // 14. Skapa ett program som låter användaren välja vilken av dessa som hen vill få beskrivet till sig.
+    /*
+     public class Fastigheter //Parent -  äger Field + Property (Get och Set)
+     {
+        //Field
+        private int sovrum;
+        private int badrum;
+        private int allrum;
+        private int klädkammare;
+        private int toalett;
+        private int kök;
 
-         }
-
-    class Radhus : Fastigheter // Child
-    {
-        //Construktor 
-        public Radhus(int sovrum, int badrum, int allrum, int klädkammare, int toalett, int kök)
+        //property
+        public int Sovrum
         {
-            this.Sovrum = sovrum; //Säger att er property-Sovrum är samma som Parent-field's variabler
-            this.Badrum = badrum;
-            this.Allrum = allrum;
-            this.Klädkammare = klädkammare;
-            this.Toalett = toalett;
-            this.Kök = kök;
+            get
+            {
+                return sovrum;
+            }
+            set 
+            {
+                sovrum = value;
+            }
         }
+        public int Badrum
+        {
+            get
+            {
+                return badrum;
+            }
+            set
+            {
+                badrum = value;
+            }
+        }
+        public int Allrum
+        {
+            get
+            {
+                return allrum;
+            }
+            set
+            {
+                allrum = value;
+            }
+        }
+        public int Klädkammare
+        {
+            get
+            {
+                return klädkammare;
+            }
+            set
+            {
+                klädkammare = value;
+            }
+        }
+        public int Toalett
+        {
+            get
+            {
+                return toalett;
+            }
+            set
+            {
+                toalett = value;
+            }
+        }
+        public int Kök
+        {
+            get
+            {
+                return kök;
+            }
+            set
+            {
+                kök = value;
+            }
+        }
+
+     }
+
+class Radhus : Fastigheter // Child
+{
+    //Construktor 
+    public Radhus(int sovrum, int badrum, int allrum, int klädkammare, int toalett, int kök)
+    {
+        this.Sovrum = sovrum; //Säger att er property-Sovrum är samma som Parent-field's variabler
+        this.Badrum = badrum;
+        this.Allrum = allrum;
+        this.Klädkammare = klädkammare;
+        this.Toalett = toalett;
+        this.Kök = kök;
     }
+}
 
-    class Villa : Fastigheter // Child
+class Villa : Fastigheter // Child
+{
+    public Villa(int sovrum, int badrum, int allrum, int klädkammare, int toalett, int kök)
     {
-        public Villa(int sovrum, int badrum, int allrum, int klädkammare, int toalett, int kök)
-        {
-            this.Sovrum = sovrum;
-            this.Badrum = badrum;
-            this.Allrum = allrum;
-            this.Klädkammare = klädkammare;
-            this.Toalett = toalett;
-            this.Kök = kök;
-        }    
-        public void Describe()
-        {
-            Console.WriteLine("Gummibralla");
-        }
+        this.Sovrum = sovrum;
+        this.Badrum = badrum;
+        this.Allrum = allrum;
+        this.Klädkammare = klädkammare;
+        this.Toalett = toalett;
+        this.Kök = kök;
+    }    
+    public void Describe()
+    {
+        Console.WriteLine("Gummibralla");
     }
+}
 
-    class Program
+class Program
+{
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Radhus radhusBadhus = new Radhus(12, 4, 4, 6, 8, 1);  // Vill vi bygga en Radhus så skriver vi så här.
-            Villa villaVillekulla = new Villa(5, 2, 1, 3, 2, 1);  // Vill vi bygga en villa så skriver vi så här.
-            Villa villaVillekulla2 = new Villa(6, 1, 2, 4, 3, 2); // Villa nr 2.
+        Radhus radhusBadhus = new Radhus(12, 4, 4, 6, 8, 1);  // Vill vi bygga en Radhus så skriver vi så här.
+        Villa villaVillekulla = new Villa(5, 2, 1, 3, 2, 1);  // Vill vi bygga en villa så skriver vi så här.
+        Villa villaVillekulla2 = new Villa(6, 1, 2, 4, 3, 2); // Villa nr 2.
 
-            List<Villa> husLista = new List<Villa>() { villaVillekulla, villaVillekulla2 };
-            int index = 1;
-            foreach (var hus in husLista)
-            {
-                Console.WriteLine($"Hus{index++} har {hus.Badrum} badrum.");
-            }
-            
+        List<Villa> husLista = new List<Villa>() { villaVillekulla, villaVillekulla2 };
+        int index = 1;
+        foreach (var hus in husLista)
+        {
+            Console.WriteLine($"Hus{index++} har {hus.Badrum} badrum.");
         }
-    }*/
-        // 1. Börja med att välkomna användaren
-        // 2. Fylla listan med uppgifter
-        // 3. Visa alla uppgifter
-        // 4. Samla allt hittills i en meny där man kan kalla på de andra metoderna
-        //    Nästa steg är att lägga till 3 metoder och 3 nya menyalternativ. Denna gång får du pröva att hitta på dina egna metoddefinitioner!
-        // 5. Flytta avklarade uppgifter från tasks till completedTasks
-        // 6. Visa allt i completedTasks
-        // 7. Ta bort uppgifter från tasks
-    class Program
+
+    }
+}*/
+    // 1. Börja med att välkomna användaren
+    // 2. Fylla listan med uppgifter
+    // 3. Visa alla uppgifter
+    // 4. Samla allt hittills i en meny där man kan kalla på de andra metoderna
+    //    Nästa steg är att lägga till 3 metoder och 3 nya menyalternativ. Denna gång får du pröva att hitta på dina egna metoddefinitioner!
+    // 5. Flytta avklarade uppgifter från tasks till completedTasks
+    // 6. Visa allt i completedTasks
+    // 7. Ta bort uppgifter från tasks
+    /*
+class Program
+{
+    static List<string> tasks = new List<string>();
+    static List<string> completedTasks = new List<string>();
+    static void Main(string[] args)
     {
-        static List<string> tasks = new List<string>();
-        static List<string> completedTasks = new List<string>();
-        static void Main(string[] args)
-        {
 
-            Welcome();
+        Welcome();
 
-        } 
-        static void Welcome()
-        {
-            Console.WriteLine("Welcome to the ToDoList");
-            StartProgram();
-        }
-        static void StartProgram()
-        {
-            
-            bool keepGoing = true;
-            int menu;
+    } 
+    static void Welcome()
+    {
+        Console.WriteLine("Welcome to the ToDoList");
+        StartProgram();
+    }
+    static void StartProgram()
+    {
 
-            do
-            {
-                Console.WriteLine("***************************************");
-                Console.WriteLine("****** Welcome to the to do list! *****");
-                Console.WriteLine("******* What do you want to do? *******");
-                Console.WriteLine("***************************************");
-                Console.WriteLine("* 1. Add a new to do to the list.     *");
-                Console.WriteLine("* 2. Check the to do list.            *");
-                Console.WriteLine("* 3.  Quit                            *");
-                Console.WriteLine("***************************************");
+        bool keepGoing = true;
+        int menu;
 
-                menu = Convert.ToInt32(Console.ReadLine());
-                switch (menu)
-                {
-                    case 1:
-                        tasks = AddToDo(); 
-                        break;
-                    case 2:
-                        CheckToDo(tasks); 
-                        break;
-                    case 3: 
-                        Exit();
-                        break;
-                }
-            } while (menu != 3);
-            
-        }
-        static List<string> AddToDo()
+        do
         {
-            
-            Console.WriteLine("Write a To Do and then press enter to save it: ");
-            string toDoIn = Console.ReadLine();
-            tasks.Add(toDoIn);
-            Console.Clear();
-            return tasks;
-        }
-        static void CheckToDo(List<string> tasks)
-        {
-            int index = 1;
-            foreach (var item in tasks)
-            {
-                Console.WriteLine($"{index++} {item}");
-            }
-            Console.WriteLine("Do you want to remove any ToDo's?");
-            Console.WriteLine("1. Go to main menu. ");
-            Console.WriteLine("2. Remove ToDo tasks ");
-            int menu = Convert.ToInt32(Console.ReadLine());
-            
+            Console.WriteLine("***************************************");
+            Console.WriteLine("****** Welcome to the to do list! *****");
+            Console.WriteLine("******* What do you want to do? *******");
+            Console.WriteLine("***************************************");
+            Console.WriteLine("* 1. Add a new to do to the list.     *");
+            Console.WriteLine("* 2. Check the to do list.            *");
+            Console.WriteLine("* 3.  Quit                            *");
+            Console.WriteLine("***************************************");
+
+            menu = Convert.ToInt32(Console.ReadLine());
             switch (menu)
             {
                 case 1:
-                    StartProgram();
+                    tasks = AddToDo(); 
                     break;
                 case 2:
-                    IsFinished();
-                    break;            
+                    CheckToDo(tasks); 
+                    break;
+                case 3: 
+                    Exit();
+                    break;
             }
-        }
+        } while (menu != 3);
 
-        static void Exit()
-        {
-            Environment.Exit(0);
-        }
-        static void IsFinished()
-        {
-            int index = 1;
-            foreach (var item in tasks)
-            {
-                Console.WriteLine($"{index++} {item}");
-            }
-            Console.WriteLine("Wich task do you want to remove?");
-            int answer = Convert.ToInt32(Console.ReadLine());
-            tasks.RemoveAt(answer -1);
+    }
+    static List<string> AddToDo()
+    {
 
+        Console.WriteLine("Write a To Do and then press enter to save it: ");
+        string toDoIn = Console.ReadLine();
+        tasks.Add(toDoIn);
+        Console.Clear();
+        return tasks;
+    }
+    static void CheckToDo(List<string> tasks)
+    {
+        int index = 1;
+        foreach (var item in tasks)
+        {
+            Console.WriteLine($"{index++} {item}");
+        }
+        Console.WriteLine("Do you want to remove any ToDo's?");
+        Console.WriteLine("1. Go to main menu. ");
+        Console.WriteLine("2. Remove ToDo tasks ");
+        int menu = Convert.ToInt32(Console.ReadLine());
+
+        switch (menu)
+        {
+            case 1:
+                StartProgram();
+                break;
+            case 2:
+                IsFinished();
+                break;            
         }
     }
 
+    static void Exit()
+    {
+        Environment.Exit(0);
+    }
+    static void IsFinished()
+    {
+        int index = 1;
+        foreach (var item in tasks)
+        {
+            Console.WriteLine($"{index++} {item}");
+        }
+        Console.WriteLine("Wich task do you want to remove?");
+        int answer = Convert.ToInt32(Console.ReadLine());
+        tasks.RemoveAt(answer -1);
+
+    }
+}
+    */
+    // ------------------------------------------------------------------------------------------------------------
+    // *************************************** ÖVNINGSUPPGIFT 8 ***************************************************
+    // ------------------------------------------------------------------------------------------------------------
+    //1. Skapa en publik klass som reprsenterar en kurs.
+    //2. Deklarera två publika fält, en sträng för namnet på kursen och en int för antalet studenter som läser kursen (t.ex. "Objektorienterad programmering i C#" och 56)
+    //3. Lägg till propertier(get och set) för ett fält i taget.
+    //4. Ändra så att dina fält är privata och testa så att det endast går att uppdatera dem genom dina properties.
+    //5. Ändra på ditt property för antalet studenter så att om någon försöker mata in ett negativt antal studenter så sparas 0 istället.
+
+
+    /*
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            CourseClass hej = new CourseClass("Gummikursen", 69);
+
+            hej.Course = "Latexkurs";
+            hej.Students = -15;
+            Console.WriteLine(hej.Course);
+            Console.WriteLine(hej.Students);
+        }
+    }
+    // 1.
+    class CourseClass
+    {
+        // 2. 4.
+        private string course;
+        private int students;
+
+        public CourseClass()
+        {
+
+        }
+
+        public CourseClass(string course, int students)
+        {
+            this.Course = course;
+            this.Students = students;
+        }
+
+        // 3.
+        public string Course
+        {
+            get { return course; }
+            set { this.course = value; }
+        }
+        public int Students
+        {
+            get { return students; }
+            set
+            {
+                if (value > 0)
+                {
+                    this.students = value;
+                }
+                else
+                {
+                    this.students = 0;
+                }
+
+            }
+        }
+    } */
+    // -----------------------------------------------------------------------------------------------------------
+    // *************************************** ÖVNINGSUPPGIFT 8 del 2*********************************************
+    // -----------------------------------------------------------------------------------------------------------
+    //6. Skapa en klass human, och ge dem fält för namn, ålder och längd.
+    //7. Skapa en klass teacher som ärver ifrån human. 
+    //8. Ge teacher ett fält för kursen som du skapade i deluppgifter 1-5, och skriv en property för att ändra den. 
+    //9. Skriv en metod för teacher som skriver ut "Hej mitt namn är {namn} och jag under visar {antalet studenter} i kursen {namnet på kursen}." till terminalen. 
+    //10. Gör en egen klass för student som läser en kurs och skriv sedan en metod där den studenten introducerar sig och vilken kurs hen läser.
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+        }
+    }
 }
