@@ -1399,7 +1399,7 @@ class Program
     //3. Lägg till propertier(get och set) för ett fält i taget.
     //4. Ändra så att dina fält är privata och testa så att det endast går att uppdatera dem genom dina properties.
     //5. Ändra på ditt property för antalet studenter så att om någon försöker mata in ett negativt antal studenter så sparas 0 istället.
-
+    /*
     class Program
     {
         static void Main(string[] args)
@@ -1413,15 +1413,15 @@ class Program
             //  5.Ändra på ditt property för antalet studenter så att om någon försöker mata in ett negativt
             //    antal studenter så sparas 0 istället.
 
-            /* CourseClass hej = new CourseClass("Gummikursen", 69);
+             //CourseClass hej = new CourseClass("Gummikursen", 69);
 
-             hej.Course = "Latexkurs";
-             hej.Students = 15;
-             Console.WriteLine(hej.Course);
-             Console.WriteLine(hej.Students);*/
+             //hej.Course = "Latexkurs";
+             //hej.Students = 15;
+             //Console.WriteLine(hej.Course);
+             //Console.WriteLine(hej.Students);
             CourseClass Course1 = new CourseClass(".Net Utvecklare", 57);
-            Teacher minLarare = new Teacher("Håkan", 44, 187);
-            minLarare.TeacherInfo();
+            Teacher minLarare = new Teacher("Håkan", 44, 187, Course1);
+            minLarare.TeacherInfo(Course1);
 
         }
     }
@@ -1432,7 +1432,6 @@ class Program
         private string course; //  
         private int students;  // 
 
-
         public CourseClass() // Vi skapar ett tomt fält för att 
         {
 
@@ -1440,8 +1439,8 @@ class Program
 
         public CourseClass(string course, int students)
         {
-            this.Course = course;
-            this.Students = students;
+            Course = course;
+            Students = students;
         }
 
         // 3.
@@ -1529,16 +1528,17 @@ class Program
     // 7
     class Teacher : Human
     {
-
-        public Teacher(string name, int age, int height)
+        string teacherCourse;
+        public Teacher(string name, int age, int height, CourseClass Course1)
         {
             this.Name = name;
             this.Age = age;
             this.Height = height;
+            this.teacherCourse = Course1.Course;
         }
 
         // 8.
-        string teacherCourse = Course1.Course;
+
         public string TeacherCourse
         {
             get
@@ -1553,11 +1553,11 @@ class Program
             }
         }
 
-        public void TeacherInfo(object Course1)
+        public void TeacherInfo(CourseClass Course1)
         {
 
-            Console.WriteLine($"Hej mitt namn är {minLarare.Name} och jag undervisar {Students} i kursen {TeacherCourse} ");
-
+            Console.WriteLine($"Hej mitt namn är {Name} och jag undervisar {Course1.Students} elever i kursen {TeacherCourse} ");
         }
-    }
+    } */
+
 }
