@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Linq;
+using System.Net;
+using System.IO;
 
 namespace Metoder_Benny_och_Nicklas
 {
@@ -1583,50 +1585,113 @@ class Program
     //alternativ för visa enstaka kategorier eller år.Man kan även visa
     //både serier och filmer i en och samma lista.
     //6. Programmet ska repetera tills användaren väljer att avsluta.
-
+    
     class Program
     {
+        static List<Serie> mySeries = new List<Serie>();
+        static List<Movie> myMovies = new List<Movie>();
+
         static void Main(string[] args)
         {
             Start();
         }
         static void Start()
         {
-            List<Serie> mySeries = new List<Serie>();
-            List<Movie> myMovies = new List<Movie>();
-
-            Console.WriteLine("Välkommen till NetFlex!");
-            Console.WriteLine("Välj ett av följande alternativ för att skapa");
-            Console.WriteLine("1. Serier");
-            Console.WriteLine("2. Filmer");
-            Console.WriteLine("3. Quit");
-            int menu = Convert.ToInt32(Console.ReadLine());
-
-            
-            // Switch case (Sid 52 i boken)
-            switch (menu)
+            do 
             {
-                case 1:
-                    mySeries = Serie.MakeSerie();
-                    break;
-                case 2:
-                   myMovies = Movie.CreateMovie();
-                    break;
-                case 3:
-                    Quit();
-                    break;
-                default:
-                    Console.WriteLine("Felaktig inmatning PAPPSKALLE!");
-                    break;
- 
-            }
+                Console.WriteLine("Välkommen till NetFlex!");
+                Console.WriteLine("Välj ett av följande alternativ för att skapa");
+                Console.WriteLine("1. Serier");
+                Console.WriteLine("2. Filmer");
+                Console.WriteLine("3. Gå vidare");
+                Console.WriteLine("4. Pappa Robins trix");
+                Console.WriteLine("4. Quit");
+                int menu = Convert.ToInt32(Console.ReadLine());
+
+
+                // Switch case (Sid 52 i boken)
+                switch (menu)
+                {
+                    case 1:
+                        mySeries = Serie.MakeSerie();
+                        break;
+                    case 2:
+                        myMovies = Movie.CreateMovie();
+                        break;
+                    case 3:
+                        ListItems();
+                        break;
+                    case 4:
+                        GoWeb();
+                        break;
+                    case 5:
+                        Quit();
+                        break;
+                    default:
+                        Console.WriteLine("Felaktig inmatning PAPPSKALLE!");
+                        break;
+
+                }
+                Console.ReadLine();
+                Console.Clear();
+            }while(true);  
+           
         }
+
+       static void GoWeb()
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://www.omdbapi.com/?t=Game+of+thrones&apikey=a1996ed6");
+            request.Method = "GET";
+            request.ContentType = "application/x-www-form-urlencoded";
+            request.UserAgent = "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 7.1; Trident/5.0)";
+            request.Accept = "/";
+            request.UseDefaultCredentials = true;
+            request.Proxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
+            HttpWebResponse resp = request.GetResponse() as HttpWebResponse;
+
+
+            Stream dataStream = resp.GetResponseStream();
+            StreamReader reader = new StreamReader(dataStream);
+            string strResponse = reader.ReadToEnd();
+
+            Console.WriteLine(strResponse);
+        }
+
         // Denna Metod skapar serier.
         // Denna metoden avslutar Consolen.
         static void Quit()
         {
             Environment.Exit(0);
         }
+        static void ListItems()
+        {
+            bool keepGoing = false;
+            do
+            {
+                Console.WriteLine("Vilken lista vill du se");
+                Console.WriteLine("1. Serier. ");
+                Console.WriteLine("2 Filmer. ");
+                int menu = Convert.ToInt32(Console.ReadLine());
+
+                switch (menu)
+                {
+                    case 1:
+                        Serie.showSeries(mySeries);
+                        break;
+                    case 2:
+                        ;
+                        break;
+                    default:
+                        Console.WriteLine("Felaktig inmatning PAPPSKALLE!");
+                        break;
+                }
+
+
+            } while (keepGoing == true); 
+        }
+
+
+
     }
     // Show är Basklassen.
     class Show
@@ -1734,6 +1799,15 @@ class Program
             return Series;
 
         }
+        public static void showSeries(List<Serie> minaSerier)
+        {
+            foreach (var serie in minaSerier) 
+            {
+                
+                    Console.WriteLine($"{serie.Name}"); 
+            }
+        }
+        
     }
 
 
