@@ -1592,7 +1592,9 @@ class Program
         }
         static void Start()
         {
+            List<Serie> mySeries = new List<Serie>();
             List<Movie> myMovies = new List<Movie>();
+
             Console.WriteLine("Välkommen till NetFlex!");
             Console.WriteLine("Välj ett av följande alternativ för att skapa");
             Console.WriteLine("1. Serier");
@@ -1605,7 +1607,7 @@ class Program
             switch (menu)
             {
                 case 1:
-                    MakeSerie();
+                    mySeries = Serie.MakeSerie();
                     break;
                 case 2:
                    myMovies = Movie.CreateMovie();
@@ -1620,29 +1622,6 @@ class Program
             }
         }
         // Denna Metod skapar serier.
-        public static List<Serie> MakeSerie()
-        { 
-            List<Serie> Series = new List<Serie>();
-            Console.WriteLine("Hur många serier vill du skriva in?");
-            int nrOfSeries = Convert.ToInt32(Console.ReadLine());
-
-            for (int i =  0; i  <  nrOfSeries; i++)
-            {
-                    Console.WriteLine("Namn:");
-                    string name = Console.ReadLine();
-                    Console.WriteLine("Årtal:");
-                    int year = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Antal säsonger:");
-                    int seasons = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Antal avsnitt per säsong:");
-                    int episodes = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Kategori:");
-                    string category = Console.ReadLine();
-                Series.Add(new Serie(seasons,  episodes,  category, name,  year));
-            }
-            return Series;
-
-        }
         // Denna metoden avslutar Consolen.
         static void Quit()
         {
@@ -1732,6 +1711,29 @@ class Program
           
         }
         //----------------------------------------------------------------------------------------------------
+        public static List<Serie> MakeSerie()
+        { 
+            List<Serie> Series = new List<Serie>();
+            Console.WriteLine("Hur många serier vill du skriva in?");
+            int nrOfSeries = Convert.ToInt32(Console.ReadLine());
+
+            for (int i =  0; i  <  nrOfSeries; i++)
+            {
+                    Console.WriteLine("Namn:");
+                    string name = Console.ReadLine();
+                    Console.WriteLine("Årtal:");
+                    int year = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Antal säsonger:");
+                    int seasons = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Antal avsnitt per säsong:");
+                    int episodes = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Kategori:");
+                    string category = Console.ReadLine();
+                Series.Add(new Serie(seasons,  episodes,  category, name,  year));
+            }
+            return Series;
+
+        }
     }
 
 
