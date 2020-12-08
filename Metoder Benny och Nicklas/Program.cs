@@ -1588,7 +1588,232 @@ class Program
     {
         static void Main(string[] args)
         {
+            Start();
+        }
+        static void Start()
+        {
+            List<Movie> myMovies = new List<Movie>();
+            Console.WriteLine("Välkommen till NetFlex!");
+            Console.WriteLine("Välj ett av följande alternativ för att skapa");
+            Console.WriteLine("1. Serier");
+            Console.WriteLine("2. Filmer");
+            Console.WriteLine("3. Quit");
+            int menu = Convert.ToInt32(Console.ReadLine());
+
+            
+            // Switch case (Sid 52 i boken)
+            switch (menu)
+            {
+                case 1:
+                    MakeSerie();
+                    break;
+                case 2:
+                   myMovies = Movie.CreateMovie();
+                    break;
+                case 3:
+                    Quit();
+                    break;
+                default:
+                    Console.WriteLine("Felaktig inmatning PAPPSKALLE!");
+                    break;
+ 
+            }
+        }
+        // Denna Metod skapar serier.
+        public static List<Serie> MakeSerie()
+        { 
+            List<Serie> Series = new List<Serie>();
+            Console.WriteLine("Hur många serier vill du skriva in?");
+            int nrOfSeries = Convert.ToInt32(Console.ReadLine());
+
+            for (int i =  0; i  <  nrOfSeries; i++)
+            {
+                    Console.WriteLine("Namn:");
+                    string name = Console.ReadLine();
+                    Console.WriteLine("Årtal:");
+                    int year = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Antal säsonger:");
+                    int seasons = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Antal avsnitt per säsong:");
+                    int episodes = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Kategori:");
+                    string category = Console.ReadLine();
+                Series.Add(new Serie(seasons,  episodes,  category, name,  year));
+            }
+            return Series;
 
         }
+        // Denna metoden avslutar Consolen.
+        static void Quit()
+        {
+            Environment.Exit(0);
+        }
     }
+    // Show är Basklassen.
+    class Show
+    {   // Fields
+        private string name;
+        private int year;
+
+        // Constructor.
+        public Show()
+        {
+
+        }
+        public Show(string name, int year)
+        {
+            this.name = name;
+            this.year = year;
+
+        }
+        // Property.
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public int Year
+        {
+            get { return year; }
+            set { year = value; }
+        }
+        public void Play() { Console.WriteLine($"Playing {Name}"); }
+    }
+
+    //----------------------------------------------------------------------------------------------------
+    // Class
+    // Klassen Serie ärver från classen Show.
+    class Serie : Show
+    {
+
+        //----------------------------------------------------------------------------------------------------
+        //Fields
+        private int episodes;
+        private int seasons;
+        private string category;
+        //----------------------------------------------------------------------------------------------------
+
+
+        //----------------------------------------------------------------------------------------------------
+        // Property
+        public string Category
+        {
+            get { return category; }
+            set { category = value; }
+        }
+
+        public int Episodes
+        {  
+            get { return episodes; }
+            set { episodes = value; }
+        }
+
+        public int Seasons
+        {  
+            get { return seasons; }
+            set { seasons = value; }
+        }
+        //----------------------------------------------------------------------------------------------------
+
+
+
+        //----------------------------------------------------------------------------------------------------
+        // Constructor
+        public Serie(int episodes, int seasons, string category, string name, int year) : base(name, year)
+        {
+            this.episodes = episodes;
+            this.seasons = seasons;
+            this.category = category;
+
+        }
+        // Tom Construktor, används för att användaren kanske är en retard som inte förstår något.
+        public Serie()
+        {
+          
+        }
+        //----------------------------------------------------------------------------------------------------
+    }
+
+
+
+    // Klassen Movie ärver från classen Show.
+    class Movie : Show
+    {
+        private string mainActor;
+        private int length;
+        private string movieDirector;
+
+        public Movie()
+        {
+
+
+        }
+
+        public Movie(string Name, int Year, string MainActor, int Length, string MovieDirector)
+        {
+            this.Name = Name;
+            this.Year = Year;
+            this.MainActor = mainActor;
+            this.Length = length;
+            this.MovieDirector = movieDirector;
+        }
+
+        public string MainActor
+        {
+            get
+            {
+                return mainActor;
+            }
+            set
+            {
+                mainActor = value;
+            }
+        }
+        public int Length
+        {
+            get
+            {
+                return length;
+            }
+            set
+            {
+                length = value;
+            }
+        }
+        public string MovieDirector
+        {
+            get
+            {
+                return movieDirector;
+            }
+            set
+            {
+                movieDirector = value;
+            }
+        }
+
+
+        public static List<Movie> CreateMovie()
+        {
+            Console.WriteLine("How many movies do you want to add?");
+            int amountOfMovies = Convert.ToInt32(Console.ReadLine());
+            List<Movie> MyMovies = new List<Movie>();
+            for (int i = 0; i < amountOfMovies; i++)
+            {
+                    Console.Write("Name of the movie: ");
+                    string name = Console.ReadLine();
+                    Console.Write("Year: ");
+                    int year = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("MainActor: ");
+                    string mainActor = Console.ReadLine();
+                    Console.Write("Length of movie: ");
+                    int length = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Movie director: ");
+                    string director = Console.ReadLine();
+
+                MyMovies.Add(new Movie(name, year, mainActor, length, director));
+            }
+            return MyMovies;
+        }
+    }  
 }
