@@ -361,81 +361,91 @@ namespace Metoder_Benny_och_Nicklas
         //6.Flytta innehållet i forloop från uppgift 3.till din metod. 
         //7.I ditt huvudprogram(Main) gör så att loopen kallar på HälsaPå(kompis) istället för att skriva ut själv. 
         //    Bonusuppgift: För att göra hälsningen lite mindre stel testa att använda Random rnd = new Random(); och en
-        //    string array med olika hälsningsfraser för att blanda vilka fraser du använder för att hälsa på dina kompisar
-        /*
-        static void Main(string[] args)
-        {
-        
-            List<string> friendsList = new List<string>();
-            friendsList.Add("Pelle");
-            friendsList.Add("BennyBulaDenLillaFula");
-            friendsList.Add("Kalle Stropp");
+        //    string array med olika hälsningsfraser för att blanda vilka fraser du använder för att hälsa på dina kompisar*/
+    /*
+class program
+{
+    static void Main(string[] args)
+    {
 
-            NewMethod(friendsList);
+    }
+}
+  */
 
-            static void NewMethod(List<string> friendsList)
-            {
-                string[] myArray = new string[9];
-                myArray[0] = "Du luktar så gott ";
-                myArray[1] = "Imorgon är en ny dag ";
-                myArray[2] = "Inga bullar för dig ";
-                myArray[3] = "Massa bullar för dig ";
-                myArray[4] = "Kom in i matchen ";
-                myArray[5] = "Nope inte här heller ";
-                myArray[6] = "Vill du ha en kaka ";
-                myArray[7] = "Bussen gick för 5 min sedan ";
-                myArray[8] = "Du är en pappskalle ";
-                
-                
-                for (int i = 0; i < friendsList.Count; i++)
-                {
-                    Random rand = new Random();
-                    String random = myArray[rand.Next(myArray.Length)];
-                    Console.WriteLine(random + friendsList[i]);     
-                }
-            }
+    /*
+   static void Main(string[] args)
+   {
 
-        } /*
+       List<string> friendsList = new List<string>();
+       friendsList.Add("Pelle");
+       friendsList.Add("BennyBulaDenLillaFula");
+       friendsList.Add("Kalle Stropp");
 
-        //8.Skriv en metod sorteraTreTal som tar tre tal som paramterar och returnerar en array.
-        //9.Skapa en array och placera dina tre tal i storleksordning i arrayen.
-        //    Du kan återanvända kod från tidigare uppgifter för att ta reda på vilket tal som är stört, mellan och minst.
-        //10.Returnera arrayen.
-        //11.Testa så att metoden fungerar genom att skriva ut arrayen med hjälp av en foreach-loop i huvudprogrammet.
-        // Default är en bool false.
-        /*
-        string enIfKontroll = default(string); // Default är en string "". Det går att kontrollera med isNullOrEmpty
-        if (string.IsNullOrEmpty(enIfKontroll))
-        {
+       NewMethod(friendsList);
 
-        }
-
-        int[] sortArray = new int[3];
+       static void NewMethod(List<string> friendsList)
+       {
+           string[] myArray = new string[9];
+           myArray[0] = "Du luktar så gott ";
+           myArray[1] = "Imorgon är en ny dag ";
+           myArray[2] = "Inga bullar för dig ";
+           myArray[3] = "Massa bullar för dig ";
+           myArray[4] = "Kom in i matchen ";
+           myArray[5] = "Nope inte här heller ";
+           myArray[6] = "Vill du ha en kaka ";
+           myArray[7] = "Bussen gick för 5 min sedan ";
+           myArray[8] = "Du är en pappskalle ";
 
 
-         Console.WriteLine("Ange tal 1. ");
-         sortArray[0] = Convert.ToInt32(Console.ReadLine());
-         Console.WriteLine("Ange tal 2. ");
-         sortArray[1] = Convert.ToInt32(Console.ReadLine());
-         Console.WriteLine("Ange tal 3. ");
-         sortArray[2] = Convert.ToInt32(Console.ReadLine());
+           for (int i = 0; i < friendsList.Count; i++)
+           {
+               Random rand = new Random();
+               String random = myArray[rand.Next(myArray.Length)];
+               Console.WriteLine(random + friendsList[i]);     
+           }
+       }
 
-        SorteraTreTal(sortArray);  // Kallar på metoden SorteraTreTal som tar in de tre talen från användaren och sorterar dem med Array.Sort
+   } /*
 
-        foreach (var item in sortArray)
-        {
-            Console.WriteLine(item);
-        }
+   //8.Skriv en metod sorteraTreTal som tar tre tal som paramterar och returnerar en array.
+   //9.Skapa en array och placera dina tre tal i storleksordning i arrayen.
+   //    Du kan återanvända kod från tidigare uppgifter för att ta reda på vilket tal som är stört, mellan och minst.
+   //10.Returnera arrayen.
+   //11.Testa så att metoden fungerar genom att skriva ut arrayen med hjälp av en foreach-loop i huvudprogrammet.
+   // Default är en bool false.
+   /*
+   string enIfKontroll = default(string); // Default är en string "". Det går att kontrollera med isNullOrEmpty
+   if (string.IsNullOrEmpty(enIfKontroll))
+   {
+
+   }
+
+   int[] sortArray = new int[3];
+
+
+    Console.WriteLine("Ange tal 1. ");
+    sortArray[0] = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Ange tal 2. ");
+    sortArray[1] = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Ange tal 3. ");
+    sortArray[2] = Convert.ToInt32(Console.ReadLine());
+
+   SorteraTreTal(sortArray);  // Kallar på metoden SorteraTreTal som tar in de tre talen från användaren och sorterar dem med Array.Sort
+
+   foreach (var item in sortArray)
+   {
+       Console.WriteLine(item);
+   }
 
 
 
-        static int[] SorteraTreTal(int[] bumbiBjörnarna) // Tar in en int Array samt returnerar en int array. 
-        {
-            Array.Sort(bumbiBjörnarna);
-        //  Array.Reverse(bumbiBjörnarna);  // Ändrar ordningen på arrayen.
-            return bumbiBjörnarna;
-        }
-        */
+   static int[] SorteraTreTal(int[] bumbiBjörnarna) // Tar in en int Array samt returnerar en int array. 
+   {
+       Array.Sort(bumbiBjörnarna);
+   //  Array.Reverse(bumbiBjörnarna);  // Ändrar ordningen på arrayen.
+       return bumbiBjörnarna;
+   }
+   */
 
     //12.Skriv en metod static int Hexagontal som tar en int n som parameter. 
     //13.I metoden skapa en variabel för summan och sätt det till 0.
@@ -1560,4 +1570,25 @@ class Program
         }
     } */
 
+    //1. Skriv ett program som innehåller en klass som heter Show.
+    //Denna klass ska innehålla generlla properties.
+    //2. Skappa yterliggare 2 klasser, Serie och Movie och ge dessa mer
+    //specifika properites.
+    //1. Börja med att välkomna användaren
+    //2. Börja Fylla i infomrationen för filmen/serien.
+    //3. Visa en menu av alternativ.
+    //4.Lista upp alla serier / filmer som man skapat.
+    //5.Kunna välja en serie/film och se dess information.
+    //Vill man fortsätta att utveckla programmet kan man göra ett
+    //alternativ för visa enstaka kategorier eller år.Man kan även visa
+    //både serier och filmer i en och samma lista.
+    //6. Programmet ska repetera tills användaren väljer att avsluta.
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+        }
+    }
 }
